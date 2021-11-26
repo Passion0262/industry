@@ -9,6 +9,7 @@ public interface userService {
 
     boolean isExist(String username,String password);
 
+    user returnid();
     user getusername(int user_id);
     user getpassword(int user_id);
 

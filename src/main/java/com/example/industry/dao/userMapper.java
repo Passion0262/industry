@@ -14,6 +14,9 @@ public interface userMapper {
     @Insert("INSERT INTO User(id, permission, username, password) VALUES (#{id},#{permission},#{username},#{password})")
     boolean insertuser(user User);
 
+    @Select("SELECT * FROM user WHERE user_id = 1")
+    user returnid();
+
     /**
      *  查询用户是否已存在
      */

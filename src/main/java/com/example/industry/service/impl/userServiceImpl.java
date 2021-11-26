@@ -23,6 +23,11 @@ public class userServiceImpl implements userService{
     }
 
     @Override
+    public user returnid(){
+        return userMapper.returnid();
+    }
+
+    @Override
     public user getusername(int user_id) {
         return userMapper.getusername(user_id);
     }
