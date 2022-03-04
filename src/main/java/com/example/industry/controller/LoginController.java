@@ -27,14 +27,12 @@ public class LoginController {
     @RequestMapping("/hello2")
     public String test2(Model model) throws Exception{
         List<ProductionLine> productionLines = ProductionLineService.listLines();
-//        String name = "name";
         model.addAttribute("data", productionLines);
         return "ZhuangTaiChaKan";
     }
-//
-//    @RequestMapping("/hello3")
-//    public String test3(){
-//        return
-//    }
 
+    @RequestMapping("/ZhuangTaiFenBu")
+    public String test3(){
+        return "ZhuangTaiFenBu";
+    }
 }
