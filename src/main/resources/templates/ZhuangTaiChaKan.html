@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>Dashboard | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
@@ -190,106 +190,123 @@
 <!--                                    </div>-->
 
                                     <div class="production_line">
-                                        <span>name1</span>
+                                        <span th:text="${data.get(0).getName()}">name1</span>
                                         <table border="1">
                                             <tr>
-                                                <th>Month</th>
-                                                <th>Savings</th>
-                                                <th>Savings</th>
-                                                <th>Savings</th>
+                                                <th>id</th>
+                                                <th>pid</th>
+                                                <th>external_id</th>
+                                                <th>drivername</th>
                                             </tr>
                                             <tr>
-                                                <td>January</td>
-                                                <td>$100</td>
-                                                <td>January</td>
-                                                <td>$100</td>
+                                                <td th:text="${data.get(0).getId()}?:'id'"></td>
+                                                <td th:text="${data.get(0).getPid()}?:'pid'"></td>
+                                                <td th:text="${data.get(0).getExternalId()}?:'external_id'"></td>
+                                                <td th:text="${data.get(0).getDrivername()}?:'drivername'"></td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="production_line">
-                                        <span>name2</span>
+                                        <span th:text="${data.get(1).getName()}?:'name2'"></span>
                                         <table border="1">
                                             <tr>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Savings</th>
+                                                <th>id</th>
+                                                <th>pid</th>
+                                                <th>external_id</th>
+                                                <th>drivername</th>
                                             </tr>
                                             <tr>
-                                                <td>January</td>
-                                                <td>$100</td>
-                                                <td>$100</td>
-                                                <td>$100</td>
+                                                <td th:text="${data.get(1).getId()}?:'id'"></td>
+                                                <td th:text="${data.get(1).getPid()}?:'pid'"></td>
+                                                <td th:text="${data.get(1).getExternalId()}?:'external_id'"></td>
+                                                <td th:text="${data.get(1).getDrivername()}?:'drivername'"></td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="production_line">
-                                        <span>name2</span>
+                                        <span th:text="${data.get(2).getName()}?:'name3'"></span>
                                         <table border="1">
                                             <tr>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Savings</th>
+                                                <th>id</th>
+                                                <th>pid</th>
+                                                <th>external_id</th>
+                                                <th>drivername</th>
                                             </tr>
                                             <tr>
-                                                <td>January</td>
-                                                <td>January</td>
-                                                <td>January</td>
-                                                <td>$100</td>
+                                                <td th:text="${data.get(2).getId()}?:'id'"></td>
+                                                <td th:text="${data.get(2).getPid()}?:'pid'"></td>
+                                                <td th:text="${data.get(2).getExternalId()}?:'external_id'"></td>
+                                                <td th:text="${data.get(2).getDrivername()}?:'drivername'"></td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="media">
                                     <div class="production_line">
-                                        <span>name2</span>
+                                        <span th:text="${data.get(3).getName()}?:'name4'"></span>
                                         <table border="1">
                                             <tr>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Savings</th>
+                                                <th>id</th>
+                                                <th>pid</th>
+                                                <th>external_id</th>
+                                                <th>drivername</th>
                                             </tr>
                                             <tr>
-                                                <td>January</td>
-                                                <td>January</td>
-                                                <td>January</td>
-                                                <td>$100</td>
+                                                <td th:text="${data.get(3).getId()}?:'id'"></td>
+                                                <td th:text="${data.get(3).getPid()}?:'pid'"></td>
+                                                <td th:text="${data.get(3).getExternalId()}?:'external_id'"></td>
+                                                <td th:text="${data.get(3).getDrivername()}?:'drivername'"></td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="production_line">
-                                        <span>name2</span>
+                                        <span th:text="${data.get(4).getName()}?:'name5'"></span>
                                         <table border="1">
                                             <tr>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Savings</th>
+                                                <th>id</th>
+                                                <th>pid</th>
+                                                <th>external_id</th>
+                                                <th>drivername</th>
                                             </tr>
                                             <tr>
-                                                <td>January</td>
-                                                <td>$100</td>
-                                                <td>$100</td>
-                                                <td>$100</td>
+                                                <td th:text="${data.get(4).getId()}?:'id'"></td>
+                                                <td th:text="${data.get(4).getPid()}?:'pid'"></td>
+                                                <td th:text="${data.get(4).getExternalId()}?:'external_id'"></td>
+                                                <td th:text="${data.get(4).getDrivername()}?:'drivername'"></td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="production_line">
-                                        <span>name2</span>
+                                        <span th:text="${data.get(5).getName()}?:'name6'"></span>
                                         <table border="1">
                                             <tr>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Month</th>
-                                                <th>Savings</th>
+                                                <th>id</th>
+                                                <th>pid</th>
+                                                <th>external_id</th>
+                                                <th>drivername</th>
                                             </tr>
                                             <tr>
-                                                <td>January</td>
-                                                <td>$100</td>
-                                                <td>$100</td>
-                                                <td>$100</td>
+                                                <td th:text="${data.get(5).getId()}?:'id'"></td>
+                                                <td th:text="${data.get(5).getPid()}?:'pid'"></td>
+                                                <td th:text="${data.get(5).getExternalId()}?:'external_id'"></td>
+                                                <td th:text="${data.get(5).getDrivername()}?:'drivername'"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="production_line">
+                                        <span th:text="${data.get(6).getName()}?:'name7'"></span>
+                                        <table border="1">
+                                            <tr>
+                                                <th>id</th>
+                                                <th>pid</th>
+                                                <th>external_id</th>
+                                                <th>drivername</th>
+                                            </tr>
+                                            <tr>
+                                                <td th:text="${data.get(6).getId()}?:'id'"></td>
+                                                <td th:text="${data.get(6).getPid()}?:'pid'"></td>
+                                                <td th:text="${data.get(6).getExternalId()}?:'external_id'"></td>
+                                                <td th:text="${data.get(6).getDrivername()}?:'drivername'"></td>
                                             </tr>
                                         </table>
                                     </div>
