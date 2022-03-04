@@ -5877,6 +5877,7 @@ a.badge-pink.focus, a.badge-pink:focus {
 }
 
 .media {
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5884,7 +5885,10 @@ a.badge-pink.focus, a.badge-pink:focus {
     -ms-flex-align: start;
     align-items: flex-start
 }
-
+.production_line{
+    margin: 8px;
+    display: block;
+}
 .media-body {
     -webkit-box-flex: 1;
     -ms-flex: 1;
