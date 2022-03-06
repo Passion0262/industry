@@ -191,7 +191,7 @@
 <!--                                        <h5 class="mb-0" style="color: #7c8a96;font-size: x-large">离线（灰）</h5>-->
 <!--                                    </div>-->
                                     <div class="production_line">
-                                        <p class="name"><strong th:text="${data.get(0).getName()}">name</strong></p>
+                                        <p class="name"><strong th:text="${data.get(0).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
                                         <div class="span1">
                                             id：<span class="span2" th:text="${data.get(0).getId()}">id</span></br>
                                             pid：<span class="span2" th:text="${data.get(0).getPid()}">pid</span></br>
@@ -201,7 +201,7 @@
                                         </div>
                                     </div>
                                     <div class="production_line">
-                                        <p class="name"><strong th:text="${data.get(1).getName()}">name</strong></p>
+                                        <p class="name"><strong th:text="${data.get(1).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
                                         <div class="span1">
                                             id：<span class="span2" th:text="${data.get(1).getId()}">id</span></br>
                                             pid：<span class="span2" th:text="${data.get(1).getPid()}">pid</span></br>
@@ -210,8 +210,12 @@
 
                                         </div>
                                     </div>
+
+                                </div>
+
+                                <div class="media">
                                     <div class="production_line">
-                                        <p class="name"><strong th:text="${data.get(2).getName()}">name</strong></p>
+                                        <p class="name"><strong th:text="${data.get(2).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
                                         <div class="span1">
                                             id：<span class="span2" th:text="${data.get(2).getId()}">id</span></br>
                                             pid：<span class="span2" th:text="${data.get(2).getPid()}">pid</span></br>
@@ -220,11 +224,8 @@
 
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="media">
-                                    <div class="production_line">
-                                        <p class="name"><strong th:text="${data.get(3).getName()}">name</strong></p>
+                                    <div class="production_line" style="background-color: #ff626226">
+                                        <p class="name" style="background-color: #ff626296"><strong th:text="${data.get(3).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[停机 x分钟]</span></p>
                                         <div class="span1">
                                             id：<span class="span2" th:text="${data.get(3).getId()}">id</span></br>
                                             pid：<span class="span2" th:text="${data.get(3).getPid()}">pid</span></br>
@@ -233,8 +234,11 @@
 
                                         </div>
                                     </div>
+
+                                </div>
+                                <div class="media">
                                     <div class="production_line">
-                                        <p class="name"><strong th:text="${data.get(4).getName()}">name</strong></p>
+                                        <p class="name"><strong th:text="${data.get(4).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
                                         <div class="span1">
                                             id：<span class="span2" th:text="${data.get(4).getId()}">id</span></br>
                                             pid：<span class="span2" th:text="${data.get(4).getPid()}">pid</span></br>
@@ -244,7 +248,7 @@
                                         </div>
                                     </div>
                                     <div class="production_line">
-                                        <p class="name"><strong th:text="${data.get(5).getName()}">name</strong></p>
+                                        <p class="name"><strong th:text="${data.get(5).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
                                         <div class="span1">
                                             id：<span class="span2" th:text="${data.get(5).getId()}">id</span></br>
                                             pid：<span class="span2" th:text="${data.get(5).getPid()}">pid</span></br>
@@ -253,10 +257,11 @@
 
                                         </div>
                                     </div>
+
                                 </div>
-                                <div>
+                                <div class="media">
                                     <div class="production_line">
-                                        <p class="name"><strong th:text="${data.get(6).getName()}">name</strong></p>
+                                        <p class="name"><strong th:text="${data.get(6).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
                                         <div class="span1">
                                             id：<span class="span2" th:text="${data.get(6).getId()}">id</span></br>
                                             pid：<span class="span2" th:text="${data.get(6).getPid()}">pid</span></br>

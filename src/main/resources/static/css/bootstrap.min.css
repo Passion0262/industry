@@ -5885,22 +5885,31 @@ a.badge-pink.focus, a.badge-pink:focus {
     align-items: flex-start
 }
 .production_line{
+    background-color: #068bee17;
     margin: 8px;
     margin-bottom: 20px;
     display: block;
-    width: 300px;
+    width: 520px;
     border-style: solid;
     border-color: #bfbfbf;
     border-width: 1px;
     border-radius: 10px;
+
 }
+.zhuangT{
+    font-size: 15px;
+}
+
 .name{
+    /*color:whitesmoke;*/
     border-style: solid;
     text-align: center;
     font-size: 30px;
     border-color: #bfbfbf;
     border-width: 1px;
     background-color: #94dbffd6;
+    border-radius: 8px;
+    padding: 10px;
 }
 .span1{
     font-size: 20px;
