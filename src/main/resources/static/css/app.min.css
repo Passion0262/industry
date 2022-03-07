@@ -1458,6 +1458,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .container-fluid, body[data
 
 .font-size-18 {
     font-size: 18px !important
+    color: #00ff80;
 }
 
 .font-size-20 {
@@ -3520,14 +3521,15 @@ div.dt-button-info h2 {
 }
 
 .authentication-bg {
-    background-image: url(../images/authentication-bg.jpg);
+    background-image: url(../images/login_img.jpg);
     height: 100vh;
     background-size: cover;
-    background-position: center
+    background-position: center;
+    border-radius: 5px;
 }
 
 .authentication-bg .bg-overlay {
-    background-color: #292626
+    background-color: #18388296
 }
 
 @media (max-width: 991px) {
@@ -3540,7 +3542,8 @@ div.dt-button-info h2 {
     height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
+
 }
 
 .auth-form-group-custom {
