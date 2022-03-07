@@ -156,16 +156,16 @@
                 <!-- Left Menu Start -->
                 <ul class="metismenu list-unstyled mm-show" id="side-menu">
                     <li class="menu-title">菜单</li>
-                    <li class="mm-active"><a th:href="@{/index}" class="waves-effect active"><i class="ri-dashboard-line"></i>
+                    <li class="mm-active"><a th:href="@{/main}" class="waves-effect active"><i class="ri-dashboard-line"></i>
                         <span class="badge badge-pill badge-success float-right">99+</span>
                         <span>主页</span></a></li>
                     <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>设备状态看板</span></a>
 
                         <ul class="sub-menu mm-collapse" aria-expanded="false">
-                            <li><a th:href="@{/ZhuangTaiChaKan}">即时状态查看</a></li>
-                            <li><a th:href="@{/kanban-baojingjilu}">报警记录分析</a></li>
-                            <li><a th:href="@{/kanban-shebeichanliangjishu}">设备产量计数分析</a></li>
-                            <li><a th:href="@{/kanban-shebeiguochengcanshu}">设备过程参数</a></li>
+                            <li><a th:href="@{/instance_status}">即时状态查看</a></li>
+                            <li><a th:href="@{/alarm_record}">报警记录分析</a></li>
+                            <li><a th:href="@{/count_analysis}">设备产量计数分析</a></li>
+                            <li><a th:href="@{/board_deviceParameter}">设备过程参数</a></li>
 
                         </ul>
 
@@ -173,27 +173,27 @@
 
                     <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>实时数据看板</span></a>
                         <ul class="sub-menu mm-collapse" aria-expanded="false">
-                            <li><a th:href="@{/LiYongLv}">设备利用率</a></li>
-                            <li><a th:href="@{/JiaDongLv}">设备稼动率</a></li>
+                            <li><a th:href="@{/use_ratio}">设备利用率</a></li>
+                            <li><a th:href="@{/activation}">设备稼动率</a></li>
                         </ul>
                     </li>
 
                     <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-store-2-line"></i><span>产量分析看板</span></a>
 
                         <ul class="sub-menu mm-collapse" aria-expanded="false">
-                            <li><a th:href="@{/ChanLiang}">产量数据</a></li>
-                            <li><a th:href="@{/ChanPin}">产品信息</a></li>
+                            <li><a th:href="@{/output}">产量数据</a></li>
+                            <li><a th:href="@{/pruduct_information}">产品信息</a></li>
 
                         </ul>
 
                     </li>
 
-                    <li><a th:href="@{/ZhuangTaiFenBu}" class="waves-effect"><i class="ri-mail-send-line"></i><span>状态分布看板</span></a>
+                    <li><a th:href="@{/status_distribute}" class="waves-effect"><i class="ri-mail-send-line"></i><span>状态分布看板</span></a>
                     </li>
 
                     <li><a th:href="@{/OEE}" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>整线OEE分析</span></a></li>
 
-                    <li><a th:href="@{/knifes}" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>刀具分析</span></a></li>
+                    <li><a th:href="@{/cutter}" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>刀具分析</span></a></li>
 
                 </ul>
             </div><!-- Sidebar -->
@@ -222,7 +222,7 @@
                             <div class="card-body  pt-0">
                                 <ul class="nav nav-tabs nav-tabs-custom mb-4">
                                     <li class="nav-item"><a class="nav-link font-weight-bold p-3 active" href="#">全部刀具信息</a></li>
-                                    <li class="nav-item"><a class="nav-link p-3 font-weight-bold" th:href="@{/knifes-huizong}">汇总查询</a>
+                                    <li class="nav-item"><a class="nav-link p-3 font-weight-bold" th:href="@{/cutter_all}">汇总查询</a>
                                     </li>
                                 </ul>
                                 <div class="table-responsive">
