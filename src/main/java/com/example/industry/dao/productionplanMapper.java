@@ -1,6 +1,7 @@
 package com.example.industry.dao;
 
 import com.example.industry.entity.User.user;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import com.example.industry.entity.Productionplan.productionplan;
@@ -23,6 +24,10 @@ public interface productionplanMapper {
 
     //查询生产计划
     @Select("SELECT * from productionplan where plan_name=#{planName} AND model_type=#{modelType} AND plannedstart=#{plannedstart} AND plannedend=#{plannedend} AND state=#{state}")
-    List<productionplan> getproplan(String planName, String modelType, Timestamp plannedstart, Timestamp plannedend, String state);
+    List<productionplan> getproplan(String planName, int modelType, Timestamp plannedstart, Timestamp plannedend, String state);
+
+    //删除生产计划
+    @Delete("DELETE from productionplan where plan_number=#{plan_number} ")
+    boolean deleteplan(int planNumber);
 
 }

@@ -20,7 +20,7 @@ public class productionplan {
     private int qualifiedYield; //合格产量
     private int disqualifiedYield;//不合格产量
     private String planDetails;//计划明细
-    private String modelType;//机种型号
+    private int modelType;//机种型号
     private Timestamp plannedstart;//计划开始时间
     private Timestamp plannedend;//计划结束时间
     private Timestamp actualstart;//实际开始时间
