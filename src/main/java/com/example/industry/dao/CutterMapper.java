@@ -4,6 +4,7 @@ import com.example.industry.entity.Cutter.cutter;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import  java.util.List;
 @Mapper
@@ -49,4 +50,17 @@ public interface CutterMapper {
      */
     @Select("SELECT * FROM cutter WHERE life_state=#{life_state}")
     List<cutter> getByLifeState(String lifeState);
+
+    /**
+     * 新增刀具信息
+     */
+    @Insert("INSERT INTO cutter(cutter_id, cutter_category, cutter_type, device_id, device_name,cutter_location,cutter_state,cutter_length," +
+            "cutter_diameter,wear_compensation_length,wear_compensation_diameter," +
+            "life_state,counting_mode,initial_life,used_life,residual_life,alarm_value) VALUES (#{cutterId},#{cutterCategory},#{cutterType}," +
+            "#{deviceId},#{deviceName},#{cutterLocation},#{cutterState},#{cutterLength},#{cutterDiameter},#{wearCompensationLength},#{wearCompensationDiameter}," +
+            "#{lifeState},#{countingMode},#{initialLife},#{usedLife},#{residualLife},#{alarmValue})")
+    boolean insertCutter(cutter cutter);
+
+
+
 }

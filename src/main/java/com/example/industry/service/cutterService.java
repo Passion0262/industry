@@ -38,4 +38,9 @@ public interface cutterService {
      */
     List<cutter> getByLifeState(String lifeState);
 
+    /**
+     * 新增刀具
+     */
+    boolean insertCutter(cutter cutter);
+
 }
