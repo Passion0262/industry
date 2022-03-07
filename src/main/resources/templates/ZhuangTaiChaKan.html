@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>Dashboard | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
@@ -116,43 +116,44 @@
                 <!-- Left Menu Start -->
                 <ul class="metismenu list-unstyled mm-show" id="side-menu">
                     <li class="menu-title">菜单</li>
-                    <li><a href="index.html" class="waves-effect"><i class="ri-dashboard-line"></i><span class="badge badge-pill badge-success float-right">1</span><span>主页</span></a></li>
-                    <li class="mm-active"><a href="javascript: void(0);" class="has-arrow waves-effect mm-active"><i class="ri-calendar-2-line"></i><span>设备状态看板</span></a>
-
-                        <ul class="sub-menu mm-collapse mm-show" aria-expanded="false">
-                            <li class="mm-active"><a href="ZhuangTaiChaKan.html" class="active">即时状态查看</a></li>
-                            <li><a href="kanban-baojingjilu.html">报警记录分析</a></li>
-                            <li><a href="kanban-shebeichanliangjishu.html">设备产量计数分析</a></li>
-                            <li><a href="kanban-shebeiguochengcanshu.html">设备过程参数</a></li>
-
-                        </ul>
-
-
-                    </li>
-                    <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>实时稼动率看板</span></a>
+                    <li class="mm-active"><a th:href="@{/index}" class="waves-effect active"><i class="ri-dashboard-line"></i>
+                        <span class="badge badge-pill badge-success float-right">99+</span>
+                        <span>主页</span></a></li>
+                    <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>设备状态看板</span></a>
 
                         <ul class="sub-menu mm-collapse" aria-expanded="false">
-                            <li><a href="LiYongLv.html">设备利用率</a></li>
-                            <li><a href="JiaDongLv.html">设备稼动率</a></li>
+                            <li><a th:href="@{/ZhuangTaiChaKan}">即时状态查看</a></li>
+                            <li><a th:href="@{/kanban-baojingjilu}">报警记录分析</a></li>
+                            <li><a th:href="@{/kanban-shebeichanliangjishu}">设备产量计数分析</a></li>
+                            <li><a th:href="@{/kanban-shebeiguochengcanshu}">设备过程参数</a></li>
+
                         </ul>
 
                     </li>
 
-                    <li><a href="javascript: void(0);" class="waves-effect"><i class="ri-store-2-line"></i><span>产量分析看板</span></a>
+                    <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>实时数据看板</span></a>
+                        <ul class="sub-menu mm-collapse" aria-expanded="false">
+                            <li><a th:href="@{/LiYongLv}">设备利用率</a></li>
+                            <li><a th:href="@{/JiaDongLv}">设备稼动率</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-store-2-line"></i><span>产量分析看板</span></a>
 
                         <ul class="sub-menu mm-collapse" aria-expanded="false">
-                            <li><a href="ChanLiang.html">产量数据</a></li>
-                            <li><a href="ChanPin.html">产品信息</a></li>
+                            <li><a th:href="@{/ChanLiang}">产量数据</a></li>
+                            <li><a th:href="@{/ChanPin}">产品信息</a></li>
+
                         </ul>
 
                     </li>
 
-                    <li><a href="ZhuangTaiFenBu.html" class="has-arrow waves-effect"><i class="ri-mail-send-line"></i><span>状态分布看板</span></a>
+                    <li><a th:href="@{/ZhuangTaiFenBu}" class="waves-effect"><i class="ri-mail-send-line"></i><span>状态分布看板</span></a>
                     </li>
 
-                    <li><a href="OEE.html" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>整线OEE分析</span></a></li>
+                    <li><a th:href="@{/OEE}" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>整线OEE分析</span></a></li>
 
-                    <li><a href="knifes.html" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>刀具分析</span></a></li>
+                    <li><a th:href="@{/knifes}" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>刀具分析</span></a></li>
 
                 </ul>
             </div><!-- Sidebar -->
@@ -177,18 +178,100 @@
                 </div><!-- end page title -->
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card" style="width: 500px;position: center">
-                            <div class="card-body" align="center">
+                        <div class="card" style="width: max-content;position: center">
+                            <div class="card-body">
                                 <div class="media">
-                                    <div class="media-body overflow-hidden"">
-                                        <p class="text-truncate font-size-14 mb-2">当前状态</p>
-                                        <h5 class="mb-0" style="color: #00ff80;font-size: x-large">运行（绿）</h5>
-                                        <h5 class="mb-0" style="color: #efe24b;font-size: x-large">空闲（黄）</h5>
-                                        <h5 class="mb-0" style="color: #1789ff;font-size: x-large">设定（蓝）</h5>
-                                        <h5 class="mb-0" style="color: #ff1741;font-size: x-large">停机（红）</h5>
-                                        <h5 class="mb-0" style="color: #7c8a96;font-size: x-large">离线（灰）</h5>
+
+<!--                                    <div class="media-body overflow-hidden"">-->
+<!--                                        <p class="text-truncate font-size-14 mb-2">当前状态</p>-->
+<!--                                        <h5 class="mb-0" style="color: #00ff80;font-size: x-large">运行（绿）</h5>-->
+<!--                                        <h5 class="mb-0" style="color: #efe24b;font-size: x-large">空闲（黄）</h5>-->
+<!--                                        <h5 class="mb-0" style="color: #1789ff;font-size: x-large">设定（蓝）</h5>-->
+<!--                                        <h5 class="mb-0" style="color: #ff1741;font-size: x-large">停机（红）</h5>-->
+<!--                                        <h5 class="mb-0" style="color: #7c8a96;font-size: x-large">离线（灰）</h5>-->
+<!--                                    </div>-->
+                                    <div class="production_line">
+                                        <p class="name"><strong th:text="${data.get(0).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
+                                        <div class="span1">
+                                            id：<span class="span2" th:text="${data.get(0).getId()}">id</span></br>
+                                            pid：<span class="span2" th:text="${data.get(0).getPid()}">pid</span></br>
+                                            external_id：<span class="span2" th:text="${data.get(0).getExternalId()}">external_id</span></br>
+                                            drivername：<span class="span2" th:text="${data.get(0).getDrivername()}">drivername</span></br>
+
+                                        </div>
+                                    </div>
+                                    <div class="production_line">
+                                        <p class="name"><strong th:text="${data.get(1).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
+                                        <div class="span1">
+                                            id：<span class="span2" th:text="${data.get(1).getId()}">id</span></br>
+                                            pid：<span class="span2" th:text="${data.get(1).getPid()}">pid</span></br>
+                                            external_id：<span class="span2" th:text="${data.get(1).getExternalId()}">external_id</span></br>
+                                            drivername：<span class="span2" th:text="${data.get(1).getDrivername()}">drivername</span></br>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="media">
+                                    <div class="production_line">
+                                        <p class="name"><strong th:text="${data.get(2).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
+                                        <div class="span1">
+                                            id：<span class="span2" th:text="${data.get(2).getId()}">id</span></br>
+                                            pid：<span class="span2" th:text="${data.get(2).getPid()}">pid</span></br>
+                                            external_id：<span class="span2" th:text="${data.get(2).getExternalId()}">external_id</span></br>
+                                            drivername：<span class="span2" th:text="${data.get(2).getDrivername()}">drivername</span></br>
+
+                                        </div>
+                                    </div>
+                                    <div class="production_line" style="background-color: #ff626226">
+                                        <p class="name" style="background-color: #ff626296"><strong th:text="${data.get(3).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[停机 x分钟]</span></p>
+                                        <div class="span1">
+                                            id：<span class="span2" th:text="${data.get(3).getId()}">id</span></br>
+                                            pid：<span class="span2" th:text="${data.get(3).getPid()}">pid</span></br>
+                                            external_id：<span class="span2" th:text="${data.get(3).getExternalId()}">external_id</span></br>
+                                            drivername：<span class="span2" th:text="${data.get(3).getDrivername()}">drivername</span></br>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="media">
+                                    <div class="production_line">
+                                        <p class="name"><strong th:text="${data.get(4).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
+                                        <div class="span1">
+                                            id：<span class="span2" th:text="${data.get(4).getId()}">id</span></br>
+                                            pid：<span class="span2" th:text="${data.get(4).getPid()}">pid</span></br>
+                                            external_id：<span class="span2" th:text="${data.get(4).getExternalId()}">external_id</span></br>
+                                            drivername：<span class="span2" th:text="${data.get(4).getDrivername()}">drivername</span></br>
+
+                                        </div>
+                                    </div>
+                                    <div class="production_line">
+                                        <p class="name"><strong th:text="${data.get(5).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
+                                        <div class="span1">
+                                            id：<span class="span2" th:text="${data.get(5).getId()}">id</span></br>
+                                            pid：<span class="span2" th:text="${data.get(5).getPid()}">pid</span></br>
+                                            external_id：<span class="span2" th:text="${data.get(5).getExternalId()}">external_id</span></br>
+                                            drivername：<span class="span2" th:text="${data.get(5).getDrivername()}">drivername</span></br>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="media">
+                                    <div class="production_line">
+                                        <p class="name"><strong th:text="${data.get(6).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
+                                        <div class="span1">
+                                            id：<span class="span2" th:text="${data.get(6).getId()}">id</span></br>
+                                            pid：<span class="span2" th:text="${data.get(6).getPid()}">pid</span></br>
+                                            external_id：<span class="span2" th:text="${data.get(6).getExternalId()}">external_id</span></br>
+                                            drivername：<span class="span2" th:text="${data.get(6).getDrivername()}">drivername</span></br>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
                             </div>
                         </div>
 
@@ -200,7 +283,7 @@
 
 
         </div><!-- end main content--></div><!-- END layout-wrapper --><!-- Right Sidebar -->
-</div>
+
     <!-- JAVASCRIPT -->
     <script src="../static/libs/jquery/jquery.min.js"></script>
     <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>

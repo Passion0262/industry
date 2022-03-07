@@ -1,7 +1,6 @@
 package com.example.industry.dao;
 
 import com.example.industry.entity.Device.device;
-import com.example.industry.entity.Device.deviceStatus;
 import org.apache.ibatis.annotations.*;
 import  java.util.List;
 

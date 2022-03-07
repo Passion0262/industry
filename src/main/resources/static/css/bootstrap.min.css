@@ -5884,7 +5884,54 @@ a.badge-pink.focus, a.badge-pink:focus {
     -ms-flex-align: start;
     align-items: flex-start
 }
+.production_line{
+    background-color: #068bee17;
+    margin: 8px;
+    margin-bottom: 20px;
+    display: block;
+    width: 520px;
+    border-style: solid;
+    border-color: #bfbfbf;
+    border-width: 1px;
+    border-radius: 10px;
 
+}
+.zhuangT{
+    font-size: 15px;
+}
+
+.name{
+    /*color:whitesmoke;*/
+    border-style: solid;
+    text-align: center;
+    font-size: 30px;
+    border-color: #bfbfbf;
+    border-width: 1px;
+    background-color: #94dbffd6;
+    border-radius: 8px;
+    padding: 10px;
+}
+.span1{
+    font-size: 20px;
+    text-align: left;
+    padding: 0px 20px 20px;
+}
+.span2{
+    color: #888888;
+}
+.pro_name{
+    background-color: #5bc0de;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: black;
+    font-size: larger;
+}
+.table{
+    width: 200px;
+}
 .media-body {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -11476,5 +11523,13 @@ a, button {
         width: 0
     }
 }
+
+.code-box-demo {
+    padding: 42px 24px 50px;
+    color: #000000d9;
+    border-bottom: 1px solid #f0f0f0
+}
+
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */

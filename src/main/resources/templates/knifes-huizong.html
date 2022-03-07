@@ -136,45 +136,46 @@
             <!--- Sidemenu -->
             <div id="sidebar-menu">
                 <!-- Left Menu Start -->
-                <ul class="metismenu list-unstyled" id="side-menu">
+                <ul class="metismenu list-unstyled mm-show" id="side-menu">
                     <li class="menu-title">菜单</li>
-                    <li><a href="index.html" class="waves-effect"><i class="ri-dashboard-line"></i><span class="badge badge-pill badge-success float-right">1</span><span>主页</span></a></li>
+                    <li class="mm-active"><a th:href="@{/index}" class="waves-effect active"><i class="ri-dashboard-line"></i>
+                        <span class="badge badge-pill badge-success float-right">99+</span>
+                        <span>主页</span></a></li>
                     <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>设备状态看板</span></a>
 
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ZhuangTaiChaKan.html">即时状态查看</a></li>
-                            <li><a href="kanban-baojingjilu.html">报警记录分析</a></li>
-                            <li><a href="kanban-shebeichanliangjishu.html">设备产量计数分析</a></li>
-                            <li><a href="kanban-shebeiguochengcanshu.html">设备过程参数</a></li>
-                            
-                        </ul>
+                        <ul class="sub-menu mm-collapse" aria-expanded="false">
+                            <li><a th:href="@{/ZhuangTaiChaKan}">即时状态查看</a></li>
+                            <li><a th:href="@{/kanban-baojingjilu}">报警记录分析</a></li>
+                            <li><a th:href="@{/kanban-shebeichanliangjishu}">设备产量计数分析</a></li>
+                            <li><a th:href="@{/kanban-shebeiguochengcanshu}">设备过程参数</a></li>
 
+                        </ul>
 
                     </li>
-                    <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>实时稼动率看板</span></a>
 
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="LiYongLv.html">设备利用率</a></li>
-                            <li><a href="JiaDongLv.html">设备稼动率</a></li>
+                    <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-calendar-2-line"></i><span>实时数据看板</span></a>
+                        <ul class="sub-menu mm-collapse" aria-expanded="false">
+                            <li><a th:href="@{/LiYongLv}">设备利用率</a></li>
+                            <li><a th:href="@{/JiaDongLv}">设备稼动率</a></li>
                         </ul>
-
                     </li>
 
                     <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="ri-store-2-line"></i><span>产量分析看板</span></a>
 
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ChanLiang.html">产量数据</a></li>
-                            <li><a href="ChanPin.html">产品信息</a></li>
+                        <ul class="sub-menu mm-collapse" aria-expanded="false">
+                            <li><a th:href="@{/ChanLiang}">产量数据</a></li>
+                            <li><a th:href="@{/ChanPin}">产品信息</a></li>
+
                         </ul>
 
                     </li>
 
-                    <li><a href="ZhuangTaiFenBu.html" class="waves-effect"><i class="ri-mail-send-line"></i><span>状态分布看板</span></a>
+                    <li><a th:href="@{/ZhuangTaiFenBu}" class="waves-effect"><i class="ri-mail-send-line"></i><span>状态分布看板</span></a>
                     </li>
 
-                    <li><a href="OEE.html" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>整线OEE分析</span></a></li>
+                    <li><a th:href="@{/OEE}" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>整线OEE分析</span></a></li>
 
-                    <li><a href="knifes.html" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>刀具分析</span></a></li>
+                    <li><a th:href="@{/knifes}" class=" waves-effect"><i class="ri-artboard-2-line"></i><span>刀具分析</span></a></li>
 
                 </ul>
             </div><!-- Sidebar -->
@@ -203,7 +204,7 @@
                             <div class="card-body  pt-0">
                                 <ul class="nav nav-tabs nav-tabs-custom mb-4">
                                     <li class="nav-item"><a class="nav-link font-weight-bold p-3 active" href="#">汇总查询</a></li>
-                                    <li class="nav-item"><a class="nav-link p-3 font-weight-bold" href="knifes.html">全部刀具信息</a>
+                                    <li class="nav-item"><a class="nav-link p-3 font-weight-bold" th:href="@{/knifes}">全部刀具信息</a>
                                     </li>
 
                                 </ul>
