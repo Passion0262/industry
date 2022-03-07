@@ -1,6 +1,5 @@
 package com.example.industry.dao;
 
-import com.example.industry.entity.User.user;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
