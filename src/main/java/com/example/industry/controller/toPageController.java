@@ -1,7 +1,9 @@
 package com.example.industry.controller;
 
+import com.example.industry.entity.Cutter.cutter;
 import com.example.industry.entity.ProductionLine;
 import com.example.industry.service.ProductionLineService;
+import com.example.industry.service.cutterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,9 @@ import java.util.List;
 public class toPageController {
     @Autowired
     ProductionLineService ProductionLineService;
+
+    @Autowired
+    cutterService cutterService;
 
     //主页
     @RequestMapping("/main")
@@ -105,7 +110,9 @@ public class toPageController {
 //----------------刀具分析-----------------
     //全部刀具分析
     @RequestMapping("/cutter")
-    public String knifes(){
+    public String knifes(Model model) {
+        List<cutter> cutterList = cutterService.listCutter();
+        model.addAttribute("cutterList", cutterList);
         return "knifes";
     }
 
