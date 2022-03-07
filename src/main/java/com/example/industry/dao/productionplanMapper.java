@@ -26,7 +26,49 @@ public interface productionplanMapper {
     List<productionplan> getproplan(String planName, int modelType, Timestamp plannedstart, Timestamp plannedend, String state);
 
     //删除生产计划
-    @Delete("DELETE from productionplan where plan_number=#{plan_number} ")
+    @Delete("DELETE from productionplan where plan_number=#{planNumber} ")
     boolean deleteplan(int planNumber);
+
+    @Select("SELECT operation from productionplan where plan_number=#{planNumber}")
+    String getplanoperation(int planNumber);
+
+    @Select("SELECT plan_name from productionplan where plan_number=#{planNumber}")
+    String getplanname(int planNumber);
+
+    @Select("SELECT state from productionplan where plan_number=#{planNumber}")
+    String getplanstate(int planNumber);
+
+    @Select("SELECT devicegroup from productionplan where plan_number=#{planNumber}")
+    String getplandevicegroup(int planNumber);
+
+    @Select("SELECT plan_yield from productionplan where plan_number=#{planNumber}")
+    int getplanyield(int planNumber);
+
+    @Select("SELECT qualified_yield from productionplan where plan_number=#{planNumber}")
+    int getqualifiedyield(int planNumber);
+
+    @Select("SELECT disqualified_yield from productionplan where plan_number=#{planNumber}")
+    int getdisqualifiedyield(int planNumber);
+
+
+
+    @Select("SELECT plan_details from productionplan where plan_number=#{planNumber}")
+    String getplandetails(int planNumner);
+
+    @Select("SELECT model_type from productionplan where plan_number=#{planNumber}")
+    int getplanmodeltype(int planNumner);
+
+    @Select("SELECT plannedstart from productionplan where plan_number=#{planNumber}")
+    Timestamp getplannedstart(int planNumner);
+
+    @Select("SELECT plannedend from productionplan where plan_number=#{planNumber}")
+    Timestamp getplannnedend(int planNumber);
+
+    @Select("SELECT actualstart from productionplan where plan_number=#{planNumber}")
+    Timestamp getactualstart(int planNumber);
+
+    @Select("SELECT actualend from productionplan where plan_number=#{planNumber}")
+    Timestamp getactualend(int planNumber);
+
 
 }

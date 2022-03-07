@@ -12,6 +12,8 @@ public class cutter {
 
   private int deviceId;
 
+  private String cutterCategory;
+
   private String cutterType;
 
   private String deviceName;
