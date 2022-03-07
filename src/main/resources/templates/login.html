@@ -6,16 +6,48 @@
 </head>
 <body>
 <h1>登陆</h1>
-<form method="post" action="/login">
+<form method="post" action="/login" id="loginForm">
     <div>
-        用户名：<input type="text" name="username">
+        用户名：<input type="text" name="username" id="uname">
     </div>
     <div>
-        密码：<input type="password" name="password">
+        密码：<input type="password" name="password" id="upwd">
     </div>
+    <span id="msg" style="font-size: 12px;color: red"></span>
     <div>
-        <button type="submit">立即登陆</button>
+        <button type="button" id="loginBtn">立即登陆</button>
     </div>
 </form>
+
+<script src="../static/libs/jquery/jquery.min.js"></script>
+<script>
+    $('#loginBtn').click(function(){
+        let uname=$("#uname").val();
+        let upwd=$("#upwd").val();
+        if(isEmpty(uname)){
+            $("#msg").html("用户名不可为空！");
+            return;
+        }
+        if(isEmpty(upwd)){
+            $("#msg").html("用户密码不可为空！");
+            return;
+        }
+        $("#loginForm").submit();
+
+    });
+
+    /**
+     * 判断字符串是否为空，为空返回true，否则返回false
+     * @param str
+     * @returns {boolean}
+     */
+    function isEmpty(str){
+        if(str == null || str.trim() == ""){
+            return true;
+        }
+        return false;
+    }
+</script>
+s
 </body>
 </html>
