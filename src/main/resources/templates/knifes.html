@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>Dashboard | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
@@ -238,17 +238,27 @@
                                                 </div>
                                             </th>
                                             <th>刀具编号</th>
-                                            <th>长度值</th>
-                                            <th>半径值</th>
-                                            <th>角度值</th>
-                                            <th>预设寿命</th>
-                                            <th>使用寿命</th>
+                                            <th>刀具类型</th>
+                                            <th>刀具型号</th>
+                                            <th>设备编号</th>
+                                            <th>设备名称</th>
+                                            <th>刀具刀位</th>
+                                            <th>使用状态</th>
+                                            <th>刀具长/X</th>
+                                            <th>刀具径/Z</th>
+                                            <th>磨损补偿长/X</th>
+                                            <th>磨损补偿径/Z</th>
+                                            <th>寿命状态</th>
+                                            <th>寿命计数方式</th>
+                                            <th>初始寿命</th>
+                                            <th>已用寿命</th>
                                             <th>剩余寿命</th>
-                                            <th>寿命提醒</th>
+                                            <th>预警值</th>
                                             <th style="width: 120px;">备注</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
+
+                                        <tbody th:each="item:${cutterList}">
                                         <tr>
                                             <td>
                                                 <div class="custom-control custom-checkbox"><input type="checkbox"
@@ -257,189 +267,226 @@
                                                         class="custom-control-label" for="ordercheck1">&nbsp;</label>
                                                 </div>
                                             </td>
-                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1572</a>
-                                            </td>
-                                            <td>x</td>
-                                            <td>x</td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>
-                                                <div class="badge badge-soft-success font-size-12">正常</div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
-                                                   data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="Edit"><i
-                                                    class="mdi mdi-pencil font-size-18"></i></a><a
-                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
+                                            <td th:text="${item.getCutterId()}">x</td>
+                                            <td>车床</td>
+                                            <td th:text="${item.getCutterType()}">x</td>
+                                            <td th:text="${item.getDeviceId()}">x</td>
+                                            <td th:text="${item.getDeviceName()}">x</td>
+                                            <td th:text="${item.getCutterLocation()}">x</td>
+                                            <td th:text="${item.getCutterState()}">x</td>
+                                            <td th:text="${item.getCutterLength()}">x</td>
+                                            <td th:text="${item.getCutterDiameter()}">x</td>
+                                            <td th:text="${item.getWearCompensationLength()}">x</td>
+                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>
+                                            <td th:text="${item.getLifeState()}">x</td>
+                                            <td th:text="${item.getCountingMode()}">x</td>
+                                            <td th:text="${item.getInitialLife()}">x</td>
+                                            <td th:text="${item.getUsedLife()}">x</td>
+                                            <td th:text="${item.getResidualLife()}">x</td>
+                                            <td th:text="${item.getAlarmValue()}">x</td>
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox"><input type="checkbox"
-                                                                                                   class="custom-control-input"
-                                                                                                   id="ordercheck2"><label
-                                                        class="custom-control-label" for="ordercheck2">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1571</a>
-                                            </td>
-                                            <td>x</td>
-                                            <td>x</td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>
-                                                <div class="badge badge-soft-warning font-size-12">预警</div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
-                                                   data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="Edit"><i
-                                                    class="mdi mdi-pencil font-size-18"></i></a><a
-                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox"><input type="checkbox"
-                                                                                                   class="custom-control-input"
-                                                                                                   id="ordercheck3"><label
-                                                        class="custom-control-label" for="ordercheck3">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1570</a>
-                                            </td>
-                                            <td>x</td>
-                                            <td>x</td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>
-                                                <div class="badge badge-soft-success font-size-12">正常</div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
-                                                   data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="Edit"><i
-                                                    class="mdi mdi-pencil font-size-18"></i></a><a
-                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox"><input type="checkbox"
-                                                                                                   class="custom-control-input"
-                                                                                                   id="ordercheck4"><label
-                                                        class="custom-control-label" for="ordercheck4">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1569</a>
-                                            </td>
-                                            <td>x</td>
-                                            <td>x</td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>
-                                                <div class="badge badge-soft-success font-size-12">正常</div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
-                                                   data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="Edit"><i
-                                                    class="mdi mdi-pencil font-size-18"></i></a><a
-                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox"><input type="checkbox"
-                                                                                                   class="custom-control-input"
-                                                                                                   id="ordercheck5"><label
-                                                        class="custom-control-label" for="ordercheck5">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1568</a>
-                                            </td>
-                                            <td>x</td>
-                                            <td>x</td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
+<!--                                        <tbody>-->
+<!--                                        <tr>-->
+<!--                                            <td>-->
+<!--                                                <div class="custom-control custom-checkbox"><input type="checkbox"-->
+<!--                                                                                                   class="custom-control-input"-->
+<!--                                                                                                   id="ordercheck1"><label-->
+<!--                                                        class="custom-control-label" for="ordercheck1">&nbsp;</label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1572</a>-->
+<!--                                            </td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td>-->
+<!--                                                <div class="custom-control custom-checkbox"><input type="checkbox"-->
+<!--                                                                                                   class="custom-control-input"-->
+<!--                                                                                                   id="ordercheck2"><label-->
+<!--                                                        class="custom-control-label" for="ordercheck2">&nbsp;</label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1571</a>-->
+<!--                                            </td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-warning font-size-12">预警</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td>-->
+<!--                                                <div class="custom-control custom-checkbox"><input type="checkbox"-->
+<!--                                                                                                   class="custom-control-input"-->
+<!--                                                                                                   id="ordercheck3"><label-->
+<!--                                                        class="custom-control-label" for="ordercheck3">&nbsp;</label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1570</a>-->
+<!--                                            </td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td>-->
+<!--                                                <div class="custom-control custom-checkbox"><input type="checkbox"-->
+<!--                                                                                                   class="custom-control-input"-->
+<!--                                                                                                   id="ordercheck4"><label-->
+<!--                                                        class="custom-control-label" for="ordercheck4">&nbsp;</label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1569</a>-->
+<!--                                            </td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td>-->
+<!--                                                <div class="custom-control custom-checkbox"><input type="checkbox"-->
+<!--                                                                                                   class="custom-control-input"-->
+<!--                                                                                                   id="ordercheck5"><label-->
+<!--                                                        class="custom-control-label" for="ordercheck5">&nbsp;</label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1568</a>-->
+<!--                                            </td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
 
-                                            <td>
-                                                <div class="badge badge-soft-danger font-size-12">报废</div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
-                                                   data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="Edit"><i
-                                                    class="mdi mdi-pencil font-size-18"></i></a><a
-                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox"><input type="checkbox"
-                                                                                                   class="custom-control-input"
-                                                                                                   id="ordercheck6"><label
-                                                        class="custom-control-label" for="ordercheck6">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1567</a>
-                                            </td>
-                                            <td>x</td>
-                                            <td>x</td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>
-                                                <div class="badge badge-soft-warning font-size-12">预警</div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
-                                                   data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="Edit"><i
-                                                    class="mdi mdi-pencil font-size-18"></i></a><a
-                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox"><input type="checkbox"
-                                                                                                   class="custom-control-input"
-                                                                                                   id="ordercheck7"><label
-                                                        class="custom-control-label" for="ordercheck7">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1566</a>
-                                            </td>
-                                            <td>x</td>
-                                            <td>x</td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>x </td>
-                                            <td>
-                                                <div class="badge badge-soft-success font-size-12">正常</div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
-                                                   data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="Edit"><i
-                                                    class="mdi mdi-pencil font-size-18"></i></a><a
-                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
-                                        </tr>
-                                        </tbody>
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-danger font-size-12">报废</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td>-->
+<!--                                                <div class="custom-control custom-checkbox"><input type="checkbox"-->
+<!--                                                                                                   class="custom-control-input"-->
+<!--                                                                                                   id="ordercheck6"><label-->
+<!--                                                        class="custom-control-label" for="ordercheck6">&nbsp;</label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1567</a>-->
+<!--                                            </td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-warning font-size-12">预警</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td>-->
+<!--                                                <div class="custom-control custom-checkbox"><input type="checkbox"-->
+<!--                                                                                                   class="custom-control-input"-->
+<!--                                                                                                   id="ordercheck7"><label-->
+<!--                                                        class="custom-control-label" for="ordercheck7">&nbsp;</label>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript: void(0);" class="text-dark font-weight-bold">#NZ1566</a>-->
+<!--                                            </td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x</td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>x </td>-->
+<!--                                            <td>-->
+<!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
+<!--                                            </td>-->
+<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+<!--                                                   data-original-title="Edit"><i-->
+<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+<!--                                        </tr>-->
+<!--                                        </tbody>-->
                                     </table>
 
                                 </div>
