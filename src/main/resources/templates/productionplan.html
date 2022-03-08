@@ -208,7 +208,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-flex align-items-center justify-content-between"><h4 class="mb-0">
-                            刀具信息</h4>
+                            生产计划</h4>
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
@@ -223,8 +223,7 @@
                         <div class="card">
                             <div class="card-body  pt-0">
                                 <ul class="nav nav-tabs nav-tabs-custom mb-4">
-                                    <li class="nav-item"><a class="nav-link font-weight-bold p-3 active" href="#">全部刀具信息</a></li>
-                                    <li class="nav-item"><a class="nav-link p-3 font-weight-bold" th:href="@{/cutter_all}">汇总查询</a>
+                                    <li class="nav-item"><a class="nav-link font-weight-bold p-3 active">生产计划列表</a></li>
                                     </li>
                                 </ul>
                                 <div class="table-responsive">
@@ -232,46 +231,44 @@
                                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead class="thead-light">
                                         <tr>
-                                            <th>刀具编号</th>
-                                            <th>刀具类型</th>
-                                            <th>刀具型号</th>
-                                            <th>设备编号</th>
-                                            <th>设备名称</th>
-                                            <th>刀具刀位</th>
-                                            <th>使用状态</th>
-                                            <th>刀具长/X</th>
-                                            <th>刀具径/Z</th>
-                                            <th>磨损补偿长/X</th>
-                                            <th>磨损补偿径/Z</th>
-                                            <th>寿命状态</th>
-                                            <th>寿命计数方式</th>
-                                            <th>初始寿命</th>
-                                            <th>已用寿命</th>
+                                            <th>操作</th>
+                                            <th>计划编号</th>
+                                            <th>计划名称</th>
+                                            <th>状态</th>
+                                            <th>设备组</th>
+                                            <th>计划产量</th>
+                                            <th>合格产量</th>
+                                            <th>不合格产量</th>
+                                            <th>计划明细</th>
+                                            <th>机床型号</th>
+                                            <th>计划开始时间</th>
+                                            <th>计划结束时间</th>
+                                            <th>实际开始时间</th>
+                                            <th>实际结束时间</th>
                                             <th>剩余寿命</th>
                                             <th>预警值</th>
-                                            <th style="width: 120px;">备注</th>
                                         </tr>
                                         </thead>
 
-                                        <tbody th:each="item:${cutterList}">
+                                        <tbody>
                                         <tr>
-                                            <td th:text="${item.getCutterId()}">x</td>
-                                            <td th:text="${item.getCutterCategory()}">x</td>
-                                            <td th:text="${item.getCutterType()}">x</td>
-                                            <td th:text="${item.getDeviceId()}">x</td>
-                                            <td th:text="${item.getDeviceName()}">x</td>
-                                            <td th:text="${item.getCutterLocation()}">x</td>
-                                            <td th:text="${item.getCutterState()}">x</td>
-                                            <td th:text="${item.getCutterLength()}">x</td>
-                                            <td th:text="${item.getCutterDiameter()}">x</td>
-                                            <td th:text="${item.getWearCompensationLength()}">x</td>
-                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>
-                                            <td th:text="${item.getLifeState()}">x</td>
-                                            <td th:text="${item.getCountingMode()}">x</td>
-                                            <td th:text="${item.getInitialLife()}">x</td>
-                                            <td th:text="${item.getUsedLife()}">x</td>
-                                            <td th:text="${item.getResidualLife()}">x</td>
-                                            <td th:text="${item.getAlarmValue()}">x</td>
+<!--                                            <td th:text="${item.getCutterId()}">x</td>-->
+<!--                                            <td th:text="${item.getCutterCategory()}">x</td>-->
+<!--                                            <td th:text="${item.getCutterType()}">x</td>-->
+<!--                                            <td th:text="${item.getDeviceId()}">x</td>-->
+<!--                                            <td th:text="${item.getDeviceName()}">x</td>-->
+<!--                                            <td th:text="${item.getCutterLocation()}">x</td>-->
+<!--                                            <td th:text="${item.getCutterState()}">x</td>-->
+<!--                                            <td th:text="${item.getCutterLength()}">x</td>-->
+<!--                                            <td th:text="${item.getCutterDiameter()}">x</td>-->
+<!--                                            <td th:text="${item.getWearCompensationLength()}">x</td>-->
+<!--                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>-->
+<!--                                            <td th:text="${item.getLifeState()}">x</td>-->
+<!--                                            <td th:text="${item.getCountingMode()}">x</td>-->
+<!--                                            <td th:text="${item.getInitialLife()}">x</td>-->
+<!--                                            <td th:text="${item.getUsedLife()}">x</td>-->
+<!--                                            <td th:text="${item.getResidualLife()}">x</td>-->
+<!--                                            <td th:text="${item.getAlarmValue()}">x</td>-->
 <!--                                            <td>-->
 <!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
 <!--                                            </td>-->
@@ -474,7 +471,7 @@
 <!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
 <!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
 <!--                                        </tr>-->
-<!--                                        </tbody>-->
+                                        </tbody>
                                     </table>
 
                                 </div>

@@ -123,6 +123,11 @@ public class toPageController {
     }
 //-------------------------------------------
 
+//----------------------生产计划-------------------------
+    @RequestMapping("/productionplan")
+    public String productionplan(){
+        return "productionplan";
+    }
 
 
 
