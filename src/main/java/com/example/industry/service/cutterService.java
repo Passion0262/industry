@@ -43,4 +43,8 @@ public interface cutterService {
      */
     boolean insertCutter(cutter cutter);
 
+    /**
+     * 根据刀具编号删除刀具
+     */
+    boolean deleteById(int cutterId);
 }

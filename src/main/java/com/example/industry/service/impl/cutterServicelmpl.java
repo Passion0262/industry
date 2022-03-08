@@ -37,4 +37,7 @@ public class cutterServicelmpl implements cutterService {
 
     @Override
     public boolean insertCutter(cutter cutter){return cutterMappper.insertCutter(cutter);}
+
+    @Override
+    public boolean deleteById(int cutterId){return cutterMappper.deleteById(cutterId);}
 }
