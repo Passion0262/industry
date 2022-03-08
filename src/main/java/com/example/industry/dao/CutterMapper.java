@@ -61,6 +61,11 @@ public interface CutterMapper {
             "#{lifeState},#{countingMode},#{initialLife},#{usedLife},#{residualLife},#{alarmValue})")
     boolean insertCutter(cutter cutter);
 
+    /**
+     * 根据刀具编号删除刀具
+     */
+    @Delete("DELETE from cutter where cutter_id=#{cutterId}")
+    boolean deleteById(int cutterId);
 
 
 }
