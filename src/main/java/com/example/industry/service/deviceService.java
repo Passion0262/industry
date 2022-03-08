@@ -1,21 +1,28 @@
 package com.example.industry.service;
-import com.example.industry.entity.Device.device;
+
+import com.example.industry.entity.Device.Device;
+
 import java.util.List;
 
-public interface deviceService {
+/**
+ * @author ：shadow
+ * @date ：Created in 2022/3/2 14:15
+ */
+public interface DeviceService {
 
     /**
-     * 显示所有设备信息
-     * @return 返回所有设备列表
+     *  获取所有设备
      */
-    List<device> listdevices();
+    List<Device> listDevices();
 
     /**
-     * 根据id返回device记录
-     * @param device_id device表id
-     * @return device实体类
+     *  根据id查找设备
      */
-    device getById(int device_id);
+    Device getById(String id);
 
-    //boolean isExist(String username,String password);
+    /**
+     *  根据name查找设备
+     */
+    Device getByName(String name);
+
 }

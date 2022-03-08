@@ -1,15 +1,24 @@
 package com.example.industry.dao;
 
-import com.example.industry.entity.Device.device;
-import org.apache.ibatis.annotations.*;
-import  java.util.List;
+import com.example.industry.entity.Device.Device;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
+/**
+ * @author ：shadow
+ * @date ：Created in 2022/3/2 10:52
+ */
 @Mapper
 public interface DeviceMapper {
+
     @Select("SELECT * FROM device")
-    List<device> listdevices();
+    List<Device> listDevices();
 
-    @Select("SELECT * FROM device WHERE device.deviceid = #{deviceID}")
-    device getById(int device_id);
+    @Select("SELECT * FROM device WHERE id = #{id}")
+    Device getById(String id);
 
+    @Select("SELECT * FROM device WHERE name = #{name}")
+    Device getByName(String name);
 }
