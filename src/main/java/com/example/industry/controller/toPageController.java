@@ -1,9 +1,9 @@
 package com.example.industry.controller;
 
 import com.example.industry.entity.Cutter.cutter;
-import com.example.industry.entity.ProductionLine;
-import com.example.industry.service.ProductionLineService;
 import com.example.industry.service.cutterService;
+import com.example.industry.entity.Device.Device;
+import com.example.industry.service.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 public class toPageController {
     @Autowired
-    ProductionLineService ProductionLineService;
+    DeviceService DeviceService;
 
     @Autowired
     cutterService cutterService;
@@ -30,7 +30,7 @@ public class toPageController {
     //即时状态查看
     @RequestMapping("/instance_status")
     public String ZhuangTaiChaKan(Model model){
-        List<ProductionLine> productionLines = ProductionLineService.listLines();
+        List<Device> productionLines = DeviceService.listDevices();
         model.addAttribute("data", productionLines);
         return "ZhuangTaiChaKan";
     }
