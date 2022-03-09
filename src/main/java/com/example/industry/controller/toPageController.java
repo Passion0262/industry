@@ -130,10 +130,9 @@ public class toPageController {
 
 //----------------------生产计划-------------------------
     @RequestMapping("/productionplan")
-    public String productionplan(){
-//        List<productionplan> planList = productionplanService.getproplan();
-//        model.addAttribute("planList", planLst);
-
+    public String productionplan(Model model){
+        List<productionplan> planList = productionplanService.getall();
+        model.addAttribute("planList", planList);
         return "productionplan";
     }
 

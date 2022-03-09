@@ -20,6 +20,9 @@ public interface productionplanMapper {
     @Insert("INSERT INTO productionplan(operation,plan_number,plan_name,state,devicegroup,plan_yield,qualified_yield,disqualified_yield,plan_details,model_type,plannedstart,plannedend,actualstart,actualend) VALUES (#{operation},#{planNumber},#{planName},#{state},#{devicegroup},#{planYield},#{qualifiedYield},#{disqualifiedYield},#{planDetails},#{modelType},#{plannedstart},#{plannedend},#{actualstart},#{actualend})")
     boolean insertplan(productionplan Productionplan);
 
+    //查询所有生产计划
+    @Select("SELECT * from productionplan")
+    List<productionplan> getall();
 
     //查询生产计划
     @Select("SELECT * from productionplan where plan_name=#{planName} AND model_type=#{modelType} AND plannedstart=#{plannedstart} AND plannedend=#{plannedend} AND state=#{state}")

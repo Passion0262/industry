@@ -66,40 +66,34 @@
                                             <th>计划结束时间</th>
                                             <th>实际开始时间</th>
                                             <th>实际结束时间</th>
-                                            <th>剩余寿命</th>
-                                            <th>预警值</th>
                                         </tr>
                                         </thead>
-
-                                        <tbody>
+                                        <tbody th:each="item:${planList}">
                                         <tr>
-<!--                                            <td th:text="${item.getCutterId()}">x</td>-->
-<!--                                            <td th:text="${item.getCutterCategory()}">x</td>-->
-<!--                                            <td th:text="${item.getCutterType()}">x</td>-->
-<!--                                            <td th:text="${item.getDeviceId()}">x</td>-->
-<!--                                            <td th:text="${item.getDeviceName()}">x</td>-->
-<!--                                            <td th:text="${item.getCutterLocation()}">x</td>-->
-<!--                                            <td th:text="${item.getCutterState()}">x</td>-->
-<!--                                            <td th:text="${item.getCutterLength()}">x</td>-->
-<!--                                            <td th:text="${item.getCutterDiameter()}">x</td>-->
-<!--                                            <td th:text="${item.getWearCompensationLength()}">x</td>-->
-<!--                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>-->
-<!--                                            <td th:text="${item.getLifeState()}">x</td>-->
-<!--                                            <td th:text="${item.getCountingMode()}">x</td>-->
-<!--                                            <td th:text="${item.getInitialLife()}">x</td>-->
-<!--                                            <td th:text="${item.getUsedLife()}">x</td>-->
-<!--                                            <td th:text="${item.getResidualLife()}">x</td>-->
-<!--                                            <td th:text="${item.getAlarmValue()}">x</td>-->
-<!--                                            <td>-->
-<!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
-<!--                                            </td>-->
-<!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
-<!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
-<!--                                                   data-original-title="Edit"><i-->
-<!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
-<!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
-<!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
-<!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+                                            <td th:text="${item.getOperation()}">x</td>
+                                            <td th:text="${item.getPlanNumber()}">x</td>
+                                            <td th:text="${item.getPlanNumber()}">x</td>
+                                            <td th:text="${item.getState()}">x</td>
+                                            <td th:text="${item.getDevicegroup()}">x</td>
+                                            <td th:text="${item.getPlanNumber()}">x</td>
+                                            <td th:text="${item.getQualifiedYield()}">x</td>
+                                            <td th:text="${item.getDisqualifiedYield()}">x</td>
+                                            <td th:text="${item.getPlanDetails()}">x</td>
+                                            <td th:text="${item.getModelType()}">x</td>
+                                            <td th:text="${item.getPlannedstart()}">x</td>
+                                            <td th:text="${item.getPlannedend()}">x</td>
+                                            <td th:text="${item.getActualstart()}">x</td>
+                                            <td th:text="${item.getActualend()}">x</td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">正常</div>
+                                            </td>
+                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"
+                                                   data-toggle="tooltip" data-placement="top" title=""
+                                                   data-original-title="Edit"><i
+                                                    class="mdi mdi-pencil font-size-18"></i></a><a
+                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"
+                                                    data-placement="top" title="" data-original-title="Delete"><i
+                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>
                                         </tr>
 
                                         </tbody>

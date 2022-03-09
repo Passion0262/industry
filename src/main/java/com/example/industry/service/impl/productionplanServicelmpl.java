@@ -21,6 +21,9 @@ public class productionplanServicelmpl implements productionplanService {
     public boolean insertplan(productionplan Productionplan){return productionplanMapper.insertplan(Productionplan);}
 
     @Override
+    public List<productionplan> getall(){return productionplanMapper.getall();}
+
+    @Override
     public List<productionplan> getproplan(String planName, int modelType, Timestamp plannedstart, Timestamp plannedend, String state){return productionplanMapper.getproplan(planName,modelType,plannedstart,plannedend,state);}
 
     @Override

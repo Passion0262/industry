@@ -13,6 +13,9 @@ public interface productionplanService {
     //新增记录
     boolean insertplan(productionplan Productionplan);
 
+    //查询所有生产计划
+    List<productionplan> getall();
+
     //查询生产计划
     List<productionplan> getproplan(String planName, int modelType, Timestamp plannedstart, Timestamp plannedend, String state);
 
