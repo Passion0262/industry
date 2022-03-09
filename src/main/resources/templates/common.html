@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:fragment="heads">
-    <meta charset="utf-8"/>
-    <title>Dashboard | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
-    <meta content="Themesdesign" name="author"/><!-- App favicon -->
-    <link rel="shortcut icon" href="../static/images/favicon.ico"><!-- jquery.vectormap css -->
-    <link href="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"
-          type="text/css"/><!-- DataTables -->
-    <link href="../static/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-          type="text/css"/>
-    <!-- Responsive datatable examples -->
-    <link href="../static/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
-          type="text/css"/><!-- Bootstrap Css -->
-    <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css"/>
-    <!-- Icons Css -->
-    <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css"/><!-- App Css-->
-    <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css"/>
-    <script src="../static/js/echarts.js"></script>
-</head>
 <body>
 
 <!--topbar and leftbar-->
@@ -135,7 +115,7 @@
                                                                                             href="#"><i
                             class="ri-lock-unlock-line align-middle mr-1"></i>Lock screen</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#"><i
+                        <a class="dropdown-item text-danger" th:href="@{/login}"><i
                                 class="ri-shut-down-line align-middle mr-1 text-danger"></i>Logout</a>
                     </div>
                 </div>
@@ -232,25 +212,5 @@
 </div>
 <!--topbar and leftbar end-->
 
-<!--scripts start-->
-<script th:fragment="scripts">
-    <script src="../static/libs/jquery/jquery.min.js"></script>
-<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../static/libs/metismenu/metisMenu.min.js"></script>
-<script src="../static/libs/simplebar/simplebar.min.js"></script>
-<script src="../static/libs/node-waves/waves.min.js"></script><!-- apexcharts -->
-<script src="../static/libs/apexcharts/apexcharts.min.js"></script><!-- jquery.vectormap map -->
-<script src="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
-<!-- Required datatable js -->
-<script src="../static/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../static/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-<!-- Responsive examples -->
-<script src="../static/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../static/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-<script src="../static/js/pages/dashboard.init.js"></script>
-<script src="../static/js/app.js"></script>
-</script>
-<!--scripts end-->
 </body>
 </html>

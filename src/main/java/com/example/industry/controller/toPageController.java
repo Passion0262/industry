@@ -1,9 +1,11 @@
 package com.example.industry.controller;
 
 import com.example.industry.entity.Cutter.cutter;
+import com.example.industry.entity.Productionplan.productionplan;
 import com.example.industry.service.cutterService;
 import com.example.industry.entity.Device.Device;
 import com.example.industry.service.DeviceService;
+import com.example.industry.service.productionplanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,9 @@ public class toPageController {
 
     @Autowired
     cutterService cutterService;
+
+    @Autowired
+    productionplanService productionplanService;
 
     //主页
     @RequestMapping("/main")
@@ -126,6 +131,9 @@ public class toPageController {
 //----------------------生产计划-------------------------
     @RequestMapping("/productionplan")
     public String productionplan(){
+//        List<productionplan> planList = productionplanService.getproplan();
+//        model.addAttribute("planList", planLst);
+
         return "productionplan";
     }
 
