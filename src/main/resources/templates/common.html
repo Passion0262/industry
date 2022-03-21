@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
+<head>
+    <meta charset="utf-8" />
+    <title>工业大数据平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="This is an industrial big data platform page" name="description" />
+    <link rel="shortcut icon" href="../static/images/favicon.ico"><!-- jquery.vectormap css -->
+    <link href="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" /><!-- DataTables -->
+    <link href="../static/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" /><!-- Responsive datatable examples -->
+    <link href="../static/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /><!-- Bootstrap Css -->
+    <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" /><!-- Icons Css -->
+    <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css" /><!-- App Css-->
+    <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <script src="../static/js/echarts.js"></script>
+</head>
+
+
 <body>
 
 <!--topbar and leftbar-->
@@ -17,80 +33,81 @@
                         class="logo-sm"><img src="../static/images/logo-sm-light.png" alt="" height="22"></span><span
                         class="logo-lg"><img src="../static/images/logo-light.png" alt="" height="20"></span></a></div>
                 <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect"
-                        id="vertical-menu-btn"><i class="ri-menu-2-line align-middle"></i></button><!-- App Search-->
-                <form class="app-search d-none d-lg-block">
-                    <div class="position-relative"><input type="text" class="form-control" placeholder="Search..."><span
-                            class="ri-search-line"></span></div>
-                </form>
-                <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
-                    <button type="button" class="btn header-item waves-effect" data-toggle="dropdown"
-                            aria-haspopup="false" aria-expanded="false">Mega Menu <i class="mdi mdi-chevron-down"></i>
-                    </button>
-
-                    <div class="dropdown-menu dropdown-megamenu">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h5 class="font-size-14 mt-0">UI Components</h5>
-                                        <ul class="list-unstyled megamenu-list">
-                                            <li><a href="javascript:void(0);">Lightbox</a></li>
-                                            <li><a href="javascript:void(0);">Range Slider</a></li>
-                                            <li><a href="javascript:void(0);">Sweet Alert</a></li>
-                                            <li><a href="javascript:void(0);">Rating</a></li>
-                                            <li><a href="javascript:void(0);">Forms</a></li>
-                                            <li><a href="javascript:void(0);">Tables</a></li>
-                                            <li><a href="javascript:void(0);">Charts</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h5 class="font-size-14 mt-0">Applications</h5>
-                                        <ul class="list-unstyled megamenu-list">
-                                            <li><a href="javascript:void(0);">Ecommerce</a></li>
-                                            <li><a href="javascript:void(0);">Calendar</a></li>
-                                            <li><a href="javascript:void(0);">Email</a></li>
-                                            <li><a href="javascript:void(0);">Projects</a></li>
-                                            <li><a href="javascript:void(0);">Tasks</a></li>
-                                            <li><a href="javascript:void(0);">Contacts</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h5 class="font-size-14 mt-0">Extra Pages</h5>
-                                        <ul class="list-unstyled megamenu-list">
-                                            <li><a href="javascript:void(0);">Light Sidebar</a></li>
-                                            <li><a href="javascript:void(0);">Compact Sidebar</a></li>
-                                            <li><a href="javascript:void(0);">Horizontal layout</a></li>
-                                            <li><a href="javascript:void(0);">Maintenance</a></li>
-                                            <li><a href="javascript:void(0);">Coming Soon</a></li>
-                                            <li><a href="javascript:void(0);">Timeline</a></li>
-                                            <li><a href="javascript:void(0);">FAQs</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <h5 class="font-size-14 mt-0">UI Components</h5>
-                                        <ul class="list-unstyled megamenu-list">
-                                            <li><a href="javascript:void(0);">Lightbox</a></li>
-                                            <li><a href="javascript:void(0);">Range Slider</a></li>
-                                            <li><a href="javascript:void(0);">Sweet Alert</a></li>
-                                            <li><a href="javascript:void(0);">Rating</a></li>
-                                            <li><a href="javascript:void(0);">Forms</a></li>
-                                            <li><a href="javascript:void(0);">Tables</a></li>
-                                            <li><a href="javascript:void(0);">Charts</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div><img src="../static/images/megamenu-img.png" alt=""
-                                                  class="img-fluid mx-auto d-block"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        id="vertical-menu-btn"><i class="ri-menu-2-line align-middle"></i></button>
+                <!--无用的搜索-->
+<!--                <form class="app-search d-none d-lg-block">-->
+<!--                    <div class="position-relative"><input type="text" class="form-control" placeholder="Search..."><span-->
+<!--                            class="ri-search-line"></span></div>-->
+<!--                </form>-->
+<!--                <div class="dropdown dropdown-mega d-none d-lg-block ml-2">-->
+<!--                    <button type="button" class="btn header-item waves-effect" data-toggle="dropdown"-->
+<!--                            aria-haspopup="false" aria-expanded="false">Mega Menu <i class="mdi mdi-chevron-down"></i>-->
+<!--                    </button>-->
+<!--无用的目录-->
+<!--                    <div class="dropdown-menu dropdown-megamenu">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-sm-8">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <h5 class="font-size-14 mt-0">UI Components</h5>-->
+<!--                                        <ul class="list-unstyled megamenu-list">-->
+<!--                                            <li><a href="javascript:void(0);">Lightbox</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Range Slider</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Sweet Alert</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Rating</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Forms</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Tables</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Charts</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <h5 class="font-size-14 mt-0">Applications</h5>-->
+<!--                                        <ul class="list-unstyled megamenu-list">-->
+<!--                                            <li><a href="javascript:void(0);">Ecommerce</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Calendar</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Email</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Projects</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Tasks</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Contacts</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <h5 class="font-size-14 mt-0">Extra Pages</h5>-->
+<!--                                        <ul class="list-unstyled megamenu-list">-->
+<!--                                            <li><a href="javascript:void(0);">Light Sidebar</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Compact Sidebar</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Horizontal layout</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Maintenance</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Coming Soon</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Timeline</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">FAQs</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-sm-4">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-sm-6">-->
+<!--                                        <h5 class="font-size-14 mt-0">UI Components</h5>-->
+<!--                                        <ul class="list-unstyled megamenu-list">-->
+<!--                                            <li><a href="javascript:void(0);">Lightbox</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Range Slider</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Sweet Alert</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Rating</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Forms</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Tables</a></li>-->
+<!--                                            <li><a href="javascript:void(0);">Charts</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-sm-5">-->
+<!--                                        <div><img src="../static/images/megamenu-img.png" alt=""-->
+<!--                                                  class="img-fluid mx-auto d-block"></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
             <div class="d-flex">
 
@@ -102,26 +119,30 @@
 
                 <div class="dropdown d-inline-block user-dropdown">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                            class="rounded-circle header-profile-user" src="../static/images/users/avatar-2.jpg"
-                            alt="Header Avatar"><span class="d-none d-xl-inline-block ml-1">Kevin</span><i
-                            class="mdi mdi-chevron-down d-none d-xl-inline-block"></i></button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <!-- item--><a class="dropdown-item" href="#"><i class="ri-user-line align-middle mr-1"></i>Profile</a><a
-                            class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle mr-1"></i>My
-                        Wallet</a><a class="dropdown-item d-block" href="#"><span
-                            class="badge badge-success float-right mt-1">11</span><i
-                            class="ri-settings-2-line align-middle mr-1"></i>Settings</a><a class="dropdown-item"
-                                                                                            href="#"><i
-                            class="ri-lock-unlock-line align-middle mr-1"></i>Lock screen</a>
-                        <div class="dropdown-divider"></div>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle header-profile-user" src="../static/images/users/avatar-2.jpg"
+                            alt="Header Avatar">
+                        <span class="d-none d-xl-inline-block ml-1">admin</span>
+<!--     无用的li标签                   -->
+<!--                        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>-->
+                    </button>
+<!-- 无用的目录                   -->
+<!--                    <div class="dropdown-menu dropdown-menu-right">-->
+<!--                        &lt;!&ndash; item&ndash;&gt;<a class="dropdown-item" href="#"><i class="ri-user-line align-middle mr-1"></i>Profile</a><a-->
+<!--                            class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle mr-1"></i>My-->
+<!--                        Wallet</a><a class="dropdown-item d-block" href="#"><span-->
+<!--                            class="badge badge-success float-right mt-1">11</span><i-->
+<!--                            class="ri-settings-2-line align-middle mr-1"></i>Settings</a><a class="dropdown-item"-->
+<!--                                                                                            href="#"><i-->
+<!--                            class="ri-lock-unlock-line align-middle mr-1"></i>Lock screen</a>-->
+<!--                        <div class="dropdown-divider"></div>-->
 
-                        <button class="dropdown-item text-danger ri-shut-down-line align-middle mr-1 text-danger" onclick="window.location.href='/logout'">Logout</button>
-                    </div>
+<!--                        <button class="dropdown-item text-danger ri-shut-down-line align-middle mr-1 text-danger" onclick="window.location.href='/logout'">Logout</button>-->
+<!--                    </div>-->
                 </div>
                 <div class="dropdown d-inline-block">
-                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect"><i
-                            class="ri-settings-2-line"></i></button>
+                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect" onclick="window.location.href='/logout'"><i
+                            class="ri-shut-down-line text-danger dropdown-item" style="font-size:16px">退出</i></button>
                 </div>
             </div>
         </div>
@@ -211,6 +232,19 @@
     <!-- Leftbar end -->
 </div>
 <!--topbar and leftbar end-->
-
+<script src="../static/libs/jquery/jquery.min.js"></script>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/libs/metismenu/metisMenu.min.js"></script>
+<script src="../static/libs/simplebar/simplebar.min.js"></script>
+<script src="../static/libs/node-waves/waves.min.js"></script><!-- apexcharts -->
+<script src="../static/libs/apexcharts/apexcharts.min.js"></script><!-- jquery.vectormap map -->
+<script src="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script><!-- Required datatable js -->
+<script src="../static/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../static/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script><!-- Responsive examples -->
+<script src="../static/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../static/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<script src="../static/js/pages/dashboard.init.js"></script>
+<script src="../static/js/app.js"></script>
 </body>
 </html>

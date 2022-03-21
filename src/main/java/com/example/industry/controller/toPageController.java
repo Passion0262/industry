@@ -2,6 +2,8 @@ package com.example.industry.controller;
 
 import com.example.industry.entity.Cutter.cutter;
 import com.example.industry.entity.Productionplan.productionplan;
+import com.example.industry.entity.Warn.warn;
+import com.example.industry.service.WarnService;
 import com.example.industry.service.cutterService;
 import com.example.industry.entity.Device.Device;
 import com.example.industry.service.DeviceService;
@@ -24,6 +26,9 @@ public class toPageController {
     @Autowired
     productionplanService productionplanService;
 
+    @Autowired
+    WarnService WarnService;
+
     //主页
     @RequestMapping("/main")
     public String index(){
@@ -42,7 +47,9 @@ public class toPageController {
 
     //报警记录分析
     @RequestMapping("/alarm_record")
-    public String kanban_baojingjilu(){
+    public String kanban_baojingjilu(Model model){
+        List<warn> warnlists = WarnService.listwarn();
+        model.addAttribute("lists", warnlists);
         return "kanban-baojingjilu";
     }
 
