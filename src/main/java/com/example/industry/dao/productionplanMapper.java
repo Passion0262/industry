@@ -1,10 +1,7 @@
 package com.example.industry.dao;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.*;
 import com.example.industry.entity.Productionplan.productionplan;
-import org.apache.ibatis.annotations.Select;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -32,46 +29,14 @@ public interface productionplanMapper {
     @Delete("DELETE from productionplan where plan_number=#{planNumber} ")
     boolean deleteplan(int planNumber);
 
-    @Select("SELECT operation from productionplan where plan_number=#{planNumber}")
-    String getplanoperation(int planNumber);
-
-    @Select("SELECT plan_name from productionplan where plan_number=#{planNumber}")
-    String getplanname(int planNumber);
-
-    @Select("SELECT state from productionplan where plan_number=#{planNumber}")
-    String getplanstate(int planNumber);
-
-    @Select("SELECT devicegroup from productionplan where plan_number=#{planNumber}")
-    String getplandevicegroup(int planNumber);
-
-    @Select("SELECT plan_yield from productionplan where plan_number=#{planNumber}")
-    int getplanyield(int planNumber);
-
-    @Select("SELECT qualified_yield from productionplan where plan_number=#{planNumber}")
-    int getqualifiedyield(int planNumber);
-
-    @Select("SELECT disqualified_yield from productionplan where plan_number=#{planNumber}")
-    int getdisqualifiedyield(int planNumber);
+    //查询某一时间段内的生产计划
+    @Select("SELECT * from productionplan where plannedstart BETWEEN #{plannedstart1} AND #{plannedstart2}")
+    List<productionplan> getplans(Timestamp plannedstart1, Timestamp plannedstart2);
 
 
 
-    @Select("SELECT plan_details from productionplan where plan_number=#{planNumber}")
-    String getplandetails(int planNumner);
 
-    @Select("SELECT model_type from productionplan where plan_number=#{planNumber}")
-    int getplanmodeltype(int planNumner);
 
-    @Select("SELECT plannedstart from productionplan where plan_number=#{planNumber}")
-    Timestamp getplannedstart(int planNumner);
-
-    @Select("SELECT plannedend from productionplan where plan_number=#{planNumber}")
-    Timestamp getplannnedend(int planNumber);
-
-    @Select("SELECT actualstart from productionplan where plan_number=#{planNumber}")
-    Timestamp getactualstart(int planNumber);
-
-    @Select("SELECT actualend from productionplan where plan_number=#{planNumber}")
-    Timestamp getactualend(int planNumber);
 
 
 }

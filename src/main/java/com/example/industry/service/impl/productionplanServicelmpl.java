@@ -30,45 +30,6 @@ public class productionplanServicelmpl implements productionplanService {
     public boolean deleteplan(int planNumber){return productionplanMapper.deleteplan(planNumber);}
 
     @Override
-    public String getplanoperation(int planNumber){return productionplanMapper.getplanoperation(planNumber);}
-
-    @Override
-    public String getplanname(int planNumber){return productionplanMapper.getplanname(planNumber);}
-
-    @Override
-    public String getplanstate(int planNumber){return productionplanMapper.getplanstate(planNumber);}
-
-    @Override
-    public String getplandevicegroup(int planNumber){return productionplanMapper.getplandevicegroup(planNumber);}
-
-    @Override
-    public int getplanyield(int planNumber){return productionplanMapper.getplanyield(planNumber);}
-
-    @Override
-    public int getqualifiedyield(int planNumber){return productionplanMapper.getqualifiedyield(planNumber);}
-
-    @Override
-    public int getdisqualifiedyield(int planNumber){return productionplanMapper.getdisqualifiedyield(planNumber);}
-
-
-    @Override
-    public String getplandetails(int planNumber){return productionplanMapper.getplandetails(planNumber);}
-
-    @Override
-    public int getplanmodeltype(int planNumber){return productionplanMapper.getplanmodeltype(planNumber);}
-
-    @Override
-    public Timestamp getplannedstart(int planNumber){return productionplanMapper.getplannedstart(planNumber);}
-
-    @Override
-    public Timestamp getplannedend(int planNumber){return productionplanMapper.getplannnedend(planNumber);}
-
-    @Override
-    public Timestamp getactualstart(int planNumber){return productionplanMapper.getactualstart(planNumber);}
-
-    @Override
-    public Timestamp getactualend(int planNumber){return productionplanMapper.getactualend(planNumber);}
-
-
+    public List<productionplan> getplans(Timestamp plannedstart1,Timestamp plannedstart2){return productionplanMapper.getplans(plannedstart1,plannedstart2);}
 
 }
