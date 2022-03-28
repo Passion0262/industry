@@ -17,4 +17,9 @@ public interface OP40CurrentService {
      */
     boolean insertOP40Current(OP40Current op40Current);
 
+    /**
+     * 获取最新的一条记录
+     */
+    OP40Current getLasted();
+
 }

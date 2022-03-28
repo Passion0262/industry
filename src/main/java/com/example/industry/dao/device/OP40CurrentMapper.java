@@ -18,4 +18,10 @@ public interface OP40CurrentMapper {
             "VALUES (null,#{status},#{workPiece},#{output},#{rapidFeedRate},#{spindleSpeed},#{feedRate},#{feedSpeed},#{alarmNumber},#{alarmInfo},CURRENT_TIMESTAMP)")
     boolean insertDeviceStatus(OP40Current op40Current);
 
+    /**
+     * 获取最新的一条记录
+     */
+    @Select("SELECT * FROM op40_current WHERE id = (SELECT MAX(id) FROM op40_current)")
+    OP40Current getLasted();
+
 }
