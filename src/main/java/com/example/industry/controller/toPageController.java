@@ -4,7 +4,6 @@ import com.example.industry.entity.Cutter.cutter;
 import com.example.industry.entity.Productionplan.productionplan;
 import com.example.industry.entity.Warn.warn;
 import com.example.industry.service.WarnService;
-import com.example.industry.service.cutterService;
 import com.example.industry.entity.Device.Device;
 import com.example.industry.service.DeviceService;
 import com.example.industry.service.productionplanService;
