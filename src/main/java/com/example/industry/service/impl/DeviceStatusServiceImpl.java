@@ -1,6 +1,6 @@
 package com.example.industry.service.impl;
 
-import com.example.industry.dao.DeviceStatusMapper;
+import com.example.industry.dao.device.DeviceStatusMapper;
 import com.example.industry.entity.Device.DeviceStatus;
 import com.example.industry.service.DeviceStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
