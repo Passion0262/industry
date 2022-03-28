@@ -6,6 +6,7 @@ import com.example.industry.entity.Warn.warn;
 import com.example.industry.service.WarnService;
 import com.example.industry.entity.Device.Device;
 import com.example.industry.service.DeviceService;
+import com.example.industry.service.cutterService;
 import com.example.industry.service.productionplanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

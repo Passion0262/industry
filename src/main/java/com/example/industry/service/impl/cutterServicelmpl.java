@@ -1,6 +1,7 @@
 package com.example.industry.service.impl;
 import com.example.industry.dao.CutterMapper;
 import com.example.industry.entity.Cutter.cutter;
+import com.example.industry.service.cutterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
