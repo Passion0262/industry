@@ -1,4 +1,4 @@
-package com.example.industry.dao;
+package com.example.industry.dao.device;
 
 import com.example.industry.entity.Device.Device;
 import org.apache.ibatis.annotations.Mapper;

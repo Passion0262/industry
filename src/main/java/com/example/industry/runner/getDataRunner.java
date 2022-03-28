@@ -1,8 +1,8 @@
 package com.example.industry.runner;
 
 
-import com.example.industry.entity.Device.DeviceStatus;
-import com.example.industry.service.DeviceStatusService;
+import com.example.industry.entity.Device.OP40Current;
+import com.example.industry.service.OP40CurrentService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -21,13 +21,13 @@ import java.util.Date;
 public class getDataRunner implements CommandLineRunner {
 
     @Autowired
-    DeviceStatusService deviceStatusService;
+    OP40CurrentService op40CurrentService;
 
     @Override
     public void run(String... args) throws Exception {
         log.info("这里处理项目加载一些系统参数、完成初始化、" +
                 "预热本地缓存 from getDataRunner");
-//        getData();
+        getData();
     }
 
     void getData() throws Exception{
@@ -45,11 +45,11 @@ public class getDataRunner implements CommandLineRunner {
                     .post();
             Thread.sleep(10000);
             System.out.println(document.text());
-            toSql(document.text());
+            getOP40(document.text());
         }
     }
 
-    void toSql(String data) throws Exception{
+    void getOP40(String data) throws Exception{
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(data);
         JsonNode node = rootNode.path("data");
@@ -81,7 +81,7 @@ public class getDataRunner implements CommandLineRunner {
         int feedSpeed = Integer.parseInt(node.path(6).path("value").textValue());
         int alarmNumber = Integer.parseInt(node.path(7).path("value").textValue());
         String alarmInfo = node.path(8).path("value").textValue();
-        DeviceStatus deviceStatus = new DeviceStatus(0,status,workPiece,output,rapidFeedRate,spindleSpeed,feedRate,feedSpeed,alarmNumber,alarmInfo,new Timestamp(new Date().getTime()));
-        deviceStatusService.insertDeviceStatus(deviceStatus);
+        OP40Current op40Current = new OP40Current(0,status,workPiece,output,rapidFeedRate,spindleSpeed,feedRate,feedSpeed,alarmNumber,alarmInfo,new Timestamp(new Date().getTime()));
+        op40CurrentService.insertOP40Current(op40Current);
     }
 }

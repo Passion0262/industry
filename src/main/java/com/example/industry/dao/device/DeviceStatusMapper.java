@@ -1,4 +1,4 @@
-package com.example.industry.dao;
+package com.example.industry.dao.device;
 
 import com.example.industry.entity.Device.DeviceStatus;
 import com.example.industry.entity.Output.output;
@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface DeviceStatusMapper {
 
-    @Select("SELECT * FROM ")
+    @Select("SELECT * FROM device_status")
     List<DeviceStatus> listDeviceStatus();
 
     @Insert("INSERT INTO device_status(id,status,work_piece,output,rapid_feed_rate,spindle_speed,feed_rate,feed_speed,alarm_number,alarm_info,time) " +

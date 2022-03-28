@@ -1,6 +1,6 @@
 package com.example.industry.service.impl;
 
-import com.example.industry.dao.DeviceMapper;
+import com.example.industry.dao.device.DeviceMapper;
 import com.example.industry.entity.Device.Device;
 import com.example.industry.service.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
