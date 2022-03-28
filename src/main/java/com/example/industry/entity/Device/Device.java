@@ -1,8 +1,6 @@
 package com.example.industry.entity.Device;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
  * @author ：shadow
