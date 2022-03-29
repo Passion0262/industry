@@ -14,8 +14,8 @@ public interface OP70CurrentMapper {
     @Select("SELECT * FROM op70_current")
     List<OP70Current> listOP70Current();
 
-    @Insert("INSERT INTO op70_current(id,status,work_piece,output,rapid_feed_rate,spindle_speed,feed_rate,feed_speed,alarm_number,alarm_info,time) " +
-            "VALUES (null,#{status},#{workPiece},#{output},#{rapidFeedRate},#{spindleSpeed},#{feedRate},#{feedSpeed},#{alarmNumber},#{alarmInfo},CURRENT_TIMESTAMP)")
+    @Insert("INSERT INTO op70_current(id,status,program_name,output,spindle_rate,spindle_speed,feed_rate,feed_speed,alarm_number,alarm_info,time) " +
+            "VALUES (null,#{status},#{programName},#{output},#{spindleRate},#{spindleSpeed},#{feedRate},#{feedSpeed},#{alarmNumber},#{alarmInfo},CURRENT_TIMESTAMP)")
     boolean insertDeviceStatus(OP70Current op70Current);
 
 }
