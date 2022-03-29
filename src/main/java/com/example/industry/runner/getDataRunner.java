@@ -25,6 +25,10 @@ import java.util.Date;
 @Component
 @Slf4j
 public class getDataRunner implements CommandLineRunner {
+    public static final String OP40ID = "f7607140-edb7-4f2b-a6b3-65c1e97c8fbe";
+    public static final String OP50ID = "8f12c017-c32f-4024-a3e1-5a35f986385a";
+    public static final String OP60ID = "e8d89f4b-48ba-42b6-be37-e932b6904466";
+    public static final String OP70ID = "b4fa2331-f058-4771-ac11-9f6125ccdca3";
 
     @Autowired
     OP40CurrentService op40CurrentService;
@@ -52,26 +56,10 @@ public class getDataRunner implements CommandLineRunner {
         Connection connect = Jsoup.connect(url);
 
         while (true) {
-            //设置useragent,设置超时时间，并以get请求方式请求服务器
-            Document document_op40 = connect
-                    .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
-                    .timeout(30000)
-                    .ignoreContentType(true)
-                    .data("deviceid", "f7607140-edb7-4f2b-a6b3-65c1e97c8fbe")
-                    .post();
-            Thread.sleep(10000);
-            System.out.println(document_op40.text());
-            getOP40(document_op40.text());
 
-            Document document_op50 = connect
-                    .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
-                    .timeout(30000)
-                    .ignoreContentType(true)
-                    .data("deviceid", "8f12c017-c32f-4024-a3e1-5a35f986385a")
-                    .post();
-            Thread.sleep(10000);
-            System.out.println(document_op50.text());
-            getOP50(document_op50.text());
+            getOP40(connect);
+
+            getOP50(connect);
 
             Document document_op60 = connect
                     .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
@@ -95,7 +83,18 @@ public class getDataRunner implements CommandLineRunner {
         }
     }
 
-    void getOP40(String data) throws Exception {
+    void getOP40(Connection connect) throws Exception {
+        //设置useragent,设置超时时间，并以get请求方式请求服务器
+        Document document_op40 = connect
+                .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
+                .timeout(30000)
+                .ignoreContentType(true)
+                .data("deviceid", getDataRunner.OP40ID)
+                .post();
+        Thread.sleep(10000);
+        String data = document_op40.text();
+        log.info(data);
+
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(data);
         JsonNode node = rootNode.path("data");
@@ -131,7 +130,17 @@ public class getDataRunner implements CommandLineRunner {
         op40CurrentService.insertOP40Current(op40Current);
     }
 
-    void getOP50(String data) throws Exception {
+    void getOP50(Connection connect) throws Exception {
+        Document document_op50 = connect
+                .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
+                .timeout(30000)
+                .ignoreContentType(true)
+                .data("deviceid", getDataRunner.OP50ID)
+                .post();
+        Thread.sleep(10000);
+        String data = document_op50.text();
+        log.info("op50: " +data);
+
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(data);
         JsonNode node = rootNode.path("data");
