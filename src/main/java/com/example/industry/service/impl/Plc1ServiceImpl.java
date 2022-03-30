@@ -16,4 +16,17 @@ public class Plc1ServiceImpl implements Plc1Service {
     public List<plc1> listAll(){
         return plc1Mapper.listAll();
     }
+
+    @Override
+    public List<plc1> getByStatus(String status){return plc1Mapper.getByStatus(status);}
+
+    @Override
+    public List<plc1> getByType(String PLCType){return plc1Mapper.getByType(PLCType);}
+
+    @Override
+    public List<plc1> getByPLState(String productionlineState){return plc1Mapper.getByPLState(productionlineState);
+    }
+
+    @Override
+    public List<plc1> getByPNumber(String productionNumber){return plc1Mapper.getByPNumber(productionNumber);}
 }

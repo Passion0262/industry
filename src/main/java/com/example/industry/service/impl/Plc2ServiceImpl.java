@@ -16,4 +16,10 @@ public class Plc2ServiceImpl implements Plc2Service {
     public List<plc2> listAll(){
         return plc2Mapper.listAll();
     }
+
+    @Override
+    public List<plc2> getByStatus(String status){return plc2Mapper.getByStatus(status);}
+
+    @Override
+    public List<plc2> getByType(String PLCType){return plc2Mapper.getByType(PLCType);}
 }
