@@ -28,16 +28,15 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-
                 <!--设备警告展示块-->
                 <!--    OP40、OP50            -->
                 <div class="row">
                     <!--  OP40-车床 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_OP40.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>OP40-车床</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_OP40.get(2)}"></i>OP40-车床</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_OP40.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
@@ -54,10 +53,10 @@
                     </div>
                     <!--  OP50-车床 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_OP50.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>OP50-车床</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_OP50.get(2)}"></i>OP50-车床</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_OP50.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
@@ -78,10 +77,10 @@
                 <div class="row">
                     <!--  OP60-立加 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_OP60.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>OP60-立加</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_OP60.get(2)}"></i>OP60-立加</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_OP60.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
@@ -98,10 +97,10 @@
                     </div>
                     <!--  OP70-立加 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_OP70.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>OP70-立加</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_OP70.get(2)}"></i>OP70-立加</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_OP70.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
@@ -122,10 +121,10 @@
                 <div class="row">
                     <!--  总控PLC-1 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_PLC1.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>总控PLC-1</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_PLC1.get(2)}"></i>总控PLC-1</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_PLC1.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
@@ -142,10 +141,10 @@
                     </div>
                     <!--  总控PLC-2 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_PLC2.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>总控PLC-2</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_PLC2.get(2)}"></i>总控PLC-2</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_PLC2.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
@@ -164,12 +163,12 @@
 
                 <!--    测量机、打标机            -->
                 <div class="row">
-                    <!--  打标机 -->
+                    <!--  测量机 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_measure.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>测量机</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_measure.get(2)}"></i>测量机</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_measure.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
@@ -186,10 +185,10 @@
                     </div>
                     <!--  打标机 -->
                     <div class="col-lg-5 border-light border card">
-                        <div class="card bg-primary text-white-50">
+                        <div class="card text-white-50" th:classappend="${status_target.get(1)}"><!---->
                             <div class="card-body"><h5 class="mt-0 mb-4 text-white"><i
-                                    class="mdi mdi-check-all mr-3"></i>打标机</h5>
-                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;[设定]</span>
+                                    class="mdi mr-3" th:classappend="${status_target.get(2)}"></i>打标机</h5><!---->
+                                &nbsp;&nbsp;<span class="zhuangT0" th:text="${status_target.get(0)}">&nbsp;[设定]</span><!---->
                                 &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院</span>
                             </div>
                         </div>
