@@ -20,6 +20,6 @@ public class RealTimeController {
     @ResponseBody
     public List<OP40Current> OP40(){
         List<OP40Current> realTime_OP40 = OP40CurrentService.listOP40Current();
-        return realTime_OP40.subList(realTime_OP40.size()-4,realTime_OP40.size()); //获取数据库末尾4条数据
+        return realTime_OP40.subList(realTime_OP40.size()-10,realTime_OP40.size()); //获取数据库末尾10条数据
     }
 }
