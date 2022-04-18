@@ -13,10 +13,11 @@
     <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" /><!-- Icons Css -->
     <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css" /><!-- App Css-->
     <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
     <script src="../static/js/echarts.js"></script>
 </head>
 
-<body data-sidebar="dark">
+<body data-sidebar="dark" class="bgc">
 <!-- Begin page -->
 <div id="layout-wrapper">
 
@@ -28,68 +29,106 @@
     <!-- Start right Content here -->
     <!-- ============================================================== -->
 
-    <div id="main" style="width: 800px; height: 400px; margin: 100px auto auto; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1646122894427"></div>
-    <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid">
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0">设备年产量分布</h4>
+                            <!--           无用的右侧标题                 -->
+                            <!--                            <div class="page-title-right">-->
+                            <!--                                <ol class="breadcrumb m-0">-->
+                            <!--                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Nazox</a></li>-->
+                            <!--                                    <li class="breadcrumb-item active">Dashboard</li>-->
+                            <!--                                </ol>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+                </div><!-- end page title -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="float-right d-none d-md-inline-block">
+                            <div class="btn-group mb-2"></div>
+                        </div>
+                        <!--                        <h4 class="card-title mb-4">整线小时产量</h4>-->
+                        <div id="main" style="width: 800px; height: 400px; margin: 50px auto auto; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1646124908884"></div>
+                        <script type="text/javascript">
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart = echarts.init(document.getElementById('main'));
 
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: '设备年产量分布',
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: '设备产量'
-            },
-            toolbox: {
-                show: true,
-                feature: {
-                    mark: {show: true},
-                    dataView: {show: true, readOnly: false},
-                    magicType: {show: true, type: ['line', 'bar']},
-                    restore: {show: true},
-                    saveAsImage: {show: true}
-                }
-            },
-            calculable: true,
-            xAxis: [
-                {
-                    type: 'category',
-                    data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
-            series: {
-                name: '设备产量',
-                type: 'bar',
-                data: [3453, 2978, 2296, 3332, 3669, 3218, 2991, 3387, 3427, 3188, 2950, 2785],
-                markPoint: {
-                    data: [
-                        {type: 'max', name: '最大值'},
-                        {type: 'min', name: '最小值'}
-                    ]
-                },
-                markLine: {
-                    data: [
-                        {type: 'average', name: '平均值'}
-                    ]
-                }
-            }
-        };
+                            // 指定图表的配置项和数据
+                            var option = {
+                                title: {
+                                    text: '设备年产量分布',
+                                },
+                                tooltip: {
+                                    trigger: 'axis'
+                                },
+                                legend: {
+                                    data: '设备产量'
+                                },
+                                toolbox: {
+                                    show: true,
+                                    feature: {
+                                        mark: {show: true},
+                                        dataView: {show: true, readOnly: false},
+                                        magicType: {show: true, type: ['line', 'bar']},
+                                        restore: {show: true},
+                                        saveAsImage: {show: true}
+                                    }
+                                },
+                                calculable: true,
+                                xAxis: [
+                                    {
+                                        type: 'category',
+                                        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+                                    }
+                                ],
+                                yAxis: [
+                                    {
+                                        type: 'value'
+                                    }
+                                ],
+                                series: {
+                                    name: '设备产量',
+                                    type: 'bar',
+                                    data: [3453, 2978, 2296, 3332, 3669, 3218, 2991, 3387, 3427, 3188, 2950, 2785],
+                                    markPoint: {
+                                        data: [
+                                            {type: 'max', name: '最大值'},
+                                            {type: 'min', name: '最小值'}
+                                        ]
+                                    },
+                                    markLine: {
+                                        data: [
+                                            {type: 'average', name: '平均值'}
+                                        ]
+                                    }
+                                }
+                            };
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    </script>
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart.setOption(option);
+                        </script>
 
 
-</div><!-- container-fluid -->
+                    </div><!-- container-fluid -->
+                </div>
+
+            </div>
+        </div>
+    </div><!-- end row -->
+
+
+
+
+    <div class="card">
+
+
+</div>
+
 
 
 <!-- End Page-content -->

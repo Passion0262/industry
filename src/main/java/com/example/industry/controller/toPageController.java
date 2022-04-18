@@ -51,16 +51,20 @@ public class toPageController {
     @RequestMapping("/alarm_record")
     public String kanban_baojingjilu(Model model){
         List<warn> warnlists = WarnService.listwarn();
+//        System.out.println("==============");
+//        System.out.println(warnlists);
+//        System.out.println("==============");
         model.addAttribute("lists", warnlists);
 
-        List<String> status_OP40  = Arrays.asList("运行", "bg-primary", "mdi-check-all"); //[状态， 对应的颜色， 对应的图标]
-        List<String> status_OP50  = Arrays.asList("运行", "bg-primary", "mdi-check-all");
-        List<String> status_OP60  = Arrays.asList("运行", "bg-primary", "mdi-check-all");
-        List<String> status_OP70  = Arrays.asList("运行", "bg-primary", "mdi-check-all");
-        List<String> status_PLC1  = Arrays.asList("运行", "bg-primary", "mdi-check-all");
-        List<String> status_PLC2  = Arrays.asList("运行", "bg-primary", "mdi-check-all");
-        List<String> status_measure  = Arrays.asList("运行", "bg-primary", "mdi-check-all");
-        List<String> status_target  = Arrays.asList("运行", "bg-primary", "mdi-check-all");
+
+        List<String> status_OP40  = Arrays.asList("设定", "bg-primary", "dripicons-code"); //[状态， 对应的颜色， 对应的图标]
+        List<String> status_OP50  = Arrays.asList("设定", "bg-primary", "dripicons-code");
+        List<String> status_OP60  = Arrays.asList("设定", "bg-primary", "dripicons-code");
+        List<String> status_OP70  = Arrays.asList("设定", "bg-primary", "dripicons-code");
+        List<String> status_PLC1  = Arrays.asList("设定", "bg-primary", "dripicons-code");
+        List<String> status_PLC2  = Arrays.asList("设定", "bg-primary", "dripicons-code");
+        List<String> status_measure  = Arrays.asList("设定", "bg-primary", "dripicons-code");
+        List<String> status_target  = Arrays.asList("设定", "bg-primary", "dripicons-code");
 
 
         //获取设备状态
@@ -68,73 +72,89 @@ public class toPageController {
             if (warnlist.getDeviceName().equals("OP40-车床")){
                 status_OP40.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_OP40.set(1, "bg-secondary"); status_OP40.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_OP40.set(1, "bg-success"); status_OP40.set(2, "dripicons-code"); break;
+                    case "空闲": status_OP40.set(1, "bg-warning"); status_OP40.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_OP40.set(1, "bg-primary"); status_OP40.set(2, "dripicons-code"); break;
                     case "停机": status_OP40.set(1, "bg-danger"); status_OP40.set(2, "dripicons-wrong"); break;
-                    default:  status_OP40.set(1, "bg-primary"); status_OP40.set(2, "mdi-check-all"); //运行
+                    case "运行": status_OP40.set(1, "bg-success"); status_OP40.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_OP40.set(1, "bg-secondary"); status_OP40.set(2, "ri-wifi-off-fill"); break;
+//                    default:  status_OP40.set(1, "bg-primary"); status_OP40.set(2, "mdi-check-all");
                 }
             }
             if (warnlist.getDeviceName().equals("OP50-车床")){
                 status_OP50.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_OP50.set(1, "bg-secondary"); status_OP50.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_OP50.set(1, "bg-success"); status_OP50.set(2, "dripicons-code"); break;
+                    case "空闲": status_OP50.set(1, "bg-warning"); status_OP50.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_OP50.set(1, "bg-primary"); status_OP50.set(2, "dripicons-code"); break;
                     case "停机": status_OP50.set(1, "bg-danger"); status_OP50.set(2, "dripicons-wrong"); break;
-                    default:  status_OP50.set(1, "bg-primary"); status_OP50.set(2, "mdi-check-all"); //运行
+                    case "运行": status_OP50.set(1, "bg-success"); status_OP50.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_OP50.set(1, "bg-secondary"); status_OP50.set(2, "ri-wifi-off-fill"); break;
+//                  default:  status_OP50.set(1, "bg-primary"); status_OP50.set(2, "mdi-check-all"); //运行
                 }
             }
             if (warnlist.getDeviceName().equals("OP60-立加")){
                 status_OP60.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_OP60.set(1, "bg-secondary"); status_OP60.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_OP60.set(1, "bg-success"); status_OP60.set(2, "dripicons-code"); break;
+                    case "空闲": status_OP60.set(1, "bg-warning"); status_OP60.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_OP60.set(1, "bg-primary"); status_OP60.set(2, "dripicons-code"); break;
                     case "停机": status_OP60.set(1, "bg-danger"); status_OP60.set(2, "dripicons-wrong"); break;
-                    default:  status_OP60.set(1, "bg-primary"); status_OP60.set(2, "mdi-check-all"); //运行
+                    case "运行": status_OP60.set(1, "bg-success"); status_OP60.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_OP60.set(1, "bg-secondary"); status_OP60.set(2, "ri-wifi-off-fill"); break;
+//                  default:  status_OP60.set(1, "bg-primary"); status_OP60.set(2, "mdi-check-all"); //运行
                 }
             }
             if (warnlist.getDeviceName().equals("OP70-立加")){
                 status_OP70.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_OP70.set(1, "bg-secondary"); status_OP70.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_OP70.set(1, "bg-success"); status_OP70.set(2, "dripicons-code"); break;
+                    case "空闲": status_OP70.set(1, "bg-warning"); status_OP70.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_OP70.set(1, "bg-primary"); status_OP70.set(2, "dripicons-code"); break;
                     case "停机": status_OP70.set(1, "bg-danger"); status_OP70.set(2, "dripicons-wrong"); break;
-                    default:  status_OP70.set(1, "bg-primary"); status_OP70.set(2, "mdi-check-all"); //运行
+                    case "运行": status_OP70.set(1, "bg-success"); status_OP70.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_OP70.set(1, "bg-secondary"); status_OP70.set(2, "ri-wifi-off-fill"); break;
+//                  default:  status_OP70.set(1, "bg-primary"); status_OP70.set(2, "mdi-check-all"); //运行
                 }
             }
             if (warnlist.getDeviceName().equals("总控PLC-1")){
                 status_PLC1.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_PLC1.set(1, "bg-secondary"); status_PLC1.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_PLC1.set(1, "bg-success"); status_PLC1.set(2, "dripicons-code"); break;
+                    case "空闲": status_PLC1.set(1, "bg-warning"); status_PLC1.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_PLC1.set(1, "bg-primary"); status_PLC1.set(2, "dripicons-code"); break;
                     case "停机": status_PLC1.set(1, "bg-danger"); status_PLC1.set(2, "dripicons-wrong"); break;
-                    default:  status_PLC1.set(1, "bg-primary"); status_PLC1.set(2, "mdi-check-all"); //运行
+                    case "运行": status_PLC1.set(1, "bg-success"); status_PLC1.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_PLC1.set(1, "bg-secondary"); status_PLC1.set(2, "ri-wifi-off-fill"); break;
+//                  default:  status_PLC1.set(1, "bg-primary"); status_PLC1.set(2, "mdi-check-all"); //运行
                 }
             }
             if (warnlist.getDeviceName().equals("总控PLC-2")){
                 status_PLC2.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_PLC2.set(1, "bg-secondary"); status_PLC2.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_PLC2.set(1, "bg-success"); status_PLC2.set(2, "dripicons-code"); break;
+                    case "空闲": status_PLC2.set(1, "bg-warning"); status_PLC2.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_PLC2.set(1, "bg-primary"); status_PLC2.set(2, "dripicons-code"); break;
                     case "停机": status_PLC2.set(1, "bg-danger"); status_PLC2.set(2, "dripicons-wrong"); break;
-                    default:  status_PLC2.set(1, "bg-primary"); status_PLC2.set(2, "mdi-check-all"); //运行
+                    case "运行": status_PLC2.set(1, "bg-success"); status_PLC2.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_PLC2.set(1, "bg-secondary"); status_PLC2.set(2, "ri-wifi-off-fill"); break;
+//                  default:  status_PLC2.set(1, "bg-primary"); status_PLC2.set(2, "mdi-check-all"); //运行
                 }
             }
             if (warnlist.getDeviceName().equals("测量机")){
                 status_measure.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_measure.set(1, "bg-secondary"); status_measure.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_measure.set(1, "bg-success"); status_measure.set(2, "dripicons-code"); break;
+                    case "空闲": status_measure.set(1, "bg-warning"); status_measure.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_measure.set(1, "bg-primary"); status_measure.set(2, "dripicons-code"); break;
                     case "停机": status_measure.set(1, "bg-danger"); status_measure.set(2, "dripicons-wrong"); break;
-                    default:  status_measure.set(1, "bg-primary"); status_measure.set(2, "mdi-check-all"); //运行
+                    case "运行": status_measure.set(1, "bg-success"); status_measure.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_measure.set(1, "bg-secondary"); status_measure.set(2, "ri-wifi-off-fill"); break;
+//                  default:  status_measure.set(1, "bg-primary"); status_measure.set(2, "mdi-check-all"); //运行
                 }
             }
             if (warnlist.getDeviceName().equals("打标机")){
                 status_target.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
-                    case "空闲": status_target.set(1, "bg-secondary"); status_target.set(2, "dripicons-time-reverse"); break;
-                    case "设定": status_target.set(1, "bg-success"); status_target.set(2, "dripicons-code"); break;
+                    case "空闲": status_target.set(1, "bg-warning"); status_target.set(2, "dripicons-time-reverse"); break;
+                    case "设定": status_target.set(1, "bg-primary"); status_target.set(2, "dripicons-code"); break;
                     case "停机": status_target.set(1, "bg-danger"); status_target.set(2, "dripicons-wrong"); break;
-                    default:  status_target.set(1, "bg-primary"); status_target.set(2, "mdi-check-all"); //运行
+                    case "运行": status_target.set(1, "bg-success"); status_target.set(2, "mdi-recycle-variant"); break;
+                    case "离线": status_target.set(1, "bg-secondary"); status_target.set(2, "ri-wifi-off-fill"); break;
+//                  default:  status_target.set(1, "bg-primary"); status_target.set(2, "mdi-check-all"); //运行
                 }
             }
         }
@@ -146,6 +166,8 @@ public class toPageController {
         model.addAttribute("status_PLC2", status_PLC2);
         model.addAttribute("status_measure", status_measure);
         model.addAttribute("status_target", status_target);
+
+
 
         return "kanban-baojingjilu";
     }

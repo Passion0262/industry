@@ -5888,50 +5888,18 @@ a.badge-pink.focus, a.badge-pink:focus {
     align-items: flex-start
 }
 .production_line{
-    background-color: #068bee17;
+    background-color: #4d525617;
     margin: 8px;
     margin-bottom: 20px;
     display: block;
     width: 520px;
     border-style: solid;
-    border-color: #bfbfbf;
+    border-color: #09090940;
     border-width: 1px;
     border-radius: 10px;
 
 }
-.zhuangT{
-    font-size: 15px;
-}
-.zhuangT0{
-    color: white;
-    background-color: #333333;
-    padding: 3px;
-    margin: 0 0 0 10px
-}
-.name{
-    /*color:whitesmoke;*/
-    border-style: solid;
-    text-align: center;
-    font-size: 30px;
-    border-color: #bfbfbf;
-    border-width: 1px;
-    background-color: #94dbffd6;
-    border-radius: 8px;
-    padding: 10px;
-}
-.span1{
-    font-size: 20px;
-    text-align: left;
-    padding: 0px 20px 20px;
-}
-.span2{
-    color: #888888;
-}
-.span3{
-    font-size: 20px;
-    text-align: left;
-    margin: -10px 15px 15px 15px
-}
+
 .pro_name{
     background-color: #5bc0de;
     border-radius: 5px;

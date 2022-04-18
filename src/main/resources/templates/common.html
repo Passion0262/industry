@@ -13,6 +13,7 @@
     <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" /><!-- Icons Css -->
     <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css" /><!-- App Css-->
     <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
     <script src="../static/js/echarts.js"></script>
 </head>
 
@@ -26,10 +27,10 @@
         <div class="navbar-header">
             <div class="d-flex">
                 <!-- LOGO -->
-                <div class="navbar-brand-box"><a href="index.html" class="logo logo-dark"><span class="logo-sm"><img
+                <div class="navbar-brand-box"><a th:href="@{/main}" class="logo logo-dark"><span class="logo-sm"><img
                         src="../static/images/logo-sm-dark.png" alt="" height="20"></span><span class="logo-lg"><img
-                        src="../static/images/logo-light2.png" alt="" height="55"></span></a><a href="index.html"
-                                                                                               class="logo logo-light"><span
+                        src="../static/images/logo-light2.png" alt="" height="55"></span></a><a th:href="@{/main}"
+                                                                                                class="logo logo-light"><span
                         class="logo-sm"><img src="../static/images/logo-sm-light.png" alt="" height="22"></span><span
                         class="logo-lg"><img src="../static/images/logo-dark2.png" alt="" height="55"></span></a></div>
                 <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect"
