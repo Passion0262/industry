@@ -19,11 +19,11 @@ public interface TimeAnalysisMapper {
      * 根据设备查询
      */
     @Select("SELECT * FROM time_analysis WHERE device=#{device}")
-    List<TimeAnalysis> getByDevice(String device);
+    List<TimeAnalysis> listByDevice(String device);
 
     /**
      * 根据日期查询
      */
     @Select("SELECT * FROM time_analysis WHERE date=#{date}")
-    List<TimeAnalysis> getByDate(String date);
+    List<TimeAnalysis> listByDate(String date);
 }

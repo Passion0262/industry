@@ -1,6 +1,7 @@
 package com.example.industry.service;
 
 import com.example.industry.entity.Timeanalysis.TimeAnalysis;
+import com.example.industry.entity.vo.TimeAnalysisVO;
 
 import java.util.List;
 
@@ -20,5 +21,5 @@ public interface TimeAnalysisService {
     /**
      * 根据日期查询，返回当日所有设备时间占比
      */
-    List<TimeAnalysis> listByDate(String date);
+    List<TimeAnalysisVO> listByDate(String date);
 }
