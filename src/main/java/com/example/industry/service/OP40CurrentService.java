@@ -20,6 +20,11 @@ public interface OP40CurrentService {
     /**
      * 获取最新的一条记录
      */
-    OP40Current getLasted();
+    OP40Current getLatest();
+
+    /**
+     * 获取最新10条记录
+     */
+    List<OP40Current> getLatest10();
 
 }

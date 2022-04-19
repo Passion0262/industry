@@ -28,4 +28,9 @@ public class OP50CurrentServiceImpl implements OP50CurrentService {
     public boolean insertOP50Current(OP50Current op50Current) {
         return  op50CurrentMapper.insertDeviceStatus(op50Current);
     }
+
+    @Override
+    public List<OP50Current> getLatest10() {
+        return op50CurrentMapper.getLatest10();
+    }
 }

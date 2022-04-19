@@ -18,4 +18,10 @@ public interface OP60CurrentMapper {
             "VALUES (null,#{status},#{programName},#{output},#{spindleRate},#{spindleSpeed},#{feedRate},#{feedSpeed},#{alarmNumber},#{alarmInfo},CURRENT_TIMESTAMP)")
     boolean insertDeviceStatus(OP60Current op60Current);
 
+    /**
+     * 获取最新的10条记录
+     */
+    @Select("SELECT * FROM op60_current ORDER BY time DESC LIMIT 10")
+    List<OP60Current> getLatest10();
+
 }

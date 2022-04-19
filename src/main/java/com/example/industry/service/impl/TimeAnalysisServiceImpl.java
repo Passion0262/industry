@@ -20,12 +20,12 @@ public class TimeAnalysisServiceImpl implements TimeAnalysisService{
     }
 
     @Override
-    public List<TimeAnalysis> getByDevice(String device) {
-        return timeAnalysisMapper.getByDevice(device);
+    public List<TimeAnalysis> listByDevice(String deviceName) {
+        return timeAnalysisMapper.getByDevice(deviceName);
     }
 
     @Override
-    public List<TimeAnalysis> getByDate(String date){
+    public List<TimeAnalysis> listByDate(String date){
         return timeAnalysisMapper.getByDate(date);
     }
 }

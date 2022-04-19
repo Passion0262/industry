@@ -31,4 +31,9 @@ public class OP70CurrentServiceImpl implements OP70CurrentService{
     public boolean insertOP70Current(OP70Current op70Current) {
         return op70CurrentMapper.insertDeviceStatus(op70Current);
     }
+
+    @Override
+    public List<OP70Current> getLatest10() {
+        return op70CurrentMapper.getLatest10();
+    }
 }

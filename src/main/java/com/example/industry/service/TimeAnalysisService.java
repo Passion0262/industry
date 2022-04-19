@@ -15,10 +15,10 @@ public interface TimeAnalysisService {
     /**
      * 根据设备名查询
      */
-    List<TimeAnalysis> getByDevice(String device);
+    List<TimeAnalysis> listByDevice(String deviceName);
 
     /**
-     * 根据日期查询
+     * 根据日期查询，返回当日所有设备时间占比
      */
-    List<TimeAnalysis> getByDate(String date);
+    List<TimeAnalysis> listByDate(String date);
 }

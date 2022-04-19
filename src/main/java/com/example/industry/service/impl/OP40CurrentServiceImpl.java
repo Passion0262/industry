@@ -1,7 +1,6 @@
 package com.example.industry.service.impl;
 
 import com.example.industry.dao.device.OP40CurrentMapper;
-import com.example.industry.entity.Device.DeviceStatus;
 import com.example.industry.entity.Device.OP40Current;
 import com.example.industry.service.OP40CurrentService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +23,7 @@ public class OP40CurrentServiceImpl implements OP40CurrentService {
 
     @Override
     public boolean insertOP40Current(OP40Current op40Current) {
-        OP40Current lasted = getLasted();
+        OP40Current lasted = getLatest();
         //如果要新增的记录和最新的一条相同，则不添加
         if (isSame(lasted,op40Current)){
             return false;
@@ -34,8 +33,13 @@ public class OP40CurrentServiceImpl implements OP40CurrentService {
     }
 
     @Override
-    public OP40Current getLasted() {
-        return op40CurrentMapper.getLasted();
+    public OP40Current getLatest() {
+        return op40CurrentMapper.getLatest();
+    }
+
+    @Override
+    public List<OP40Current> getLatest10() {
+        return op40CurrentMapper.getLatest10();
     }
 
     boolean isSame(OP40Current o1,OP40Current o2){

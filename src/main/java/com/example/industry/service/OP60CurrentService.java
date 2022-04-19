@@ -17,4 +17,9 @@ public interface OP60CurrentService {
      */
     boolean insertOP60Current(OP60Current op60Current);
 
+    /**
+     * 获取最新10条记录
+     */
+    List<OP60Current> getLatest10();
+
 }

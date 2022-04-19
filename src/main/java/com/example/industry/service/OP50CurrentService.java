@@ -22,4 +22,9 @@ public interface OP50CurrentService {
      */
     boolean insertOP50Current(OP50Current op50Current);
 
+    /**
+     *  获取op50最新的10条记录
+     */
+    List<OP50Current> getLatest10();
+
 }

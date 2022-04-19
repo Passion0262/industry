@@ -22,6 +22,12 @@ public interface OP40CurrentMapper {
      * 获取最新的一条记录
      */
     @Select("SELECT * FROM op40_current WHERE id = (SELECT MAX(id) FROM op40_current)")
-    OP40Current getLasted();
+    OP40Current getLatest();
+
+    /**
+     * 获取最新的10条记录
+     */
+    @Select("SELECT * FROM op40_current ORDER BY time DESC LIMIT 10")
+    List<OP40Current> getLatest10();
 
 }
