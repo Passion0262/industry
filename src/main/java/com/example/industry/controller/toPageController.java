@@ -2,18 +2,15 @@ package com.example.industry.controller;
 
 import com.example.industry.entity.Cutter.cutter;
 import com.example.industry.entity.Productionplan.productionplan;
+import com.example.industry.entity.Timeanalysis.TimeAnalysis;
 import com.example.industry.entity.Warn.warn;
-import com.example.industry.service.WarnService;
+import com.example.industry.service.*;
 import com.example.industry.entity.Device.Device;
-import com.example.industry.service.DeviceService;
-import com.example.industry.service.cutterService;
-import com.example.industry.service.productionplanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,6 +27,32 @@ public class toPageController {
 
     @Autowired
     WarnService WarnService;
+
+
+    @Autowired
+    TimeAnalysisService TimeAnalysis;
+
+
+    //----------------------用时分析-------------------------
+    @RequestMapping("/time_analysis")
+    public String timeAnalysis(String data, Model model){
+        if(data==null||data==""){
+            data="2022-03-11"; //默认展示 2022-03-11 的数据
+        }
+        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
+
+        //打印测试
+        System.out.println("=====================!");
+        for (TimeAnalysis timeAnalysis : dataByTime) {
+            System.out.println("data:"+timeAnalysis);
+        }
+
+        System.out.println("=====================!");
+
+        model.addAttribute("dataByTime", dataByTime);
+        return "timeAnalysis";
+    }
+
 
     //主页
     @RequestMapping("/main")
@@ -261,6 +284,10 @@ public class toPageController {
         model.addAttribute("planList", planList);
         return "productionplan";
     }
+
+
+
+
 
 //----------------------test-----------------------
     @RequestMapping("/test")
