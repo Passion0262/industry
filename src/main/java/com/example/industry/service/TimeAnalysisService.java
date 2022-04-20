@@ -21,5 +21,5 @@ public interface TimeAnalysisService {
     /**
      * 根据日期查询，返回当日所有设备时间占比
      */
-    List<TimeAnalysisVO> listByDate(String date);
+    List<TimeAnalysis> listByDate(String date);
 }

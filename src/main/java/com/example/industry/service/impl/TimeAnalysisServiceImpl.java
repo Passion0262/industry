@@ -27,14 +27,8 @@ public class TimeAnalysisServiceImpl implements TimeAnalysisService{
     }
 
     @Override
-    public List<TimeAnalysisVO> listByDate(String date){
-        List<TimeAnalysisVO> voArrayList = new ArrayList<TimeAnalysisVO>();
-        List<TimeAnalysis> list = timeAnalysisMapper.listByDate(date);
-        for (TimeAnalysis timeAnalysis : list) {
-            TimeAnalysisVO vo = timeAnalysis.toVO();
-            voArrayList.add(vo);
-        }
-        return voArrayList;
+    public List<TimeAnalysis> listByDate(String date){
+        return timeAnalysisMapper.listByDate(date);
     }
 
 }
