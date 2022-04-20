@@ -41,19 +41,27 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <form class="form-inline" method="post" action="/time_analysis" id="form1" >
+                                <form class="form-inline" method="post" action="/time_analysis" id="form1" onsubmit="return a();">
                                     <div class="input-group">
-                                        <span style="line-height: 37px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;输入日期：</span><input type="text" class="form-control input-sm" id="searchStr"
+                                        <span style="line-height: 37px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;输入日期：</span>
+                                        <input type="text" class="form-control input-sm" id="searchStr"
                                                placeholder="严格格式如：2022-03-11" name="data">
                                             <button class="btn btn-success btn-sm" type="submit">查找</button>
                                     </div>
                                 </form>
                             </div>
 
+<!--                            请输入日期提示框-->
+                            <div class="row">
+                                <div class="col-md-8" id="nullMsg0"></div>
+                            </div>
+
+<!--                            查询无结果提示框-->
                             <div class="row">
                                 <div class="col-md-8" id="nullMsg"></div>
                             </div>
 
+<!--                            饼图框-->
                             <div class="row" style="margin-top: 30px ">
                                 <div class="col-md-2">
                                     <div id="main1" style="width: 300px;height:300px;margin-left:40px;"></div>
@@ -72,7 +80,7 @@
                                 <div class="col-md-2" style="margin-left: 140px">
                                     <div id="main5" style="width: 300px;height:300px;"></div>
                                 </div>
-                                <div class="col-md-2" style="margin-left: 60px">
+                                <div class="col-md-2" style="margin-left: 80px">
                                     <div id="main6" style="width: 300px;height:300px;"></div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: 60px">
@@ -81,6 +89,17 @@
                             </div>
 
 <!--                            <div id="main" style="width: 800px;height:400px;margin: auto;margin-top: 100px" ></div>-->
+                            <script>
+                                function a(e){
+                                    var val1 = $("#searchStr").val();
+                                    if (val1==""){
+                                        $("#nullMsg0").html("<span style=\"font-size: medium;color: #4b83ff;;margin-left: 50px;\">请输入日期！<span/>");
+                                        return false;
+                                    }else{
+                                        return true;
+                                    }
+                                }
+                            </script>
 
 
                             <script th:inline="javascript">
@@ -89,7 +108,7 @@
                                     $("#nullMsg").html("<div style=\"font-size: x-large;color: #ff3535;margin-left: 50px;margin-top: 50px;\">当天无数据记录！</div>");
                                 }else {
                                     var data1 = d[0]['date'];
-                                    $("#nullMsg").html("<div style=\"font-size: x-large;margin-left: 50px;margin-top: 20px;margin-bottom: -30px;\">"+data1+"</div>");
+                                    $("#nullMsg").html("<div style=\"font-size: x-large;margin-left: 50px;margin-bottom: -30px;\">"+data1+"</div>");
                                 }
                             </script>
 
