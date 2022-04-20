@@ -41,7 +41,7 @@ function OP40(){
 
     option = {
         title: {
-            text: 'OP40数据'
+            text: 'OP40-车床'
         },
         tooltip: {
             trigger: 'axis',
@@ -56,7 +56,7 @@ function OP40(){
             }
         },
         legend: {
-            data: ['output', 'rapid_feed_rate', 'spindle_speed', 'feed_rate', 'feed_speed']
+            data: ['产量', '快速给进倍率', '主轴转速', '给进倍率', '给进速度']
         },
         grid: {
             left: '3%',
@@ -85,31 +85,31 @@ function OP40(){
         },
         series: [
             {
-                name: 'spindle_speed',
+                name: '主轴转速',
                 type: 'line',
                 data: spindle_speed,
                 smooth: true
             },
             {
-                name: 'rapid_feed_rate',
+                name: '快速给进倍率',
                 type: 'line',
                 data: rapid_feed_rate,
                 smooth: true
             },
             {
-                name: 'feed_speed',
+                name: '给进速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: 'feed_rate',
+                name: '给进倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
             },
             {
-                name: 'output',
+                name: '产量',
                 type: 'line',
                 data: output,
                 smooth: true
@@ -159,7 +159,7 @@ function OP50(){
 
     option = {
         title: {
-            text: 'OP50数据'
+            text: 'OP50-车床'
         },
         tooltip: {
             trigger: 'axis',
@@ -174,7 +174,7 @@ function OP50(){
             }
         },
         legend: {
-            data: ['output', 'rapid_feed_rate', 'spindle_speed', 'feed_rate', 'feed_speed']
+            data: ['产量', '快速给进倍率', '主轴转速', '给进倍率', '给进速度']
         },
         grid: {
             left: '3%',
@@ -203,31 +203,31 @@ function OP50(){
         },
         series: [
             {
-                name: 'spindle_speed',
+                name: '主轴转速',
                 type: 'line',
                 data: spindle_speed,
                 smooth: true
             },
             {
-                name: 'rapid_feed_rate',
+                name: '快速给进倍率',
                 type: 'line',
                 data: rapid_feed_rate,
                 smooth: true
             },
             {
-                name: 'feed_speed',
+                name: '给进速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: 'feed_rate',
+                name: '给进倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
             },
             {
-                name: 'output',
+                name: '产量',
                 type: 'line',
                 data: output,
                 smooth: true
@@ -277,7 +277,7 @@ function OP60(){
 
     option = {
         title: {
-            text: 'OP60数据'
+            text: 'OP60-立加'
         },
         tooltip: {
             trigger: 'axis',
@@ -292,7 +292,7 @@ function OP60(){
             }
         },
         legend: {
-            data: ['output', 'spindle_rate', 'spindle_speed', 'feed_rate', 'feed_speed']
+            data: ['产量', '主轴倍率', '主轴转速', '给进倍率', '给进速度']
         },
         grid: {
             left: '3%',
@@ -321,31 +321,31 @@ function OP60(){
         },
         series: [
             {
-                name: 'spindle_speed',
+                name: '主轴转速',
                 type: 'line',
                 data: spindle_speed,
                 smooth: true
             },
             {
-                name: 'spindle_rate',
+                name: '主轴倍率',
                 type: 'line',
                 data: spindle_rate,
                 smooth: true
             },
             {
-                name: 'feed_speed',
+                name: '给进速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: 'feed_rate',
+                name: '给进倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
             },
             {
-                name: 'output',
+                name: '产量',
                 type: 'line',
                 data: output,
                 smooth: true
@@ -395,7 +395,7 @@ function OP70(){
 
     option = {
         title: {
-            text: 'OP70数据'
+            text: 'OP70-立加'
         },
         tooltip: {
             trigger: 'axis',
@@ -410,7 +410,7 @@ function OP70(){
             }
         },
         legend: {
-            data: ['output', 'spindle_rate', 'spindle_speed', 'feed_rate', 'feed_speed']
+            data: ['产量', '转轴倍率', '主轴转速', '给进倍率', '给进速度']
         },
         grid: {
             left: '3%',
@@ -439,31 +439,31 @@ function OP70(){
         },
         series: [
             {
-                name: 'spindle_speed',
+                name: '主轴转速',
                 type: 'line',
                 data: spindle_speed,
                 smooth: true
             },
             {
-                name: 'spindle_rate',
+                name: '主轴倍率',
                 type: 'line',
                 data: spindle_rate,
                 smooth: true
             },
             {
-                name: 'feed_speed',
+                name: '给进速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: 'feed_rate',
+                name: '给进倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
             },
             {
-                name: 'output',
+                name: '产量',
                 type: 'line',
                 data: output,
                 smooth: true
