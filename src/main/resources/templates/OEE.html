@@ -46,72 +46,96 @@
                         </div>
                     </div>
                 </div><!-- end page title -->
+                <div class="row" >
+                    <div class="card" style="width:23%; height: 50px; margin: 1%">
+                        <div class="card-body">
+                            <div class="text-center h5"><span>OP40-机床当前OEE为210</span></div>
+                        </div>
+                    </div>
+                    <div class="card" style="width:23%; height: 50px; margin: 1%">
+                        <div class="card-body">
+                            <div class="text-center h5"><span>OP50-机床当前OEE为310</span></div>
+                        </div>
+                    </div><div class="card" style="width:23%; height: 50px; margin: 1%">
+                    <div class="card-body">
+                        <div class="text-center h5"><span>OP60-机床当前OEE为410</span></div>
+                    </div>
+                </div><div class="card" style="width:23%; height: 50px; margin: 1%">
+                    <div class="card-body">
+                        <div class="text-center h5"><span>OP70-机床当前OEE为320</span></div>
+                    </div>
+                </div>
+                </div>
                 <div class="card">
                     <div class="card-body">
-                        <div class="float-right d-none d-md-inline-block">
-                            <div class="btn-group mb-2"></div>
-                        </div>
-                        <div class="float-right d-none d-md-inline-block">
-                            <div class="btn-group mb-2">
-                                <a href="#"><button type="button" class="btn btn-sm btn-light active">当前设备OEE</button></a>
-                                <a th:href="@{/OEE1}"><button type="button" class="btn btn-sm btn-light">整线OEE</button></a>
-                            </div>
-                        </div>
+<!--                        <div class="float-right d-none d-md-inline-block">-->
+<!--                            <div class="btn-group mb-2"></div>-->
+<!--                        </div>-->
+<!--                        <div class="float-right d-none d-md-inline-block">-->
+<!--                            <div class="btn-group mb-2">-->
+<!--                                <a href="#"><button type="button" class="btn btn-sm btn-light active">当前设备OEE</button></a>-->
+<!--                                <a th:href="@{/OEE1}"><button type="button" class="btn btn-sm btn-light">整线OEE</button></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
 <!--                        <h4 class="card-title mb-4">当前设备OEE分析</h4>-->
-                        <div id="main" style="width: 800px; height: 400px; margin: 50px auto auto; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1646124908884"></div>
+                        <div id="OEE" style="width: 800px; height: 400px; margin: 50px auto auto; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1646124908884"></div>
                         <script type="text/javascript">
                             // 基于准备好的dom，初始化echarts实例
-                            var myChart = echarts.init(document.getElementById('main'));
+                            var chartDom = document.getElementById('OEE');
+                            var myChart = echarts.init(chartDom);
+                            var option;
 
-                            // 指定图表的配置项和数据
-                            var option = {
+                            option = {
                                 title: {
-                                    text: '暂定',
+                                    text: '整线OEE变化情况'
                                 },
                                 tooltip: {
                                     trigger: 'axis'
                                 },
                                 legend: {
-                                    data: 'OEE'
+                                    data: ['OP40-机床', 'OP50-机床', 'OP60-立加', 'OP70-立加']
+                                },
+                                grid: {
+                                    left: '3%',
+                                    right: '4%',
+                                    bottom: '3%',
+                                    containLabel: true
                                 },
                                 toolbox: {
-                                    show: true,
                                     feature: {
-                                        mark: {show: true},
-                                        dataView: {show: true, readOnly: false},
-                                        magicType: {show: true, type: ['line', 'bar']},
-                                        restore: {show: true},
-                                        saveAsImage: {show: true}
+                                        saveAsImage: {}
                                     }
                                 },
-                                calculable: true,
-                                xAxis: [
+                                xAxis: {
+                                    type: 'category',
+                                    boundaryGap: false,
+                                    data: ['3月18日', '3月19日', '3月20日', '3月21日', '3月22日', '3月23日', '3月24日']
+                                },
+                                yAxis: {
+                                    type: 'value'
+                                },
+                                series: [
                                     {
-                                        type: 'category',
-                                        data: ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
-                                    }
-                                ],
-                                yAxis: [
-                                    {
-                                        type: 'value'
-                                    }
-                                ],
-                                series: {
-                                    name: '设备产量',
-                                    type: 'bar',
-                                    data: [0.7, 0.67, 0.87, 0.99, 0.95, 0.69, 0.33, 0.87, 0.99, 0.95, 0.69, 0.33],
-                                    markPoint: {
-                                        data: [
-                                            {type: 'max', name: '最大值'},
-                                            {type: 'min', name: '最小值'}
-                                        ]
+                                        name: 'OP40-机床',
+                                        type: 'line',
+                                        data: [120, 132, 101, 134, 90, 230, 210]
                                     },
-                                    markLine: {
-                                        data: [
-                                            {type: 'average', name: '平均值'}
-                                        ]
+                                    {
+                                        name: 'OP50-机床',
+                                        type: 'line',
+                                        data: [220, 182, 191, 234, 290, 330, 310]
+                                    },
+                                    {
+                                        name: 'OP60-立加',
+                                        type: 'line',
+                                        data: [150, 232, 201, 154, 190, 330, 410]
+                                    },
+                                    {
+                                        name: 'OP70-立加',
+                                        type: 'line',
+                                        data: [320, 332, 301, 334, 390, 330, 320]
                                     }
-                                }
+                                ]
                             };
 
                             // 使用刚指定的配置项和数据显示图表。
