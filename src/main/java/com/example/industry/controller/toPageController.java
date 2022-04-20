@@ -193,18 +193,6 @@ public class toPageController {
 
         return "kanban-baojingjilu";
     }
-
-    //设备产量计数分析
-    @RequestMapping("/count_analysis")
-    public String kanban_shebeichanliangjishu(){
-        return "kanban-shebeichanliangjishu";
-    }
-
-    //看板-设备过程参数
-    @RequestMapping("/board_deviceParameter")
-    public String kanban_shebeiguochengcanshu(){
-        return "kanban-shebeiguochengcanshu";
-    }
 //--------------------------------------------------------------------
 
 
@@ -220,20 +208,52 @@ public class toPageController {
     public String JiaDongLv(){
         return "JiaDongLv";
     }
+
+    //设备过程参数
+    @RequestMapping("/board_deviceParameter")
+    public String kanban_shebeiguochengcanshu(){
+        return "kanban-shebeiguochengcanshu";
+    }
 //-------------------------------------------------------
 
 
 //-----------------产量分析看板-----------------
-    //产量数据
-    @RequestMapping("/output")
-    public String ChanLiang(){
-        return "ChanLiang";
+//    //产量数据
+//    @RequestMapping("/output")
+//    public String ChanLiang(){
+//        return "ChanLiang";
+//    }
+//
+//    //产品信息
+//    @RequestMapping("/pruduct_information")
+//    public String ChanPin(){
+//        return "ChanPin";
+//    }
+
+    //用时分析
+    @RequestMapping("/time_analysis")
+    public String timeAnalysis(String data, Model model){
+        if(data==null||data==""){
+            data="2022-03-11"; //默认展示 2022-03-11 的数据
+        }
+        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
+
+//        //打印测试
+//        System.out.println("=====================!");
+//        for (TimeAnalysis timeAnalysis : dataByTime) {
+//            System.out.println("data:"+timeAnalysis);
+//        }
+//
+//        System.out.println("=====================!");
+
+        model.addAttribute("dataByTime", dataByTime);
+        return "timeAnalysis";
     }
 
-    //产品信息
-    @RequestMapping("/pruduct_information")
-    public String ChanPin(){
-        return "ChanPin";
+    //设备产量计数分析
+    @RequestMapping("/count_analysis")
+    public String kanban_shebeichanliangjishu(){
+        return "kanban-shebeichanliangjishu";
     }
 //-------------------------------------------
 
