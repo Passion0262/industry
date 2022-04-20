@@ -33,26 +33,6 @@ public class toPageController {
     TimeAnalysisService TimeAnalysis;
 
 
-    //----------------------用时分析-------------------------
-    @RequestMapping("/time_analysis")
-    public String timeAnalysis(String data, Model model){
-        if(data==null){
-            data="2022-03-11"; //默认展示 2022-03-11 的数据
-        }
-        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
-
-        //打印测试
-//        System.out.println("=====================!");
-//        for (TimeAnalysis timeAnalysis : dataByTime) {
-//            System.out.println("data:"+timeAnalysis);
-//        }
-//        System.out.println("=====================!");
-
-        model.addAttribute("dataByTime", dataByTime);
-        return "timeAnalysis";
-    }
-
-
     //主页
     @RequestMapping("/main")
     public String index(){
@@ -230,25 +210,25 @@ public class toPageController {
 //        return "ChanPin";
 //    }
 
-    //用时分析
+    //----------------------用时分析-------------------------
     @RequestMapping("/time_analysis")
     public String timeAnalysis(String data, Model model){
-        if(data==null||data==""){
+        if(data==null){
             data="2022-03-11"; //默认展示 2022-03-11 的数据
         }
         List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
 
-//        //打印测试
+        //打印测试
 //        System.out.println("=====================!");
 //        for (TimeAnalysis timeAnalysis : dataByTime) {
 //            System.out.println("data:"+timeAnalysis);
 //        }
-//
 //        System.out.println("=====================!");
 
         model.addAttribute("dataByTime", dataByTime);
         return "timeAnalysis";
     }
+
 
     //设备产量计数分析
     @RequestMapping("/count_analysis")

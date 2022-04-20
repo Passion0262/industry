@@ -90,13 +90,17 @@
 
 <!--                            <div id="main" style="width: 800px;height:400px;margin: auto;margin-top: 100px" ></div>-->
                             <script>
-                                function a(e){
+                                function a(){
                                     var val1 = $("#searchStr").val();
                                     if (val1==""){
                                         $("#nullMsg0").html("<span style=\"font-size: medium;color: #4b83ff;;margin-left: 50px;\">请输入日期！<span/>");
                                         return false;
-                                    }else{
+                                    }else if((/^(\d{4}-\d{2}-\d{2})$/).test(val1)){
                                         return true;
+                                    }else{
+                                        $("#nullMsg0").html("<span style=\"font-size: medium;color: #ff4b4b;;;margin-left: 50px;\">请输入正确格式！<span/>");
+
+                                        return false;
                                     }
                                 }
                             </script>
