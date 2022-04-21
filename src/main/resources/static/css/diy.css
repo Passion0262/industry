@@ -1,7 +1,11 @@
 .bgc{
     background-color: #dadaea;
     background-image: linear-gradient(270deg, #dadaea 0%, #dcdfe2 25%, #c9c1c1 100%);
-
+}
+.bg-img{
+    background-image: url(../images/index.jpg);
+    background-size: 100% 100%;
+    background-position:right;
 }
 .name{
     width: 520px;
@@ -11,7 +15,7 @@
     font-size: 30px;
     border-color: #bfbfbf;
     border-width: 1px;
-    background-color: #000000;
+    background-color: #7d5b5b;;
     border-radius: 8px;
     padding: 10px;
 }
