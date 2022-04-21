@@ -2,24 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>工业大数据平台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="This is an industrial big data platform page" name="description" />
+    <meta content="This is an industrial big data platform page" name="description"/>
     <link rel="shortcut icon" href="../static/images/favicon.ico"><!-- jquery.vectormap css -->
-    <link href="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" /><!-- DataTables -->
-    <link href="../static/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" /><!-- Responsive datatable examples -->
-    <link href="../static/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /><!-- Bootstrap Css -->
-    <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" /><!-- Icons Css -->
-    <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css" /><!-- App Css-->
-    <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"
+          type="text/css"/><!-- DataTables -->
+    <link href="../static/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Responsive datatable examples -->
+    <link href="../static/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
+          type="text/css"/><!-- Bootstrap Css -->
+    <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css"/>
+    <!-- Icons Css -->
+    <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css"/><!-- App Css-->
+    <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css"/>
     <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
     <script src="../static/js/echarts.js"></script>
     <script src="../static/libs/jquery/jquery.min.js"></script>
     <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link href="../static/libs/bootstrap-datetimepicker.min.css" rel="external nofollow" rel="stylesheet" />
-    <script src="../static/libs/bootstrap-datetimepicker.js"></script>
-    <script src="../static/libs/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link href="https://cdn.bootcss.com/gijgo/1.9.13/combined/css/gijgo.min.css" rel="stylesheet">
 </head>
 
 <body data-sidebar="dark" class="bgc">
@@ -40,7 +42,7 @@
                 <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
-                        <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <div class="page-title-box d-flex align-items-center justify-content-between" style="margin-bottom: -20px">
                             <h4 class="mb-0">当前设备OEE分析</h4>
                             <!--          无用的右侧标题                  -->
                             <!--                            <div class="page-title-right">-->
@@ -56,477 +58,29 @@
                     <div class="card-body">
 
 
-
                         <div class="row">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+
+                            <form class="form-inline" method="post" action="/time_analysis" id="form1"
+                                  onsubmit="return a();">
+                                <div class="input-group">
+                                    <span style="line-height: 30px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;选择日期：</span>
+                                    <input type="text" class="form-control input-sm" id="searchStr"
+                                           placeholder="按日期搜索..." name="data" style="height: 30px;width: 200px">
+                                    <button class="btn btn-success btn-sm" type="submit" style="margin-left: 10px">查找</button>
                                 </div>
-                            </div>
-
-
+                            </form>
                         </div>
 
 
+                    </div>
 
 
-                        <!--                        <h4 class="card-title mb-4">当前设备OEE分析</h4>-->
-
-<!--                        <div class="row">-->
-<!--                            <div class="col-md-2">-->
-<!--                                <div id="main1" style="width: 300px;height:300px;margin-left:10px;" ></div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-2" style="margin-left: 50px">-->
-<!--                                <div id="main2" style="width: 300px;height:300px;margin-left:10px;" ></div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-2" style="margin-left: 50px">-->
-<!--                                <div id="main3" style="width: 300px;height:300px;margin-left:10px;" ></div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-2" style="margin-left: 50px">-->
-<!--                                <div id="main4" style="width: 300px;height:300px;margin-left:10px;" ></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="row" style="margin-top: 30px">-->
-<!--                            <div class="col-md-2" style="margin-left: 20px">-->
-<!--                                <div id="main5" style="width: 300px;height:300px;margin-left:10px;" ></div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-2" style="margin-left: 50px">-->
-<!--                                <div id="main6" style="width: 300px;height:300px;margin-left:10px;" ></div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-2" style="margin-left: 50px">-->
-<!--                                <div id="main7" style="width: 300px;height:300px;margin-left:10px;" ></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-
-
-<!--                        <script type="text/javascript">-->
-<!--                            // 基于准备好的dom，初始化echarts实例-->
-<!--                            var myChart = echarts.init(document.getElementById('main1'));-->
-
-
-<!--                            // 指定图表的配置项和数据-->
-<!--                            var option = {-->
-<!--                                title : {-->
-<!--                                    text: '整线设备状态分布',-->
-<!--                                    x:'center'-->
-<!--                                },-->
-<!--                                tooltip : {-->
-<!--                                    trigger: 'item',-->
-<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
-<!--                                },-->
-<!--                                legend: {-->
-<!--                                    orient : 'vertical',-->
-<!--                                    x : 'left',-->
-<!--                                    data:['运行','空闲','停机','离线','设定']-->
-<!--                                },-->
-<!--                                color:['#00FF7F','#FFD700','#FF4500','#778899','#00BFFF'],-->
-<!--                                toolbox: {-->
-<!--                                    show : true,-->
-<!--                                    feature : {-->
-<!--                                        mark : {show: true},-->
-<!--                                        dataView : {show: true, readOnly: false},-->
-<!--                                        magicType : {-->
-<!--                                            show: true,-->
-<!--                                            type: ['pie', 'funnel'],-->
-<!--                                            option: {-->
-<!--                                                funnel: {-->
-<!--                                                    x: '25%',-->
-<!--                                                    width: '50%',-->
-<!--                                                    funnelAlign: 'left',-->
-<!--                                                    max: 1548-->
-<!--                                                }-->
-<!--                                            }-->
-<!--                                        },-->
-<!--                                        restore : {show: true},-->
-<!--                                        saveAsImage : {show: true}-->
-<!--                                    }-->
-<!--                                },-->
-<!--                                calculable : true,-->
-<!--                                series : [-->
-<!--                                    {-->
-<!--                                        name:'访问来源',-->
-<!--                                        type:'pie',-->
-<!--                                        radius : '55%',-->
-<!--                                        center: ['50%', '60%'],-->
-<!--                                        data:[-->
-<!--                                            {value:335, name:'运行'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:234, name:'停机'},-->
-<!--                                            {value:0, name:'设定'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                        ]-->
-<!--                                    }-->
-<!--                                ]-->
-<!--                            };-->
-
-<!--                            // 使用刚指定的配置项和数据显示图表。-->
-<!--                            myChart.setOption(option);-->
-<!--                        </script>-->
-
-
-<!--                        <script type="text/javascript">-->
-<!--                            // 基于准备好的dom，初始化echarts实例-->
-<!--                            var myChart = echarts.init(document.getElementById('main2'));-->
-
-<!--                            // 指定图表的配置项和数据-->
-<!--                            var option = {-->
-<!--                                title : {-->
-<!--                                    text: '整线设备状态分布',-->
-<!--                                    x:'center'-->
-<!--                                },-->
-<!--                                tooltip : {-->
-<!--                                    trigger: 'item',-->
-<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
-<!--                                },-->
-
-<!--                                toolbox: {-->
-<!--                                    show : true,-->
-<!--                                    feature : {-->
-<!--                                        mark : {show: true},-->
-<!--                                        dataView : {show: true, readOnly: false},-->
-<!--                                        magicType : {-->
-<!--                                            show: true,-->
-<!--                                            type: ['pie', 'funnel'],-->
-<!--                                            option: {-->
-<!--                                                funnel: {-->
-<!--                                                    x: '25%',-->
-<!--                                                    width: '50%',-->
-<!--                                                    funnelAlign: 'left',-->
-<!--                                                    max: 1548-->
-<!--                                                }-->
-<!--                                            }-->
-<!--                                        },-->
-<!--                                        restore : {show: true},-->
-<!--                                        saveAsImage : {show: true}-->
-<!--                                    }-->
-<!--                                },-->
-<!--                                calculable : true,-->
-<!--                                series : [-->
-<!--                                    {-->
-<!--                                        name:'访问来源',-->
-<!--                                        type:'pie',-->
-<!--                                        radius : '55%',-->
-<!--                                        center: ['50%', '60%'],-->
-<!--                                        data:[-->
-<!--                                            {value:335, name:'运行'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:234, name:'停机'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                        ]-->
-<!--                                    }-->
-<!--                                ]-->
-<!--                            };-->
-
-<!--                            // 使用刚指定的配置项和数据显示图表。-->
-<!--                            myChart.setOption(option);-->
-<!--                        </script>-->
-<!--                        <script type="text/javascript">-->
-<!--                            // 基于准备好的dom，初始化echarts实例-->
-<!--                            var myChart = echarts.init(document.getElementById('main3'));-->
-
-<!--                            // 指定图表的配置项和数据-->
-<!--                            var option = {-->
-<!--                                title : {-->
-<!--                                    text: '整线设备状态分布',-->
-<!--                                    x:'center'-->
-<!--                                },-->
-<!--                                tooltip : {-->
-<!--                                    trigger: 'item',-->
-<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
-<!--                                },-->
-
-<!--                                toolbox: {-->
-<!--                                    show : true,-->
-<!--                                    feature : {-->
-<!--                                        mark : {show: true},-->
-<!--                                        dataView : {show: true, readOnly: false},-->
-<!--                                        magicType : {-->
-<!--                                            show: true,-->
-<!--                                            type: ['pie', 'funnel'],-->
-<!--                                            option: {-->
-<!--                                                funnel: {-->
-<!--                                                    x: '25%',-->
-<!--                                                    width: '50%',-->
-<!--                                                    funnelAlign: 'left',-->
-<!--                                                    max: 1548-->
-<!--                                                }-->
-<!--                                            }-->
-<!--                                        },-->
-<!--                                        restore : {show: true},-->
-<!--                                        saveAsImage : {show: true}-->
-<!--                                    }-->
-<!--                                },-->
-<!--                                calculable : true,-->
-<!--                                series : [-->
-<!--                                    {-->
-<!--                                        name:'访问来源',-->
-<!--                                        type:'pie',-->
-<!--                                        radius : '55%',-->
-<!--                                        center: ['50%', '60%'],-->
-<!--                                        data:[-->
-<!--                                            {value:335, name:'运行'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:234, name:'停机'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                        ]-->
-<!--                                    }-->
-<!--                                ]-->
-<!--                            };-->
-
-<!--                            // 使用刚指定的配置项和数据显示图表。-->
-<!--                            myChart.setOption(option);-->
-<!--                        </script>-->
-<!--                        <script type="text/javascript">-->
-<!--                            // 基于准备好的dom，初始化echarts实例-->
-<!--                            var myChart = echarts.init(document.getElementById('main4'));-->
-
-<!--                            // 指定图表的配置项和数据-->
-<!--                            var option = {-->
-<!--                                title : {-->
-<!--                                    text: '整线设备状态分布',-->
-<!--                                    x:'center'-->
-<!--                                },-->
-<!--                                tooltip : {-->
-<!--                                    trigger: 'item',-->
-<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
-<!--                                },-->
-
-<!--                                toolbox: {-->
-<!--                                    show : true,-->
-<!--                                    feature : {-->
-<!--                                        mark : {show: true},-->
-<!--                                        dataView : {show: true, readOnly: false},-->
-<!--                                        magicType : {-->
-<!--                                            show: true,-->
-<!--                                            type: ['pie', 'funnel'],-->
-<!--                                            option: {-->
-<!--                                                funnel: {-->
-<!--                                                    x: '25%',-->
-<!--                                                    width: '50%',-->
-<!--                                                    funnelAlign: 'left',-->
-<!--                                                    max: 1548-->
-<!--                                                }-->
-<!--                                            }-->
-<!--                                        },-->
-<!--                                        restore : {show: true},-->
-<!--                                        saveAsImage : {show: true}-->
-<!--                                    }-->
-<!--                                },-->
-<!--                                calculable : true,-->
-<!--                                series : [-->
-<!--                                    {-->
-<!--                                        name:'访问来源',-->
-<!--                                        type:'pie',-->
-<!--                                        radius : '55%',-->
-<!--                                        center: ['50%', '60%'],-->
-<!--                                        data:[-->
-<!--                                            {value:335, name:'运行'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:234, name:'停机'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                        ]-->
-<!--                                    }-->
-<!--                                ]-->
-<!--                            };-->
-
-<!--                            // 使用刚指定的配置项和数据显示图表。-->
-<!--                            myChart.setOption(option);-->
-<!--                        </script>-->
-
-<!--                        <script type="text/javascript">-->
-<!--                            // 基于准备好的dom，初始化echarts实例-->
-<!--                            var myChart = echarts.init(document.getElementById('main5'));-->
-
-<!--                            // 指定图表的配置项和数据-->
-<!--                            var option = {-->
-<!--                                title : {-->
-<!--                                    text: '整线设备状态分布',-->
-<!--                                    x:'center'-->
-<!--                                },-->
-<!--                                tooltip : {-->
-<!--                                    trigger: 'item',-->
-<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
-<!--                                },-->
-
-<!--                                toolbox: {-->
-<!--                                    show : true,-->
-<!--                                    feature : {-->
-<!--                                        mark : {show: true},-->
-<!--                                        dataView : {show: true, readOnly: false},-->
-<!--                                        magicType : {-->
-<!--                                            show: true,-->
-<!--                                            type: ['pie', 'funnel'],-->
-<!--                                            option: {-->
-<!--                                                funnel: {-->
-<!--                                                    x: '25%',-->
-<!--                                                    width: '50%',-->
-<!--                                                    funnelAlign: 'left',-->
-<!--                                                    max: 1548-->
-<!--                                                }-->
-<!--                                            }-->
-<!--                                        },-->
-<!--                                        restore : {show: true},-->
-<!--                                        saveAsImage : {show: true}-->
-<!--                                    }-->
-<!--                                },-->
-<!--                                calculable : true,-->
-<!--                                series : [-->
-<!--                                    {-->
-<!--                                        name:'访问来源',-->
-<!--                                        type:'pie',-->
-<!--                                        radius : '55%',-->
-<!--                                        center: ['50%', '60%'],-->
-<!--                                        data:[-->
-<!--                                            {value:335, name:'运行'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:234, name:'停机'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                        ]-->
-<!--                                    }-->
-<!--                                ]-->
-<!--                            };-->
-
-<!--                            // 使用刚指定的配置项和数据显示图表。-->
-<!--                            myChart.setOption(option);-->
-<!--                        </script>-->
-<!--                        <script type="text/javascript">-->
-<!--                            // 基于准备好的dom，初始化echarts实例-->
-<!--                            var myChart = echarts.init(document.getElementById('main6'));-->
-
-<!--                            // 指定图表的配置项和数据-->
-<!--                            var option = {-->
-<!--                                title : {-->
-<!--                                    text: '整线设备状态分布',-->
-<!--                                    x:'center'-->
-<!--                                },-->
-<!--                                tooltip : {-->
-<!--                                    trigger: 'item',-->
-<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
-<!--                                },-->
-
-<!--                                toolbox: {-->
-<!--                                    show : true,-->
-<!--                                    feature : {-->
-<!--                                        mark : {show: true},-->
-<!--                                        dataView : {show: true, readOnly: false},-->
-<!--                                        magicType : {-->
-<!--                                            show: true,-->
-<!--                                            type: ['pie', 'funnel'],-->
-<!--                                            option: {-->
-<!--                                                funnel: {-->
-<!--                                                    x: '25%',-->
-<!--                                                    width: '50%',-->
-<!--                                                    funnelAlign: 'left',-->
-<!--                                                    max: 1548-->
-<!--                                                }-->
-<!--                                            }-->
-<!--                                        },-->
-<!--                                        restore : {show: true},-->
-<!--                                        saveAsImage : {show: true}-->
-<!--                                    }-->
-<!--                                },-->
-<!--                                calculable : true,-->
-<!--                                series : [-->
-<!--                                    {-->
-<!--                                        name:'访问来源',-->
-<!--                                        type:'pie',-->
-<!--                                        radius : '55%',-->
-<!--                                        center: ['50%', '60%'],-->
-<!--                                        data:[-->
-<!--                                            {value:335, name:'运行'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:234, name:'停机'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                        ]-->
-<!--                                    }-->
-<!--                                ]-->
-<!--                            };-->
-
-<!--                            // 使用刚指定的配置项和数据显示图表。-->
-<!--                            myChart.setOption(option);-->
-<!--                        </script>-->
-<!--                        <script type="text/javascript">-->
-<!--                            // 基于准备好的dom，初始化echarts实例-->
-<!--                            var myChart = echarts.init(document.getElementById('main7'));-->
-
-<!--                            // 指定图表的配置项和数据-->
-<!--                            var option = {-->
-<!--                                title : {-->
-<!--                                    text: '整线设备状态分布',-->
-<!--                                    x:'center'-->
-<!--                                },-->
-<!--                                tooltip : {-->
-<!--                                    trigger: 'item',-->
-<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
-<!--                                },-->
-
-<!--                                toolbox: {-->
-<!--                                    show : true,-->
-<!--                                    feature : {-->
-<!--                                        mark : {show: true},-->
-<!--                                        dataView : {show: true, readOnly: false},-->
-<!--                                        magicType : {-->
-<!--                                            show: true,-->
-<!--                                            type: ['pie', 'funnel'],-->
-<!--                                            option: {-->
-<!--                                                funnel: {-->
-<!--                                                    x: '25%',-->
-<!--                                                    width: '50%',-->
-<!--                                                    funnelAlign: 'left',-->
-<!--                                                    max: 1548-->
-<!--                                                }-->
-<!--                                            }-->
-<!--                                        },-->
-<!--                                        restore : {show: true},-->
-<!--                                        saveAsImage : {show: true}-->
-<!--                                    }-->
-<!--                                },-->
-<!--                                calculable : true,-->
-<!--                                series : [-->
-<!--                                    {-->
-<!--                                        name:'访问来源',-->
-<!--                                        type:'pie',-->
-<!--                                        radius : '55%',-->
-<!--                                        center: ['50%', '60%'],-->
-<!--                                        data:[-->
-<!--                                            {value:335, name:'运行'},-->
-<!--                                            {value:310, name:'空闲'},-->
-<!--                                            {value:234, name:'停机'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                            {value:135, name:'离线'},-->
-<!--                                        ]-->
-<!--                                    }-->
-<!--                                ]-->
-<!--                            };-->
-
-<!--                            // 使用刚指定的配置项和数据显示图表。-->
-<!--                            myChart.setOption(option);-->
-<!--                        </script>-->
-
-
-                    </div><!-- container-fluid -->
-                </div>
-
+                </div><!-- container-fluid -->
             </div>
+
         </div>
-    </div><!-- end row -->
-
-
-
-
-
-
-
-
-
-
+    </div>
+</div><!-- end row -->
 
 
 </div><!-- container-fluid -->
@@ -535,16 +89,26 @@
 </div><!-- End Page-content -->
 
 
-
-
 <!-- Right bar overlay-->
+
+<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/gijgo.min.js"></script>
+<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/messages/messages.zh-cn.min.js"></script>
+<script>
+    $("#searchStr").datepicker({
+        locale: 'zh-cn',
+        format: 'yyyy-mm-dd',
+        weekStartDay: 1
+    });
+</script>
+
 
 <script src="../static/libs/metismenu/metisMenu.min.js"></script>
 <script src="../static/libs/simplebar/simplebar.min.js"></script>
 <script src="../static/libs/node-waves/waves.min.js"></script><!-- apexcharts -->
 <script src="../static/libs/apexcharts/apexcharts.min.js"></script><!-- jquery.vectormap map -->
 <script src="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script><!-- Required datatable js -->
+<script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
+<!-- Required datatable js -->
 <script src="../static/libs/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../static/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script><!-- Responsive examples -->
 <script src="../static/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>

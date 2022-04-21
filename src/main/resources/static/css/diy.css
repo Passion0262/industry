@@ -1,20 +1,40 @@
 .bgc{
     background-color: #dadaea;
     background-image: linear-gradient(270deg, #dadaea 0%, #dcdfe2 25%, #c9c1c1 100%);
-
+}
+.bg-img{
+    background-image: url(../images/index.jpg);
+    background-size: 100% 100%;
+    background-position:right;
 }
 .name{
     width: 520px;
     color:whitesmoke;
     border-style: solid;
-    text-align: left;
+    text-align: center;
     font-size: 30px;
     border-color: #bfbfbf;
     border-width: 1px;
-    background-color: #000000;
     border-radius: 8px;
     padding: 10px;
 }
+
+.color-setting{
+    background-color: #5470c6;
+}
+.color-stop{
+    background-color: #ee6666;
+}
+.color-free{
+    background-color: #fac858;
+}
+.color-offline{
+    background-color: #abadb4;
+}
+.color-operate{
+    background-color: #91cc75;
+}
+
 .zhuangT{
     font-size: 15px;
 }
@@ -40,8 +60,12 @@
 }
 
 .img1{
-    float: right;
-    margin-top: -10px;
-    border-radius: 100px;
-    box-shadow: #333333 -3px 3px
+    float: left;
+    margin-left: 3px;
+    border-radius: 6px;
+    box-shadow: #333333 3px 3px
+}
+
+.card-shadow{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }

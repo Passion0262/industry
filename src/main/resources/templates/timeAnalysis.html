@@ -20,6 +20,7 @@
     <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
     <script src="../static/js/echarts.js"></script>
     <script src="../static/libs/jquery/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/gijgo/1.9.13/combined/css/gijgo.min.css" rel="stylesheet">
 </head>
 
 <body data-sidebar="dark" class="bgc">
@@ -37,31 +38,48 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between" style="margin-bottom: -20px">
+                            <h4 class="mb-0">用时分析</h4>
+                            <!--          无用的右侧标题                  -->
+                            <!--                            <div class="page-title-right">-->
+                            <!--                                <ol class="breadcrumb m-0">-->
+                            <!--                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Nazox</a></li>-->
+                            <!--                                    <li class="breadcrumb-item active">Dashboard</li>-->
+                            <!--                                </ol>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+                </div><!-- end page title -->
                 <div class="row-fluid">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <form class="form-inline" method="post" action="/time_analysis" id="form1" onsubmit="return a();">
+                                <form class="form-inline" method="post" action="/time_analysis" id="form1"
+                                      onsubmit="return a();">
                                     <div class="input-group">
-                                        <span style="line-height: 37px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;输入日期：</span>
+                                        <span style="line-height: 30px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;选择日期：</span>
                                         <input type="text" class="form-control input-sm" id="searchStr"
-                                               placeholder="严格格式如：2022-03-11" name="data">
-                                            <button class="btn btn-success btn-sm" type="submit">查找</button>
+                                               placeholder="按日期搜索..." name="data" style="height: 30px;width: 200px">
+                                        <button class="btn btn-success btn-sm" type="submit" style="margin-left: 10px">
+                                            查找
+                                        </button>
                                     </div>
                                 </form>
                             </div>
 
-<!--                            请输入日期提示框-->
+                            <!--                            请输入日期提示框-->
                             <div class="row">
                                 <div class="col-md-8" id="nullMsg0"></div>
                             </div>
 
-<!--                            查询无结果提示框-->
+                            <!--                            查询无结果提示框-->
                             <div class="row">
                                 <div class="col-md-8" id="nullMsg"></div>
                             </div>
 
-<!--                            饼图框-->
+                            <!--                            饼图框-->
                             <div class="row" style="margin-top: 30px ">
                                 <div class="col-md-2">
                                     <div id="main1" style="width: 300px;height:300px;margin-left:40px;"></div>
@@ -88,16 +106,16 @@
                                 </div>
                             </div>
 
-<!--                            <div id="main" style="width: 800px;height:400px;margin: auto;margin-top: 100px" ></div>-->
+                            <!--                            <div id="main" style="width: 800px;height:400px;margin: auto;margin-top: 100px" ></div>-->
                             <script>
-                                function a(){
+                                function a() {
                                     var val1 = $("#searchStr").val();
-                                    if (val1==""){
+                                    if (val1 == "") {
                                         $("#nullMsg0").html("<span style=\"font-size: medium;color: #4b83ff;;margin-left: 50px;\">请输入日期！<span/>");
                                         return false;
-                                    }else if((/^(\d{4}-\d{2}-\d{2})$/).test(val1)){
+                                    } else if ((/^(\d{4}-\d{2}-\d{2})$/).test(val1)) {
                                         return true;
-                                    }else{
+                                    } else {
                                         $("#nullMsg0").html("<span style=\"font-size: medium;color: #ff4b4b;;;margin-left: 50px;\">请输入正确格式！<span/>");
 
                                         return false;
@@ -108,11 +126,11 @@
 
                             <script th:inline="javascript">
                                 let d = [[${dataByTime}]]; //内联表达式获取值
-                                if(d.length==0){
+                                if (d.length == 0) {
                                     $("#nullMsg").html("<div style=\"font-size: x-large;color: #ff3535;margin-left: 50px;margin-top: 50px;\">当天无数据记录！</div>");
-                                }else {
+                                } else {
                                     var data1 = d[0]['date'];
-                                    $("#nullMsg").html("<div style=\"font-size: x-large;margin-left: 50px;margin-bottom: -30px;\">"+data1+"</div>");
+                                    $("#nullMsg").html("<div style=\"font-size: x-large;margin-left: 50px;margin-bottom: -30px;\">" + data1 + "</div>");
                                 }
                             </script>
 
@@ -143,10 +161,10 @@
                                         orient: 'vertical',
                                         x: 'left',
                                         y: 'top',
-                                        padding:[0, 100,0,0],
+                                        padding: [0, 100, 0, 0],
                                         data: ['运行', '空闲', '停机', '离线', '设定']
                                     },
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -220,7 +238,7 @@
                                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                                     },
 
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -294,7 +312,7 @@
                                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                                     },
 
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -368,7 +386,7 @@
                                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                                     },
 
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -442,7 +460,7 @@
                                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                                     },
 
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -517,7 +535,7 @@
                                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                                     },
 
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -591,7 +609,7 @@
                                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                                     },
 
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -665,7 +683,7 @@
                                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                                     },
 
-                                    color: ['#00FF7F', '#FFD700', '#FF4500', '#778899', '#00BFFF'],
+                                    color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                     toolbox: {
                                         show: true,
                                         feature: {
@@ -774,6 +792,17 @@
 
 
 </div><!-- End Page-content -->
+
+<!--日期控件-->
+<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/gijgo.min.js"></script>
+<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/messages/messages.zh-cn.min.js"></script>
+<script>
+    $("#searchStr").datepicker({
+        locale: 'zh-cn',
+        format: 'yyyy-mm-dd',
+        weekStartDay: 1
+    });
+</script>
 
 
 <!-- Right bar overlay-->
