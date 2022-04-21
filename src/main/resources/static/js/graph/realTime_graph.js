@@ -56,7 +56,7 @@ function OP40(){
             }
         },
         legend: {
-            data: ['产量', '快速给进倍率', '主轴转速', '给进倍率', '给进速度']
+            data: ['产量', '快速进给倍率', '主轴转速', '进给倍率', '进给速度']
         },
         grid: {
             left: '3%',
@@ -91,19 +91,19 @@ function OP40(){
                 smooth: true
             },
             {
-                name: '快速给进倍率',
+                name: '快速进给倍率',
                 type: 'line',
                 data: rapid_feed_rate,
                 smooth: true
             },
             {
-                name: '给进速度',
+                name: '进给速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: '给进倍率',
+                name: '进给倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
@@ -174,7 +174,7 @@ function OP50(){
             }
         },
         legend: {
-            data: ['产量', '快速给进倍率', '主轴转速', '给进倍率', '给进速度']
+            data: ['产量', '快速进给倍率', '主轴转速', '进给倍率', '进给速度']
         },
         grid: {
             left: '3%',
@@ -209,19 +209,19 @@ function OP50(){
                 smooth: true
             },
             {
-                name: '快速给进倍率',
+                name: '快速进给倍率',
                 type: 'line',
                 data: rapid_feed_rate,
                 smooth: true
             },
             {
-                name: '给进速度',
+                name: '进给速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: '给进倍率',
+                name: '进给倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
@@ -292,7 +292,7 @@ function OP60(){
             }
         },
         legend: {
-            data: ['产量', '主轴倍率', '主轴转速', '给进倍率', '给进速度']
+            data: ['产量', '主轴倍率', '主轴转速', '进给倍率', '进给速度']
         },
         grid: {
             left: '3%',
@@ -333,13 +333,13 @@ function OP60(){
                 smooth: true
             },
             {
-                name: '给进速度',
+                name: '进给速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: '给进倍率',
+                name: '进给倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
@@ -410,7 +410,7 @@ function OP70(){
             }
         },
         legend: {
-            data: ['产量', '转轴倍率', '主轴转速', '给进倍率', '给进速度']
+            data: ['产量', '转轴倍率', '主轴转速', '进给倍率', '进给速度']
         },
         grid: {
             left: '3%',
@@ -451,13 +451,13 @@ function OP70(){
                 smooth: true
             },
             {
-                name: '给进速度',
+                name: '进给速度',
                 type: 'line',
                 data: feed_speed,
                 smooth: true
             },
             {
-                name: '给进倍率',
+                name: '进给倍率',
                 type: 'line',
                 data: feed_rate,
                 smooth: true
