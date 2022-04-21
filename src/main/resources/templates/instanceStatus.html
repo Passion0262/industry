@@ -29,7 +29,7 @@
             <div class="container-fluid"><!-- start page title -->
                 <div class="row">
                     <div class="col-12">
-                        <div class="page-title-box d-flex align-items-center justify-content-between" style="padding-bottom: 5px">
+                        <div class="page-title-box d-flex align-items-center justify-content-between" style="margin-bottom: -20px">
                             <h4 class="mb-0">
                             状态信息</h4>
                         </div>
@@ -40,7 +40,8 @@
                             <div class="card-body">
                                 <div class="media">
                                     <div class="production_line">
-                                        <p class="name " style="text-align: left"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(0).getName()}">&nbsp;&nbsp;name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span>
+                                        <img src="../static/images/machine.png" alt="" width="70" height="70" class="img1">
+                                        <p class="name btn-success"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(0).getName()}">&nbsp;&nbsp;name</strong><span class="zhuangT">&nbsp;&nbsp;[ 运行 129 分钟 ]</span>
                                             </p>
                                         <div class="span1">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;id：<span class="span2" th:text="${data.get(0).getId()}">id</span></br><hr style="margin: 5px">
@@ -52,7 +53,8 @@
 
 
                                     <div class="production_line">
-                                        <p class="name"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(1).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span></p>
+                                        <img src="../static/images/machine.png" alt="" width="70" height="70" class="img1">
+                                        <p class="name btn-danger"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(1).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[ 停机 32 分钟 ]</span></p>
                                         <div class="span1">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;id：<span class="span2" th:text="${data.get(1).getId()}">id</span></br><hr style="margin: 5px">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;pid：<span class="span2" th:text="${data.get(1).getPid()}">pid</span></br>  <hr style="margin: 5px">
@@ -65,7 +67,8 @@
 
                                 <div class="media">
                                     <div class="production_line">
-                                        <p class="name"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(2).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span>
+                                        <img src="../static/images/machine.png" alt="" width="70" height="70" class="img1">
+                                        <p class="name btn-success"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(2).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[ 运行 287 分钟 ]</span>
                                             </p>
                                         <div class="span1">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;id：<span class="span2" th:text="${data.get(2).getId()}">id</span></br><hr style="margin: 5px">
@@ -75,7 +78,8 @@
                                         </div>
                                     </div>
                                     <div class="production_line" >
-                                        <p class="name"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(3).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[停机 x分钟]</span>
+                                        <img src="../static/images/machine.png" alt="" width="70" height="70" class="img1">
+                                        <p class="name btn-warning"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(3).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[ 警告 5 分钟 ]</span>
                                             </p>
                                         <div class="span1">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;id：<span class="span2" th:text="${data.get(3).getId()}">id</span></br><hr style="margin: 5px">
@@ -87,7 +91,8 @@
                                 </div>
                                 <div class="media">
                                     <div class="production_line">
-                                        <p class="name"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(4).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span>
+                                        <img src="../static/images/machine.png" alt="" width="70" height="70" class="img1">
+                                        <p class="name btn-primary"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(4).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[ 设定 28 分钟 ]</span>
                                             </p>
                                         <div class="span1">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;id：<span class="span2" th:text="${data.get(4).getId()}">id</span></br><hr style="margin: 5px">
@@ -97,7 +102,8 @@
                                         </div>
                                     </div>
                                     <div class="production_line">
-                                        <p class="name"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(5).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span>
+                                        <img src="../static/images/machine.png" alt="" width="70" height="70" class="img1">
+                                        <p class="name btn-secondary"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(5).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[ 离线 97 分钟 ]</span>
                                            </p>
                                         <div class="span1">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;id：<span class="span2" th:text="${data.get(5).getId()}">id</span></br><hr style="margin: 5px">
@@ -110,7 +116,8 @@
                                 </div>
                                 <div class="media">
                                     <div class="production_line">
-                                        <p class="name"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(6).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[设定 x分钟]</span>
+                                        <img src="../static/images/machine.png" alt="" width="70" height="70" class="img1">
+                                        <p class="name btn-success"><span class=" ri-printer-line"></span>&nbsp;<strong th:text="${data.get(6).getName()}">name</strong><span class="zhuangT">&nbsp;&nbsp;[ 运行 27 分钟 ]</span>
                                           </p>
                                         <div class="span1">
                                             <span class="dripicons-dot"></span>&nbsp;&nbsp;id：<span class="span2" th:text="${data.get(6).getId()}">id</span></br><hr style="margin: 5px">

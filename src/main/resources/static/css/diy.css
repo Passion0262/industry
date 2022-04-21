@@ -11,14 +11,30 @@
     width: 520px;
     color:whitesmoke;
     border-style: solid;
-    text-align: left;
+    text-align: center;
     font-size: 30px;
     border-color: #bfbfbf;
     border-width: 1px;
-    background-color: #7d5b5b;;
     border-radius: 8px;
     padding: 10px;
 }
+
+.color-setting{
+    background-color: #5470c6;
+}
+.color-stop{
+    background-color: #ee6666;
+}
+.color-free{
+    background-color: #fac858;
+}
+.color-offline{
+    background-color: #abadb4;
+}
+.color-operate{
+    background-color: #91cc75;
+}
+
 .zhuangT{
     font-size: 15px;
 }
@@ -44,8 +60,12 @@
 }
 
 .img1{
-    float: right;
-    margin-top: -10px;
-    border-radius: 100px;
-    box-shadow: #333333 -3px 3px
+    float: left;
+    margin-left: 3px;
+    border-radius: 6px;
+    box-shadow: #333333 3px 3px
+}
+
+.card-shadow{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
