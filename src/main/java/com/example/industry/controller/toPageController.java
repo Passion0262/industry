@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -266,6 +267,32 @@ public class toPageController {
     public String cutter(Model model) {
         List<cutter> cutterList = cutterService.listCutter();
         model.addAttribute("cutterList", cutterList);
+
+        List<String> warnings = new ArrayList<>();
+        List<String> aralms = new ArrayList<>();
+
+        int sum_warnings = 0;
+        int sum_aralms = 0;
+
+        for (cutter cutter : cutterList) {
+            if(cutter.getLifeState().equals("警告")){
+                sum_warnings++;
+                warnings.add(String.valueOf(cutter.getCutterId()));
+            }else if(cutter.getLifeState().equals("报警")){
+                sum_aralms++;
+                aralms.add(String.valueOf(cutter.getCutterId()));
+            }
+        }
+        for (String warning : warnings) {
+            System.out.println(warning);
+        }
+
+        model.addAttribute("warnings", warnings);
+        model.addAttribute("aralms", aralms);
+        model.addAttribute("sum_warnings", sum_warnings);
+        model.addAttribute("sum_aralms", sum_aralms);
+
+
         return "cutter";
     }
 

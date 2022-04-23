@@ -41,6 +41,8 @@
                         </div>
                     </div>
                 </div><!-- end page title -->
+
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -76,8 +78,9 @@
                                         </tr>
                                         </thead>
 
-                                        <tbody th:each="item:${cutterList}">
-                                        <tr>
+                                        <tbody th:each="item:${cutterList}" >
+                                        <div th:switch="${item.getLifeState()}">
+                                        <tr th:case="警告" class="btn-warning">
                                             <td th:text="${item.getCutterId()}">x</td>
                                             <td th:text="${item.getCutterCategory()}">x</td>
                                             <td th:text="${item.getCutterType()}">x</td>
@@ -95,16 +98,88 @@
                                             <td th:text="${item.getUsedLife()}">x</td>
                                             <td th:text="${item.getResidualLife()}">x</td>
                                             <td th:text="${item.getAlarmValue()}">x</td>
-
                                         </tr>
-
+                                        <tr  th:case="报警" class="btn-danger">
+                                            <td th:text="${item.getCutterId()}">x</td>
+                                            <td th:text="${item.getCutterCategory()}">x</td>
+                                            <td th:text="${item.getCutterType()}">x</td>
+                                            <td th:text="${item.getDeviceId()}">x</td>
+                                            <td th:text="${item.getDeviceName()}">x</td>
+                                            <td th:text="${item.getCutterLocation()}">x</td>
+                                            <td th:text="${item.getCutterState()}">x</td>
+                                            <td th:text="${item.getCutterLength()}">x</td>
+                                            <td th:text="${item.getCutterDiameter()}">x</td>
+                                            <td th:text="${item.getWearCompensationLength()}">x</td>
+                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>
+                                            <td th:text="${item.getLifeState()}">x</td>
+                                            <td th:text="${item.getCountingMode()}">x</td>
+                                            <td th:text="${item.getInitialLife()}">x</td>
+                                            <td th:text="${item.getUsedLife()}">x</td>
+                                            <td th:text="${item.getResidualLife()}">x</td>
+                                            <td th:text="${item.getAlarmValue()}">x</td>
+                                        </tr>
+                                        <tr  th:case="*" class="btn-danger">
+                                            <td th:text="${item.getCutterId()}">x</td>
+                                            <td th:text="${item.getCutterCategory()}">x</td>
+                                            <td th:text="${item.getCutterType()}">x</td>
+                                            <td th:text="${item.getDeviceId()}">x</td>
+                                            <td th:text="${item.getDeviceName()}">x</td>
+                                            <td th:text="${item.getCutterLocation()}">x</td>
+                                            <td th:text="${item.getCutterState()}">x</td>
+                                            <td th:text="${item.getCutterLength()}">x</td>
+                                            <td th:text="${item.getCutterDiameter()}">x</td>
+                                            <td th:text="${item.getWearCompensationLength()}">x</td>
+                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>
+                                            <td th:text="${item.getLifeState()}">x</td>
+                                            <td th:text="${item.getCountingMode()}">x</td>
+                                            <td th:text="${item.getInitialLife()}">x</td>
+                                            <td th:text="${item.getUsedLife()}">x</td>
+                                            <td th:text="${item.getResidualLife()}">x</td>
+                                            <td th:text="${item.getAlarmValue()}">x</td>
+                                        </tr>
+                                        </div>
+                                        </tbody>
                                     </table>
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- end row --></div><!-- container-fluid --></div><!-- End Page-content -->
+                </div><!-- end row -->
+
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between" style="margin-bottom: -20px"><h4 class="mb-0">
+                        刀具汇总</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <span class="btn-warning" style="font-size: larger;color: white;margin: 10px;text-align: center">刀具警告数量：<span style="font-size: x-large" th:text="${sum_warnings}"></span></span>
+                            <p style="margin: 10px">警告编号：</p>
+                            <ul th:each="warning:${warnings}">
+                                <li style="height: 5px" th:text="${warning}"></li>
+                            </ul>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <span class="btn-danger" style="font-size: larger;color: white;margin: 10px;text-align: center">刀具报警数量：<span style="font-size: x-large" th:text="${sum_aralms}"></span></span>
+                            <p style="margin: 10px">报警编号：</p>
+                            <ul th:each="aralm:${aralms}">
+                                <li style="height: 5px" th:text="${aralm}"></li>
+                            </ul>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div><!-- container-fluid --></div><!-- End Page-content -->
     </div></div>
         <script src="../static/libs/jquery/jquery.min.js"></script>
         <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
