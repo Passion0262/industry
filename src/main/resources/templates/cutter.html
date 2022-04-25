@@ -156,7 +156,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
-                            <span class="btn-warning" style="font-size: larger;color: white;margin: 10px;text-align: center">刀具警告数量：<span style="font-size: x-large" th:text="${sum_warnings}"></span></span>
+                            <span class="btn-warning   ri-file-warning-line" style="font-size: larger;color: white;margin: 10px;text-align: center">&nbsp;刀具警告数量：<span style="font-size: x-large" th:text="${sum_warnings}"></span></span>
                             <p style="margin: 10px">警告编号：</p>
                             <ul th:each="warning:${warnings}">
                                 <li style="height: 5px" th:text="${warning}"></li>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card">
-                            <span class="btn-danger" style="font-size: larger;color: white;margin: 10px;text-align: center">刀具报警数量：<span style="font-size: x-large" th:text="${sum_aralms}"></span></span>
+                            <span class="btn-danger  ri-file-warning-fill" style="font-size: larger;color: white;margin: 10px;text-align: center">&nbsp;刀具报警数量：<span style="font-size: x-large" th:text="${sum_aralms}"></span></span>
                             <p style="margin: 10px">报警编号：</p>
                             <ul th:each="aralm:${aralms}">
                                 <li style="height: 5px" th:text="${aralm}"></li>

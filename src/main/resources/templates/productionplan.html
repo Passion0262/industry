@@ -107,10 +107,10 @@
                                             <td th:text="${item.getDisqualifiedYield()}">x</td>
                                             <td th:text="${item.getPlanDetails()}">x</td>
                                             <td th:text="${item.getModelType()}">x</td>
-                                            <td th:text="${item.getPlannedstart()}">x</td>
-                                            <td th:text="${item.getPlannedend()}">x</td>
-                                            <td th:text="${item.getActualstart()}">x</td>
-                                            <td th:text="${item.getActualend()}">x</td>
+                                            <td th:text="${#dates.format(item.getPlannedstart(),'yyyy-MM-dd HH:mm:ss')}">x</td>
+                                            <td th:text="${#dates.format(item.getPlannedend(),'yyyy-MM-dd HH:mm:ss')}">x</td>
+                                            <td th:text="${#dates.format(item.getActualstart(),'yyyy-MM-dd HH:mm:ss')}">x</td>
+                                            <td th:text="${#dates.format(item.getActualend(),'yyyy-MM-dd HH:mm:ss')}">x</td>
 <!--                                            <td>-->
 <!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
 <!--                                            </td>-->

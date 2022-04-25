@@ -52,7 +52,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='OP40-车床'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>
@@ -72,7 +72,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='OP50-车床'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>
@@ -96,7 +96,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='OP60-立加'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>
@@ -116,7 +116,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='OP70-立加'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>
@@ -140,7 +140,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='总控PLC-1'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>
@@ -160,7 +160,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='总控PLC-2'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>
@@ -184,7 +184,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='测量机'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>
@@ -204,7 +204,7 @@
                             <div th:each="item:${lists}">
                                 <div th:if="${item.getDeviceName()=='打标机'}">
                                     <span class="fas fa-bell"></span>&nbsp;&nbsp;编号：<span class="span2" th:text="${item.getWarnId()}">报警ID</span>
-                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${item.getWarnTime()}">报警时间</span></br>
+                                    <span class="span2 " style="float:right;margin-right: 20px" th:text="${#dates.format(item.getWarnTime(),'yyyy-MM-dd HH:mm:ss')}">报警时间</span></br>
                                     <span class="fas fa-file-alt"></span>&nbsp;&nbsp;信息：<span class="span2" th:text="${item.getWarnInformation()}">报警信息</span></br>
                                     <hr>
                                 </div>

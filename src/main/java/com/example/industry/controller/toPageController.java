@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,13 +53,9 @@ public class toPageController {
 
     //报警记录分析
     @RequestMapping("/alarm_record")
-    public String alarmRecord(Model model){
+    public String alarmRecord(Model model) throws ParseException {
         List<warn> warnlists = WarnService.listwarn();
-//        System.out.println("==============");
-//        System.out.println(warnlists);
-//        System.out.println("==============");
         model.addAttribute("lists", warnlists);
-
 
         List<String> status_OP40  = Arrays.asList("设定", "bg-primary", "dripicons-code"); //[状态， 对应的颜色， 对应的图标]
         List<String> status_OP50  = Arrays.asList("设定", "bg-primary", "dripicons-code");
@@ -68,7 +65,6 @@ public class toPageController {
         List<String> status_PLC2  = Arrays.asList("设定", "bg-primary", "dripicons-code");
         List<String> status_measure  = Arrays.asList("设定", "bg-primary", "dripicons-code");
         List<String> status_target  = Arrays.asList("设定", "bg-primary", "dripicons-code");
-
 
         //获取设备状态
         for (warn warnlist : warnlists) {
@@ -268,11 +264,11 @@ public class toPageController {
         List<cutter> cutterList = cutterService.listCutter();
         model.addAttribute("cutterList", cutterList);
 
-        List<String> warnings = new ArrayList<>();
-        List<String> aralms = new ArrayList<>();
+        List<String> warnings = new ArrayList<>();//保存警告刀具id
+        List<String> aralms = new ArrayList<>();//保存报警刀具id
 
-        int sum_warnings = 0;
-        int sum_aralms = 0;
+        int sum_warnings = 0;//警告刀具数量
+        int sum_aralms = 0;//报警刀具数量
 
         for (cutter cutter : cutterList) {
             if(cutter.getLifeState().equals("警告")){
@@ -283,15 +279,11 @@ public class toPageController {
                 aralms.add(String.valueOf(cutter.getCutterId()));
             }
         }
-        for (String warning : warnings) {
-            System.out.println(warning);
-        }
 
         model.addAttribute("warnings", warnings);
         model.addAttribute("aralms", aralms);
         model.addAttribute("sum_warnings", sum_warnings);
         model.addAttribute("sum_aralms", sum_aralms);
-
 
         return "cutter";
     }
