@@ -57,6 +57,7 @@ public class toPageController {
         List<warn> warnlists = WarnService.listwarn();
         model.addAttribute("lists", warnlists);
 
+
         List<String> status_OP40  = Arrays.asList("设定", "bg-primary", "dripicons-code"); //[状态， 对应的颜色， 对应的图标]
         List<String> status_OP50  = Arrays.asList("设定", "bg-primary", "dripicons-code");
         List<String> status_OP60  = Arrays.asList("设定", "bg-primary", "dripicons-code");
