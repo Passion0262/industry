@@ -37,7 +37,9 @@ public class toPageController {
 
     //主页
     @RequestMapping("/main")
-    public String index(){
+    public String index(Model model){
+        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate("2022-03-11");
+        model.addAttribute("dataByTime", dataByTime);
         return "index";
     }
 

@@ -2,22 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>工业大数据平台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="This is an industrial big data platform page" name="description" />
+    <meta content="This is an industrial big data platform page" name="description"/>
     <link rel="shortcut icon" href="../static/images/favicon.ico"><!-- jquery.vectormap css -->
-    <link href="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" /><!-- DataTables -->
-    <link href="../static/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" /><!-- Responsive datatable examples -->
-    <link href="../static/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /><!-- Bootstrap Css -->
-    <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" /><!-- Icons Css -->
-    <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css" /><!-- App Css-->
-    <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"
+          type="text/css"/><!-- DataTables -->
+    <link href="../static/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Responsive datatable examples -->
+    <link href="../static/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
+          type="text/css"/><!-- Bootstrap Css -->
+    <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css"/>
+    <!-- Icons Css -->
+    <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css"/><!-- App Css-->
+    <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css"/>
     <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
-
+    <script src="../static/js/echarts.js"></script>
 </head>
 
-<body data-sidebar="dark" class="bg-img bgc">
+<body data-sidebar="dark" class="bgc">
 <!-- Begin page -->
 <div id="layout-wrapper">
 
@@ -28,35 +32,801 @@
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
+
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-                <!-- start page title -->
                 <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box d-flex align-items-center justify-content-between">
-                            <h1 class="mb-0" style="font-size: x-large;color: whitesmoke;margin-left: 450px">欢迎来到主页！</h1>
-<!--无用的右侧标题-->
-<!--                            <div class="page-title-right">-->
-<!--                                <ol class="breadcrumb m-0">-->
-<!--                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Nazox</a></li>-->
-<!--                                    <li class="breadcrumb-item active">Dashboard</li>-->
-<!--                                </ol>-->
-<!--                            </div>-->
+                    <div class="col-lg-4 m-0">
+                        <div class="card">
+                            <div class="card bg-warning mb-2"><!---->
+                                <div class="card-body p-2">
+                                    <h3 class="mt-0 mb-0 text-white">设备状态</h3><!---->
+                                    <h6 class="mt-0 mb-0 text-white">Device Status</h6>
+                                    <!--                                &nbsp;&nbsp;<span class="zhuangT0">[设定]</span>&lt;!&ndash;&ndash;&gt;-->
+                                    <!--                                &nbsp;&nbsp;<span class="zhuangT0">&nbsp;无锡职业技术学院&nbsp;</span>-->
+                                </div>
+                            </div>
+                            <div>
+                                &nbsp;&nbsp;<span class=" ri-stop-mini-fill" style="color: #ff1741"></span>&nbsp;&nbsp;停机<span class="float-right" style="margin-right:20px">3</span>
+                                <hr style="margin:5px"/>
+                                &nbsp;&nbsp;<span class=" ri-play-mini-fill" style="color: #2bdfaa"></span>&nbsp;&nbsp;运行<span class="float-right" style="margin-right:20px">5</span>
+                                <hr style="margin:5px"/>
+                                &nbsp;&nbsp;<span class=" ri-record-circle-line" style="color: #efe24b"></span>&nbsp;&nbsp;空闲<span class="float-right" style="margin-right:20px">4</span>
+                                <hr style="margin:5px"/>
+                                &nbsp;&nbsp;<span class="dripicons-code" style="color: #0a83ff"></span>&nbsp;&nbsp;设定<span class="float-right" style="margin-right:20px">0</span>
+                                <hr style="margin:5px"/>
+                                &nbsp;&nbsp;<span class="ri-wifi-off-fill"></span>&nbsp;&nbsp;离线<span class="float-right" style="margin-right:20px">2</span>
+                                <hr style="margin:5px"/>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card mb-1" style="height: 40px;background-color: #0a83ff">
+                                <div class="card-body p-2">
+                                    <h6 class="mt-0 mb-0 text-white ri-profile-fill">&nbsp;快捷菜单</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 ml-1 pr-0" style="text-align: center">
+                                    <a class="btn btn-primary" href="#" role="button">Link</a>
+                                </div>
+                                <div class="col-lg-3 ml-1 pr-0" style="text-align: center">
+                                    <a class="btn btn-primary" href="#" role="button">Link</a>
+                                </div>
+                                <div class="col-lg-3 ml-1 pr-0" style="text-align: center">
+                                    <a class="btn btn-primary" href="#" role="button">Link</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                </div><!-- end page title -->
 
-            </div><!-- container-fluid -->
-        </div><!-- End Page-content -->
+                    <div class="col-lg-8 m-0">
+                        <div class="card">
+                            <div class="card mb-0" style="height: 40px;background-color: #0a83ff">
+                                <div class="card-body p-2">
+                                    <h6 class="mt-0 mb-0 text-white ri-bar-chart-fill">&nbsp;设备班次稼动率</h6>
+                                </div>
+                            </div>
+                            <div class="card-body" style="height: 300px">
+                                <div id="main" style="width:100%; height:100%"></div>
+                                <script type="text/javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+                                    var myChart = echarts.init(document.getElementById('main'));
+                                    window.onresize = function () { // 监听窗口大小变化
+                                        myChart.resize()       // 自适应大小变化
+                                    }
 
-    </div><!-- end main content-->
+                                    // 指定图表的配置项和数据
+                                    var option = {
+                                        title: {
+                                            text: '设备稼动率',
+                                        },
+                                        tooltip: {
+                                            trigger: 'axis'
+                                        },
+                                        legend: {
+                                            data: '设备稼动率'
+                                        },
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {show: true, type: ['line', 'bar']},
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        xAxis: [
+                                            {
+                                                type: 'category',
+                                                data: ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+                                            }
+                                        ],
+                                        yAxis: [
+                                            {
+                                                type: 'value'
+                                            }
+                                        ],
+                                        series: {
+                                            name: '设备产量',
+                                            type: 'bar',
+                                            data: [0.7, 0.67, 0.87, 0.99, 0.95, 0.69, 0.33, 0.87, 0.99, 0.95, 0.69, 0.33],
+                                            markPoint: {
+                                                data: [
+                                                    {type: 'max', name: '最大值'},
+                                                    {type: 'min', name: '最小值'}
+                                                ]
+                                            },
+                                            markLine: {
+                                                data: [
+                                                    {type: 'average', name: '平均值'}
+                                                ]
+                                            }
+                                        }
+                                    };
 
-</div><!-- END layout-wrapper -->
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
 
 
+                        <div class="row m-0" style="height: 34px">
+                            <div>
+                                <button class="btn btn-sm" style="float: right;background-color: #0073e9">
+                                    <a class="text-white" th:href="@{/time_analysis}">查找其他日期数据</a></button>
+                            </div>
+                        </div>
 
-<!-- JAVASCRIPT -->
+
+                        <div class="row m-0" style="height: 40px;background-color: #0a83ff">
+                            <h6 class="ri-pie-chart-2-fill text-white"
+                                style="line-height: 40px;margin-left: 10px">&nbsp;设备用时比例</h6>
+                            <h6 id="name text-white" style="line-height: 45px;margin-left: 10px"></h6>
+                        </div>
+                        <div class="row m-0" style="height: 40px;background-color: #FFFFFF">
+                            <div style="margin: 5px">
+                                <button class="btn btn-lg color-setting" style="text-align: center;"></button>
+                                <span style="margin-right: 15px">设定</span>
+                                <button class="btn btn-lg color-operate"></button>
+                                <span style="margin-right: 15px">运行</span>
+                                <button class="btn btn-lg color-free"></button>
+                                <span style="margin-right: 15px">空闲</span>
+                                <button class="btn btn-lg color-offline"></button>
+                                <span style="margin-right: 15px">离线</span>
+                                <button class="btn btn-lg color-stop"></button>
+                                <span style="margin-right: 15px">停机</span>
+                            </div>
+                        </div>
+                        <div class="card" style="overflow-x: auto;">
+                            <div class="card-body">
+
+                                <div style="width: 2200px">
+
+                                    <div id="main1"
+                                         style="float:left;width: 300px;height:300px;margin-left-left: 100px"></div>
+
+                                    <div id="main2" style="float:left;width: 300px;height:300px;"></div>
+
+                                    <div id="main3" style="float:left;width: 300px;height:300px;"></div>
+
+                                    <div id="main4" style="float:left;width: 300px;height:300px;"></div>
+
+                                    <div id="main5" style="float:left;width: 300px;height:300px;"></div>
+
+                                    <div id="main6" style="float:left;width: 300px;height:300px;"></div>
+
+                                    <div id="main7" style="float:left;width: 300px;height:300px;"></div>
+                                </div>
+
+
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart = echarts.init(document.getElementById('main1'));
+                                    let d = [[${dataByTime}]]; //内联表达式获取值
+                                    //去掉%号以能转化为数值型
+                                    d[0]['operate'] = d[0]['operate'].replace(/%/, "");
+                                    d[0]['free'] = d[0]['free'].replace(/%/, "");
+                                    d[0]['stop'] = d[0]['stop'].replace(/%/, "");
+                                    d[0]['offline'] = d[0]['offline'].replace(/%/, "");
+                                    d[0]['setting'] = d[0]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option = {
+                                        title: {
+                                            text: d[0]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+                                        legend: {
+                                            orient: 'vertical',
+                                            x: 'left',
+                                            y: 'top',
+                                            padding: [0, 100, 0, 0],
+                                            data: ['运行', '空闲', '停机', '离线', '设定']
+                                        },
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[0]['operate'], name: '运行'},
+                                                    {value: d[0]['free'], name: '空闲'},
+                                                    {value: d[0]['stop'], name: '停机'},
+                                                    {value: d[0]['offline'], name: '离线'},
+                                                    {value: d[0]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart.setOption(option);
+                                </script>
+
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart = echarts.init(document.getElementById('main2'));
+                                    let d = [[${dataByTime}]]; //内联表达式获取值
+                                    //去掉%号以能转化为数值型
+                                    d[1]['operate'] = d[1]['operate'].replace(/%/, "");
+                                    d[1]['free'] = d[1]['free'].replace(/%/, "");
+                                    d[1]['stop'] = d[1]['stop'].replace(/%/, "");
+                                    d[1]['offline'] = d[1]['offline'].replace(/%/, "");
+                                    d[1]['setting'] = d[1]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option2 = {
+                                        title: {
+                                            text: d[1]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[1]['operate'], name: '运行'},
+                                                    {value: d[1]['free'], name: '空闲'},
+                                                    {value: d[1]['stop'], name: '停机'},
+                                                    {value: d[1]['offline'], name: '离线'},
+                                                    {value: d[1]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart.setOption(option2);
+                                </script>
+
+                                <!--==================================================-->
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart3 = echarts.init(document.getElementById('main3'));
+
+                                    //去掉%号以能转化为数值型
+                                    d[2]['operate'] = d[2]['operate'].replace(/%/, "");
+                                    d[2]['free'] = d[2]['free'].replace(/%/, "");
+                                    d[2]['stop'] = d[2]['stop'].replace(/%/, "");
+                                    d[2]['offline'] = d[2]['offline'].replace(/%/, "");
+                                    d[2]['setting'] = d[2]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option3 = {
+                                        title: {
+                                            text: d[2]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[2]['operate'], name: '运行'},
+                                                    {value: d[2]['free'], name: '空闲'},
+                                                    {value: d[2]['stop'], name: '停机'},
+                                                    {value: d[2]['offline'], name: '离线'},
+                                                    {value: d[2]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart3.setOption(option3);
+                                </script>
+
+                                <!--==================================================-->
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart = echarts.init(document.getElementById('main2'));
+
+                                    //去掉%号以能转化为数值型
+                                    d[1]['operate'] = d[1]['operate'].replace(/%/, "");
+                                    d[1]['free'] = d[1]['free'].replace(/%/, "");
+                                    d[1]['stop'] = d[1]['stop'].replace(/%/, "");
+                                    d[1]['offline'] = d[1]['offline'].replace(/%/, "");
+                                    d[1]['setting'] = d[1]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option2 = {
+                                        title: {
+                                            text: d[1]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[1]['operate'], name: '运行'},
+                                                    {value: d[1]['free'], name: '空闲'},
+                                                    {value: d[1]['stop'], name: '停机'},
+                                                    {value: d[1]['offline'], name: '离线'},
+                                                    {value: d[1]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart.setOption(option2);
+                                </script>
+
+                                <!--==================================================-->
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart4 = echarts.init(document.getElementById('main4'));
+
+                                    //去掉%号以能转化为数值型
+                                    d[3]['operate'] = d[3]['operate'].replace(/%/, "");
+                                    d[3]['free'] = d[3]['free'].replace(/%/, "");
+                                    d[3]['stop'] = d[3]['stop'].replace(/%/, "");
+                                    d[3]['offline'] = d[3]['offline'].replace(/%/, "");
+                                    d[3]['setting'] = d[3]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option4 = {
+                                        title: {
+                                            text: d[3]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[3]['operate'], name: '运行'},
+                                                    {value: d[3]['free'], name: '空闲'},
+                                                    {value: d[3]['stop'], name: '停机'},
+                                                    {value: d[3]['offline'], name: '离线'},
+                                                    {value: d[3]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart4.setOption(option4);
+                                </script>
+
+
+                                <!--==================================================-->
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart5 = echarts.init(document.getElementById('main5'));
+
+                                    //去掉%号以能转化为数值型
+                                    d[4]['operate'] = d[4]['operate'].replace(/%/, "");
+                                    d[4]['free'] = d[4]['free'].replace(/%/, "");
+                                    d[4]['stop'] = d[4]['stop'].replace(/%/, "");
+                                    d[4]['offline'] = d[4]['offline'].replace(/%/, "");
+                                    d[4]['setting'] = d[4]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option5 = {
+                                        title: {
+                                            text: d[4]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[4]['operate'], name: '运行'},
+                                                    {value: d[4]['free'], name: '空闲'},
+                                                    {value: d[4]['stop'], name: '停机'},
+                                                    {value: d[4]['offline'], name: '离线'},
+                                                    {value: d[4]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart5.setOption(option5);
+                                </script>
+
+                                <!--==================================================-->
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart6 = echarts.init(document.getElementById('main6'));
+
+                                    //去掉%号以能转化为数值型
+                                    d[5]['operate'] = d[5]['operate'].replace(/%/, "");
+                                    d[5]['free'] = d[5]['free'].replace(/%/, "");
+                                    d[5]['stop'] = d[5]['stop'].replace(/%/, "");
+                                    d[5]['offline'] = d[5]['offline'].replace(/%/, "");
+                                    d[5]['setting'] = d[5]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option6 = {
+                                        title: {
+                                            text: d[5]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[5]['operate'], name: '运行'},
+                                                    {value: d[5]['free'], name: '空闲'},
+                                                    {value: d[5]['stop'], name: '停机'},
+                                                    {value: d[5]['offline'], name: '离线'},
+                                                    {value: d[5]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart6.setOption(option6);
+                                </script>
+
+                                <!--==================================================-->
+                                <script th:inline="javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+
+                                    var myChart7 = echarts.init(document.getElementById('main7'));
+
+                                    //去掉%号以能转化为数值型
+                                    d[6]['operate'] = d[6]['operate'].replace(/%/, "");
+                                    d[6]['free'] = d[6]['free'].replace(/%/, "");
+                                    d[6]['stop'] = d[6]['stop'].replace(/%/, "");
+                                    d[6]['offline'] = d[6]['offline'].replace(/%/, "");
+                                    d[6]['setting'] = d[6]['setting'].replace(/%/, "");
+
+                                    // 指定图表的配置项和数据
+                                    var option7 = {
+                                        title: {
+                                            text: d[6]['device'],
+                                            x: 'center'
+                                        },
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                        },
+
+                                        color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
+                                        toolbox: {
+                                            show: true,
+                                            feature: {
+                                                mark: {show: true},
+                                                dataView: {show: true, readOnly: false},
+                                                magicType: {
+                                                    show: true,
+                                                    type: ['pie', 'funnel'],
+                                                    option: {
+                                                        funnel: {
+                                                            x: '25%',
+                                                            width: '50%',
+                                                            funnelAlign: 'left',
+                                                            max: 1548
+                                                        }
+                                                    }
+                                                },
+                                                restore: {show: true},
+                                                saveAsImage: {show: true}
+                                            }
+                                        },
+                                        calculable: true,
+                                        series: [
+                                            {
+                                                name: '',
+                                                type: 'pie',
+                                                radius: '55%',
+                                                center: ['50%', '60%'],
+                                                data: [
+                                                    {value: d[6]['operate'], name: '运行'},
+                                                    {value: d[6]['free'], name: '空闲'},
+                                                    {value: d[6]['stop'], name: '停机'},
+                                                    {value: d[6]['offline'], name: '离线'},
+                                                    {value: d[6]['setting'], name: '设定'},
+                                                ],
+                                                // label: {
+                                                //     normal: {
+                                                //         position: 'outer',
+                                                //         show: true,
+                                                //         formatter: '{b}' + ' ' + '{d}%'
+                                                //     }
+                                                // }
+                                            }
+                                        ]
+                                    };
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart7.setOption(option7);
+                                </script>
+
+                                <script type="text/javascript">
+                                    $("#name").html(d[0]['date']);
+                                </script>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- end row -->
+
+
+</div><!-- container-fluid -->
+
+
+</div><!-- End Page-content -->
+
+
+<!-- Right bar overlay-->
 <script src="../static/libs/jquery/jquery.min.js"></script>
 <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../static/libs/metismenu/metisMenu.min.js"></script>
@@ -64,15 +834,14 @@
 <script src="../static/libs/node-waves/waves.min.js"></script><!-- apexcharts -->
 <script src="../static/libs/apexcharts/apexcharts.min.js"></script><!-- jquery.vectormap map -->
 <script src="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script><!-- Required datatable js -->
+<script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
+<!-- Required datatable js -->
 <script src="../static/libs/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../static/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script><!-- Responsive examples -->
 <script src="../static/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 <script src="../static/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 <script src="../static/js/pages/dashboard.init.js"></script>
 <script src="../static/js/app.js"></script>
-
-
 </body>
 
 </html>
