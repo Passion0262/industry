@@ -42,13 +42,6 @@ public class toPageController {
 
         List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate("2022-03-11");
 
-        //打印测试
-        System.out.println("=====================!");
-        for (TimeAnalysis timeAnalysis : dataByTime) {
-            System.out.println("data:"+timeAnalysis);
-        }
-        System.out.println("=====================!");
-
         model.addAttribute("dataByTime", dataByTime);
 
         return "index";

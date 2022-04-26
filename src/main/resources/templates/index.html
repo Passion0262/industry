@@ -48,21 +48,27 @@
                                 </div>
                             </div>
                             <div>
-                                &nbsp;&nbsp;<span class=" ri-stop-mini-fill" style="color: #ff1741"></span>&nbsp;&nbsp;停机<span class="float-right" style="margin-right:20px">3</span>
+                                &nbsp;&nbsp;<span class=" ri-stop-mini-fill" style="color: #ff1741"></span>&nbsp;&nbsp;停机<span
+                                    class="float-right" style="margin-right:20px">3</span>
                                 <hr style="margin:5px"/>
-                                &nbsp;&nbsp;<span class=" ri-play-mini-fill" style="color: #2bdfaa"></span>&nbsp;&nbsp;运行<span class="float-right" style="margin-right:20px">5</span>
+                                &nbsp;&nbsp;<span class=" ri-play-mini-fill" style="color: #2bdfaa"></span>&nbsp;&nbsp;运行<span
+                                    class="float-right" style="margin-right:20px">5</span>
                                 <hr style="margin:5px"/>
-                                &nbsp;&nbsp;<span class=" ri-record-circle-line" style="color: #efe24b"></span>&nbsp;&nbsp;空闲<span class="float-right" style="margin-right:20px">4</span>
+                                &nbsp;&nbsp;<span class=" ri-record-circle-line" style="color: #efe24b"></span>&nbsp;&nbsp;空闲<span
+                                    class="float-right" style="margin-right:20px">4</span>
                                 <hr style="margin:5px"/>
-                                &nbsp;&nbsp;<span class="dripicons-code" style="color: #0a83ff"></span>&nbsp;&nbsp;设定<span class="float-right" style="margin-right:20px">0</span>
+                                &nbsp;&nbsp;<span class="dripicons-code"
+                                                  style="color: #0a83ff"></span>&nbsp;&nbsp;设定<span class="float-right"
+                                                                                                    style="margin-right:20px">0</span>
                                 <hr style="margin:5px"/>
-                                &nbsp;&nbsp;<span class="ri-wifi-off-fill"></span>&nbsp;&nbsp;离线<span class="float-right" style="margin-right:20px">2</span>
+                                &nbsp;&nbsp;<span class="ri-wifi-off-fill"></span>&nbsp;&nbsp;离线<span
+                                    class="float-right" style="margin-right:20px">2</span>
                                 <hr style="margin:5px"/>
                             </div>
                         </div>
 
                         <div class="card">
-                            <div class="card mb-1" style="height: 40px;background-color: #0a83ff">
+                            <div class="card mb-1" style="background-color: #0a83ff">
                                 <div class="card-body p-2">
                                     <h6 class="mt-0 mb-0 text-white ri-profile-fill">&nbsp;快捷菜单</h6>
                                 </div>
@@ -84,12 +90,12 @@
 
                     <div class="col-lg-8 m-0">
                         <div class="card">
-                            <div class="card mb-0" style="height: 40px;background-color: #0a83ff">
+                            <div class="card mb-0" style="background-color: #0a83ff">
                                 <div class="card-body p-2">
                                     <h6 class="mt-0 mb-0 text-white ri-bar-chart-fill">&nbsp;设备班次稼动率</h6>
                                 </div>
                             </div>
-                            <div class="card-body" style="height: 300px">
+                            <div class="card-body" style="width: 100%; height: 300px">
                                 <div id="main" style="width:100%; height:100%"></div>
                                 <script type="text/javascript">
                                     // 基于准备好的dom，初始化echarts实例
@@ -163,28 +169,34 @@
                             </div>
                         </div>
 
+                        <!--                        <div class="card mb-1" style="height: 40px;background-color: #0a83ff">-->
+                        <!--                            <div class="card-body p-2">-->
+                        <!--                                <h6 class="mt-0 mb-0 text-white ri-profile-fill">&nbsp;快捷菜单</h6>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
-                        <div class="row m-0" style="height: 40px;background-color: #0a83ff">
-                            <h6 class="ri-pie-chart-2-fill text-white"
-                                style="line-height: 40px;margin-left: 10px">&nbsp;设备用时比例</h6>
-                            <h6 id="name text-white" style="line-height: 45px;margin-left: 10px"></h6>
-                        </div>
-                        <div class="row m-0" style="height: 40px;background-color: #FFFFFF">
-                            <div style="margin: 5px">
-                                <button class="btn btn-lg color-setting" style="text-align: center;"></button>
-                                <span style="margin-right: 15px">设定</span>
-                                <button class="btn btn-lg color-operate"></button>
-                                <span style="margin-right: 15px">运行</span>
-                                <button class="btn btn-lg color-free"></button>
-                                <span style="margin-right: 15px">空闲</span>
-                                <button class="btn btn-lg color-offline"></button>
-                                <span style="margin-right: 15px">离线</span>
-                                <button class="btn btn-lg color-stop"></button>
-                                <span style="margin-right: 15px">停机</span>
+                        <div class="card">
+                            <div class="card mb-0" style="background-color: #0a83ff">
+                                <div class="card-body pt-2 pb-0">
+                                    <h6 class="ri-pie-chart-2-fill text-white mt-0 mb-0">&nbsp;设备用时比例</h6>
+                                    <h6 id="name" class="text-white"></h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card" style="overflow-x: auto;">
-                            <div class="card-body">
+                            <div class="card-body p-0"><!-- style="height: 40px;background-color: #FFFFFF"-->
+                                <div style="margin: 5px">
+                                    <button class="btn btn-lg color-setting" style="text-align: center;"></button>
+                                    <span style="margin-right: 15px">设定</span>
+                                    <button class="btn btn-lg color-operate"></button>
+                                    <span style="margin-right: 15px">运行</span>
+                                    <button class="btn btn-lg color-free"></button>
+                                    <span style="margin-right: 15px">空闲</span>
+                                    <button class="btn btn-lg color-offline"></button>
+                                    <span style="margin-right: 15px">离线</span>
+                                    <button class="btn btn-lg color-stop"></button>
+                                    <span style="margin-right: 15px">停机</span>
+                                </div>
+                            </div>
+                            <div class="card-body" style="overflow-x: auto;">
 
                                 <div style="width: 2200px">
 
@@ -226,13 +238,6 @@
                                         tooltip: {
                                             trigger: 'item',
                                             formatter: "{a} <br/>{b} : {c} ({d}%)"
-                                        },
-                                        legend: {
-                                            orient: 'vertical',
-                                            x: 'left',
-                                            y: 'top',
-                                            padding: [0, 100, 0, 0],
-                                            data: ['运行', '空闲', '停机', '离线', '设定']
                                         },
                                         color: ['#91cc95', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
                                         toolbox: {
@@ -807,12 +812,8 @@
                                     $("#name").html(d[0]['date']);
                                 </script>
                             </div>
-
-
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
