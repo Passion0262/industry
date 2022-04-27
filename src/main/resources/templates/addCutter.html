@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>工业大数据平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="This is an industrial big data platform page" name="description"/>
+    <link rel="shortcut icon" href="../static/images/favicon.ico"><!-- jquery.vectormap css -->
+    <link href="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"
+          type="text/css"/><!-- DataTables -->
+    <link href="../static/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Responsive datatable examples -->
+    <link href="../static/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
+          type="text/css"/><!-- Bootstrap Css -->
+    <link href="../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css"/>
+    <!-- Icons Css -->
+    <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css"/><!-- App Css-->
+    <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
+    <!--    <script src="../static/js/echarts.js"></script>-->
+</head>
+
+<body data-sidebar="dark" class="bgc"><!-- Begin page -->
+<div id="layout-wrapper">
+
+    <!--topbar and leftbar start-->
+    <div th:include="~{common::TopAndLeft}"></div>
+    <!--topbar and leftbar end-->
+
+    <!-- Start right Content here --><!-- ============================================================== -->
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid"><!-- start page title -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body  pt-0">
+                                <form th:action="@{/addCutter}" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-12 m-o">
+                                            <h4 class="mb-0" style="float: left">新增刀具</h4>
+                                            <button type="submit" class="btn btn-primary" style="float: right;margin-right: 50px">提交</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 m-0">
+                                            <div class="form-group">
+                                                <label for="Input1">刀具编号</label>
+                                                <input type="text" class="form-control" id="Input1"
+                                                       placeholder="" name="cutterId">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input2">刀具类型</label>
+                                                <input type="text" class="form-control" id="Input2"
+                                                       placeholder="" name="cutterCategory">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input3">刀具型号</label>
+                                                <input type="text" class="form-control" id="Input3"
+                                                       placeholder="" name="cutterType">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input4">设备编号</label>
+                                                <input type="text" class="form-control" id="Input4"
+                                                       placeholder="" name="deviceId">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input5">设备名称</label>
+                                                <select class="form-control" id="Input5" name="deviceName">
+                                                    <option>总控PLC-1</option>
+                                                    <option>总控PLC-2</option>
+                                                    <option>OP40-车床</option>
+                                                    <option>OP50-车床</option>
+                                                    <option>OP60-立加</option>
+                                                    <option>OP70-立加</option>
+                                                    <option>测量机</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Input6">刀具刀位</label>
+                                                <input type="text" class="form-control" id="Input6"
+                                                       placeholder="" name="cutterLocation">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input7">使用状态</label>
+                                                <input type="text" class="form-control" id="Input7"
+                                                       placeholder="" name="cutterState">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input8">刀具长/X</label>
+                                                <input type="text" class="form-control" id="Input8"
+                                                       placeholder="" name="cutterLength">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input9">刀具径/z</label>
+                                                <input type="text" class="form-control" id="Input9"
+                                                       placeholder="" name="cutterDiameter">
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="col-lg-6 m-0">
+                                            <div class="form-group">
+                                                <label for="Input10">磨损补偿长/X</label>
+                                                <input type="text" class="form-control" id="Input10"
+                                                       placeholder="" name="wearCompensationLength">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input11">磨损补偿长/Z</label>
+                                                <input type="text" class="form-control" id="Input11"
+                                                       placeholder="" name="wearCompensationDiameter">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Input12">寿命状态</label>
+                                                <select class="form-control" id="Input12" name="lifeState">
+                                                    <option>正常</option>
+                                                    <option>预警</option>
+                                                    <option>警告</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Input13">寿命计数方式</label>
+                                                <select class="form-control" id="Input13" name="countingMode">
+                                                    <option>次数</option>
+                                                    <option>(待填...)</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Input14">初始寿命</label>
+                                                <input type="text" class="form-control" id="Input14"
+                                                       placeholder="" name="initialLife">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input15">已用寿命</label>
+                                                <input type="text" class="form-control" id="Input15"
+                                                       placeholder="" name="usedLife">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input16">剩余寿命</label>
+                                                <input type="text" class="form-control" id="Input16"
+                                                       placeholder="" name="residualLife">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Input17">预警值</label>
+                                                <input type="text" class="form-control" id="Input17"
+                                                       placeholder="" name="alarmValue">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end row --><!-- container-fluid --></div><!-- End Page-content -->
+        </div>
+    </div>
+    <script src="../static/libs/jquery/jquery.min.js"></script>
+    <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/libs/metismenu/metisMenu.min.js"></script>
+    <script src="../static/libs/simplebar/simplebar.min.js"></script>
+    <script src="../static/libs/node-waves/waves.min.js"></script><!-- apexcharts -->
+    <script src="../static/libs/apexcharts/apexcharts.min.js"></script><!-- jquery.vectormap map -->
+    <script src="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
+    <!-- Required datatable js -->
+    <script src="../static/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../static/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="../static/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../static/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="../static/js/pages/dashboard.init.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

@@ -45,18 +45,20 @@
 
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="row m-0" style="height: 34px">
+                            <div class="mb-3">
+                                <button class="btn btn-sm" style="font-size: medium;float: right;background-color: #0eb1e3">
+                                    <a class="text-white" th:href="@{/addCutter}">新增刀具</a></button>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card-body  pt-0">
-<!--                                <ul class="nav nav-tabs nav-tabs-custom mb-4">-->
-<!--                                    <li class="nav-item"><a class="nav-link font-weight-bold p-3 active" href="#">全部刀具信息</a></li>-->
-<!--                                    <li class="nav-item"><a class="nav-link p-3 font-weight-bold" th:href="@{/cutter_all}">汇总查询</a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
                                 <div class="table-responsive">
-                                    <table class="table table-centered datatable dt-responsive nowrap "
+                                    <table class="table table-centered datatable dt-responsive nowrap table-bordered border"
                                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead class="thead-light">
                                         <tr>
+                                            <th style="text-align: center">编辑</th>
                                             <th>刀具编号</th>
                                             <th>刀具类型</th>
                                             <th>刀具型号</th>
@@ -81,6 +83,8 @@
                                         <tbody th:each="item:${cutterList}" >
                                         <div th:switch="${item.getLifeState()}">
                                         <tr th:case="警告" class="btn-warning">
+                                            <td> <span class="btn btn-sm btn-danger"><a
+                                                    th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
                                             <td th:text="${item.getCutterId()}">x</td>
                                             <td th:text="${item.getCutterCategory()}">x</td>
                                             <td th:text="${item.getCutterType()}">x</td>
@@ -100,6 +104,8 @@
                                             <td th:text="${item.getAlarmValue()}">x</td>
                                         </tr>
                                         <tr  th:case="报警" class="btn-danger">
+                                            <td> <span class="btn btn-sm btn-danger"><a
+                                                    th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
                                             <td th:text="${item.getCutterId()}">x</td>
                                             <td th:text="${item.getCutterCategory()}">x</td>
                                             <td th:text="${item.getCutterType()}">x</td>
@@ -118,7 +124,9 @@
                                             <td th:text="${item.getResidualLife()}">x</td>
                                             <td th:text="${item.getAlarmValue()}">x</td>
                                         </tr>
-                                        <tr  th:case="*" class="btn-danger">
+                                        <tr  th:case="*" class="">
+                                            <td> <span class="btn btn-sm btn-danger"><a
+                                                    th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
                                             <td th:text="${item.getCutterId()}">x</td>
                                             <td th:text="${item.getCutterCategory()}">x</td>
                                             <td th:text="${item.getCutterType()}">x</td>

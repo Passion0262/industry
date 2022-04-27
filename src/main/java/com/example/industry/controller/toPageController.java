@@ -9,6 +9,9 @@ import com.example.industry.entity.Device.Device;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.text.ParseException;
@@ -38,12 +41,8 @@ public class toPageController {
     //主页
     @RequestMapping("/main")
     public String index1(Model model){
-
-
         List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate("2022-03-11");
-
         model.addAttribute("dataByTime", dataByTime);
-
         return "index";
     }
 
@@ -62,7 +61,6 @@ public class toPageController {
     public String alarmRecord(Model model) throws ParseException {
         List<warn> warnlists = WarnService.listwarn();
         model.addAttribute("lists", warnlists);
-
 
         List<String> status_OP40  = Arrays.asList("设定", "bg-primary", "dripicons-code"); //[状态， 对应的颜色， 对应的图标]
         List<String> status_OP50  = Arrays.asList("设定", "bg-primary", "dripicons-code");
@@ -302,6 +300,38 @@ public class toPageController {
     }
 //-------------------------------------------
 
+
+
+
+    //----------------增加刀具-----------------
+    @GetMapping("/addCutter")
+    public String addCutter() {
+        return "addCutter";//插入失败重定向展示页面
+    }
+
+    @PostMapping("/addCutter")
+    public String addCutter(cutter cutter) {
+//        System.out.println("进入第二个addCutter1方法了！");
+        boolean insert = cutterService.insertCutter(cutter);
+        if(insert){
+            System.out.println("插入成功："+cutter);
+        }else{
+            System.out.println("插入失败");
+        }
+        return "redirect:cutter";//插入失败重定向展示页面
+    }
+
+    @RequestMapping("/deleteCutter/{cutterId}")
+    public String deleteCutter(@PathVariable("cutterId") int cutterId) {
+        System.out.println("进入deleteCutter方法！");
+        boolean delete = cutterService.deleteById(cutterId);
+        if(delete){
+            System.out.println("删除成功");
+        }else{
+            System.out.println("删除失败");
+        }
+        return "redirect:/cutter";//删除失败重定向展示页面
+    }
 //----------------------生产计划-------------------------
     @RequestMapping("/productionplan")
     public String productionplan(Model model){
