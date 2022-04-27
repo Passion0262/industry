@@ -24,7 +24,7 @@ public class cutterServicelmpl implements cutterService {
     public List<cutter> getByType(String cutterType) {return cutterMappper.getByType(cutterType);}
 
     @Override
-    public List<cutter> getByCategory(String cutterCategory) {return cutterMappper.getByType(cutterCategory);}
+    public List<cutter> getByCategory(String cutterCategory) {return cutterMappper.getByCategory(cutterCategory);}
 
     @Override
     public List<cutter> getByDeviceId(int deviceId) {return cutterMappper.getByDeviceId(deviceId);}

@@ -13,7 +13,7 @@
     <link href="../static/css/icons.min.css" rel="stylesheet" type="text/css" /><!-- App Css-->
     <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
-<!--    <script src="../static/js/echarts.js"></script>-->
+    <!--    <script src="../static/js/echarts.js"></script>-->
 </head>
 
 <body data-sidebar="dark" class="bgc"><!-- Begin page -->
@@ -31,13 +31,13 @@
                     <div class="col-12">
                         <div class="page-title-box d-flex align-items-center justify-content-between" style="margin-bottom: -20px"><h4 class="mb-0">
                             刀具信息</h4>
-<!--          无用的右侧标题                  -->
-<!--                            <div class="page-title-right">-->
-<!--                                <ol class="breadcrumb m-0">-->
-<!--                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>-->
-<!--                                    <li class="breadcrumb-item active">Orders</li>-->
-<!--                                </ol>-->
-<!--                            </div>-->
+                            <!--          无用的右侧标题                  -->
+                            <!--                            <div class="page-title-right">-->
+                            <!--                                <ol class="breadcrumb m-0">-->
+                            <!--                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>-->
+                            <!--                                    <li class="breadcrumb-item active">Orders</li>-->
+                            <!--                                </ol>-->
+                            <!--                            </div>-->
                         </div>
                     </div>
                 </div><!-- end page title -->
@@ -46,10 +46,20 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row m-0" style="height: 34px">
-                            <div class="mb-3">
-                                <button class="btn btn-sm" style="font-size: medium;float: right;background-color: #0eb1e3">
-                                    <a class="text-white" th:href="@{/addCutter}">新增刀具</a></button>
+                            <div class="button-items">
+                                <button type="button" class="btn btn-primary waves-effect waves-light"><a class="text-white" th:href="@{/addCutter}">新增刀具
+                                </a></button>
+
+                                <button type="button" class="btn btn-info waves-effect waves-light"><a class="text-white" th:href="@{/byCutterType}">根据刀具型号查找 </a></button>
+                                <button type="button" class="btn btn-info waves-effect waves-light"><a class="text-white" th:href="@{/byCutterCategory}">根据刀具类型查找 </a></button>
+                                <button type="button" class="btn btn-info waves-effect waves-light"><a class="text-white" th:href="@{/byDeviceId}">根据设备编号查找 </a></button>
+                                <button type="button" class="btn btn-info waves-effect waves-light"><a class="text-white" th:href="@{/byCutterLocation}">根据刀具刀位查找 </a></button>
+                                <button type="button" class="btn btn-info waves-effect waves-light"><a class="text-white" th:href="@{/byLifeState}">根据寿命状态查找 </a></button>
+
+
                             </div>
+
+
                         </div>
                         <div class="card">
                             <div class="card-body  pt-0">
@@ -82,69 +92,69 @@
 
                                         <tbody th:each="item:${cutterList}" >
                                         <div th:switch="${item.getLifeState()}">
-                                        <tr th:case="警告" class="btn-warning">
-                                            <td> <span class="btn btn-sm btn-danger"><a
-                                                    th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
-                                            <td th:text="${item.getCutterId()}">x</td>
-                                            <td th:text="${item.getCutterCategory()}">x</td>
-                                            <td th:text="${item.getCutterType()}">x</td>
-                                            <td th:text="${item.getDeviceId()}">x</td>
-                                            <td th:text="${item.getDeviceName()}">x</td>
-                                            <td th:text="${item.getCutterLocation()}">x</td>
-                                            <td th:text="${item.getCutterState()}">x</td>
-                                            <td th:text="${item.getCutterLength()}">x</td>
-                                            <td th:text="${item.getCutterDiameter()}">x</td>
-                                            <td th:text="${item.getWearCompensationLength()}">x</td>
-                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>
-                                            <td th:text="${item.getLifeState()}">x</td>
-                                            <td th:text="${item.getCountingMode()}">x</td>
-                                            <td th:text="${item.getInitialLife()}">x</td>
-                                            <td th:text="${item.getUsedLife()}">x</td>
-                                            <td th:text="${item.getResidualLife()}">x</td>
-                                            <td th:text="${item.getAlarmValue()}">x</td>
-                                        </tr>
-                                        <tr  th:case="报警" class="btn-danger">
-                                            <td> <span class="btn btn-sm btn-danger"><a
-                                                    th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
-                                            <td th:text="${item.getCutterId()}">x</td>
-                                            <td th:text="${item.getCutterCategory()}">x</td>
-                                            <td th:text="${item.getCutterType()}">x</td>
-                                            <td th:text="${item.getDeviceId()}">x</td>
-                                            <td th:text="${item.getDeviceName()}">x</td>
-                                            <td th:text="${item.getCutterLocation()}">x</td>
-                                            <td th:text="${item.getCutterState()}">x</td>
-                                            <td th:text="${item.getCutterLength()}">x</td>
-                                            <td th:text="${item.getCutterDiameter()}">x</td>
-                                            <td th:text="${item.getWearCompensationLength()}">x</td>
-                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>
-                                            <td th:text="${item.getLifeState()}">x</td>
-                                            <td th:text="${item.getCountingMode()}">x</td>
-                                            <td th:text="${item.getInitialLife()}">x</td>
-                                            <td th:text="${item.getUsedLife()}">x</td>
-                                            <td th:text="${item.getResidualLife()}">x</td>
-                                            <td th:text="${item.getAlarmValue()}">x</td>
-                                        </tr>
-                                        <tr  th:case="*" class="">
-                                            <td> <span class="btn btn-sm btn-danger"><a
-                                                    th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
-                                            <td th:text="${item.getCutterId()}">x</td>
-                                            <td th:text="${item.getCutterCategory()}">x</td>
-                                            <td th:text="${item.getCutterType()}">x</td>
-                                            <td th:text="${item.getDeviceId()}">x</td>
-                                            <td th:text="${item.getDeviceName()}">x</td>
-                                            <td th:text="${item.getCutterLocation()}">x</td>
-                                            <td th:text="${item.getCutterState()}">x</td>
-                                            <td th:text="${item.getCutterLength()}">x</td>
-                                            <td th:text="${item.getCutterDiameter()}">x</td>
-                                            <td th:text="${item.getWearCompensationLength()}">x</td>
-                                            <td th:text="${item.getWearCompensationDiameter()}">x</td>
-                                            <td th:text="${item.getLifeState()}">x</td>
-                                            <td th:text="${item.getCountingMode()}">x</td>
-                                            <td th:text="${item.getInitialLife()}">x</td>
-                                            <td th:text="${item.getUsedLife()}">x</td>
-                                            <td th:text="${item.getResidualLife()}">x</td>
-                                            <td th:text="${item.getAlarmValue()}">x</td>
-                                        </tr>
+                                            <tr th:case="警告" class="btn-warning">
+                                                <td class="bg-white"> <span class="btn btn-sm btn-danger"><a
+                                                        th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
+                                                <td th:text="${item.getCutterId()}">x</td>
+                                                <td th:text="${item.getCutterCategory()}">x</td>
+                                                <td th:text="${item.getCutterType()}">x</td>
+                                                <td th:text="${item.getDeviceId()}">x</td>
+                                                <td th:text="${item.getDeviceName()}">x</td>
+                                                <td th:text="${item.getCutterLocation()}">x</td>
+                                                <td th:text="${item.getCutterState()}">x</td>
+                                                <td th:text="${item.getCutterLength()}">x</td>
+                                                <td th:text="${item.getCutterDiameter()}">x</td>
+                                                <td th:text="${item.getWearCompensationLength()}">x</td>
+                                                <td th:text="${item.getWearCompensationDiameter()}">x</td>
+                                                <td th:text="${item.getLifeState()}">x</td>
+                                                <td th:text="${item.getCountingMode()}">x</td>
+                                                <td th:text="${item.getInitialLife()}">x</td>
+                                                <td th:text="${item.getUsedLife()}">x</td>
+                                                <td th:text="${item.getResidualLife()}">x</td>
+                                                <td th:text="${item.getAlarmValue()}">x</td>
+                                            </tr>
+                                            <tr  th:case="报警" class="btn-danger">
+                                                <td class="bg-white"> <span class="btn btn-sm btn-danger"><a
+                                                        th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
+                                                <td th:text="${item.getCutterId()}">x</td>
+                                                <td th:text="${item.getCutterCategory()}">x</td>
+                                                <td th:text="${item.getCutterType()}">x</td>
+                                                <td th:text="${item.getDeviceId()}">x</td>
+                                                <td th:text="${item.getDeviceName()}">x</td>
+                                                <td th:text="${item.getCutterLocation()}">x</td>
+                                                <td th:text="${item.getCutterState()}">x</td>
+                                                <td th:text="${item.getCutterLength()}">x</td>
+                                                <td th:text="${item.getCutterDiameter()}">x</td>
+                                                <td th:text="${item.getWearCompensationLength()}">x</td>
+                                                <td th:text="${item.getWearCompensationDiameter()}">x</td>
+                                                <td th:text="${item.getLifeState()}">x</td>
+                                                <td th:text="${item.getCountingMode()}">x</td>
+                                                <td th:text="${item.getInitialLife()}">x</td>
+                                                <td th:text="${item.getUsedLife()}">x</td>
+                                                <td th:text="${item.getResidualLife()}">x</td>
+                                                <td th:text="${item.getAlarmValue()}">x</td>
+                                            </tr>
+                                            <tr  th:case="*" class="">
+                                                <td class="bg-white"> <span class="btn btn-sm btn-danger"><a
+                                                        th:href="@{/deleteCutter/}+${item.getCutterId()}" class="text-white border-warning">删除</a></span></td>
+                                                <td th:text="${item.getCutterId()}">x</td>
+                                                <td th:text="${item.getCutterCategory()}">x</td>
+                                                <td th:text="${item.getCutterType()}">x</td>
+                                                <td th:text="${item.getDeviceId()}">x</td>
+                                                <td th:text="${item.getDeviceName()}">x</td>
+                                                <td th:text="${item.getCutterLocation()}">x</td>
+                                                <td th:text="${item.getCutterState()}">x</td>
+                                                <td th:text="${item.getCutterLength()}">x</td>
+                                                <td th:text="${item.getCutterDiameter()}">x</td>
+                                                <td th:text="${item.getWearCompensationLength()}">x</td>
+                                                <td th:text="${item.getWearCompensationDiameter()}">x</td>
+                                                <td th:text="${item.getLifeState()}">x</td>
+                                                <td th:text="${item.getCountingMode()}">x</td>
+                                                <td th:text="${item.getInitialLife()}">x</td>
+                                                <td th:text="${item.getUsedLife()}">x</td>
+                                                <td th:text="${item.getResidualLife()}">x</td>
+                                                <td th:text="${item.getAlarmValue()}">x</td>
+                                            </tr>
                                         </div>
                                         </tbody>
                                     </table>
@@ -189,19 +199,19 @@
 
             </div><!-- container-fluid --></div><!-- End Page-content -->
     </div></div>
-        <script src="../static/libs/jquery/jquery.min.js"></script>
-        <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="../static/libs/metismenu/metisMenu.min.js"></script>
-        <script src="../static/libs/simplebar/simplebar.min.js"></script>
-        <script src="../static/libs/node-waves/waves.min.js"></script><!-- apexcharts -->
-        <script src="../static/libs/apexcharts/apexcharts.min.js"></script><!-- jquery.vectormap map -->
-        <script src="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script><!-- Required datatable js -->
-        <script src="../static/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="../static/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script><!-- Responsive examples -->
-        <script src="../static/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="../static/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-        <script src="../static/js/pages/dashboard.init.js"></script>
-        <script src="../static/js/app.js"></script>
+<script src="../static/libs/jquery/jquery.min.js"></script>
+<script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/libs/metismenu/metisMenu.min.js"></script>
+<script src="../static/libs/simplebar/simplebar.min.js"></script>
+<script src="../static/libs/node-waves/waves.min.js"></script><!-- apexcharts -->
+<script src="../static/libs/apexcharts/apexcharts.min.js"></script><!-- jquery.vectormap map -->
+<script src="../static/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../static/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script><!-- Required datatable js -->
+<script src="../static/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../static/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script><!-- Responsive examples -->
+<script src="../static/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../static/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<script src="../static/js/pages/dashboard.init.js"></script>
+<script src="../static/js/app.js"></script>
 </body>
 </html>

@@ -318,7 +318,7 @@ public class toPageController {
         }else{
             System.out.println("插入失败");
         }
-        return "redirect:cutter";//插入失败重定向展示页面
+        return "redirect:/cutter";//重定向展示页面
     }
 
     @RequestMapping("/deleteCutter/{cutterId}")
@@ -330,7 +330,7 @@ public class toPageController {
         }else{
             System.out.println("删除失败");
         }
-        return "redirect:/cutter";//删除失败重定向展示页面
+        return "redirect:/cutter";//重定向展示页面
     }
 //----------------------生产计划-------------------------
     @RequestMapping("/productionplan")
@@ -342,16 +342,11 @@ public class toPageController {
 
 
 
-
-
 //----------------------test-----------------------
     @RequestMapping("/test")
     public String test(){
         return "test";
     }
-
-
-
 
 
 }
