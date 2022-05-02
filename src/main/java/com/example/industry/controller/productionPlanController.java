@@ -20,12 +20,15 @@ public class productionPlanController {
     @RequestMapping("/productionplan")
     public String productionplan(Model model, @RequestParam Map<String, String> map){
         List<productionplan> planList = new ArrayList<productionplan>();
-        if (map.isEmpty()){ //查询所有记录
+        if (map.get("startTime")==null || map.get("endTime")==null || map.get("startTime")=="" || map.get("endTime")==""){ //查询所有记录
             System.out.println("参数为空");
             planList = productionplanService.getall();
+            for (productionplan productionplan : planList) {
+                System.out.println(productionplan);
+            }
         }
         else{ //按照日期查询
-            System.out.println(map);
+//            System.out.println(map);
             //######################时间格式修改###########################
             map.put("startTime", map.get("startTime").replaceAll("/", "-"));
             map.put("startTime", map.get("startTime").replaceAll("T", " "));
