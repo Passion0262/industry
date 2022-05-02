@@ -20,7 +20,6 @@
     <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
     <script src="../static/js/echarts.js"></script>
     <script src="../static/libs/jquery/jquery.min.js"></script>
-    <link href="https://cdn.bootcss.com/gijgo/1.9.13/combined/css/gijgo.min.css" rel="stylesheet">
 </head>
 
 <body data-sidebar="dark" class="bgc">
@@ -30,30 +29,105 @@
     <!--topbar and leftbar start-->
     <div th:include="~{common::TopAndLeft}"></div>
 
-    <form class="form-inline" method="post" action="/time_analysis" id="form1"
-          onsubmit="return a();">
-        <div class="input-group">
-            <span style="line-height: 30px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;选择日期：</span>
-            <input type="text" class="form-control input-sm" id="searchStr"
-                   placeholder="按日期搜索..." name="data" style="height: 30px;width: 200px">
-            <button class="btn btn-success btn-sm" type="submit" style="margin-left: 10px">
-                查找
-            </button>
-        </div>
-    </form>
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid"><!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between" style="margin-bottom: -20px">
+                            <h4 class="mb-0">
+                                生产计划</h4>
+                            <!--     无用的右侧标题                       -->
+                            <!--                            <div class="page-title-right">-->
+                            <!--                                <ol class="breadcrumb m-0">-->
+                            <!--                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>-->
+                            <!--                                    <li class="breadcrumb-item active">Orders</li>-->
+                            <!--                                </ol>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+                </div><!-- end page title -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body  pt-0">
+<!--                                查询-->
+                                <form class="form-inline mt-2" method="post" action="/productionplan"  onsubmit="return a()">
+                                    <div class="form-group mr-2">
+                                        <label for="startTime" class="mr-1">计划开始时间</label>
+                                        <input type="date" class="form-control" id="startTime" placeholder="2022-01-01">
+                                    </div>
+                                    <div class="form-group ml-2 mr-2">
+                                        <label for="endTime" class="mr-1">计划结束时间</label>
+                                        <input type="date" class="form-control" id="endTime" placeholder="2022-01-01">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">查询</button>
+                                </form>
+<!--                                查询-->
+                                <div class="table-responsive">
+                                    <table class="table table-centered datatable dt-responsive nowrap "
+                                           style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th>操作</th>
+                                            <th>计划编号</th>
+                                            <th>计划名称</th>
+                                            <th>状态</th>
+                                            <th>设备组</th>
+                                            <th>计划产量</th>
+                                            <th>合格产量</th>
+                                            <th>不合格产量</th>
+                                            <th>计划明细</th>
+                                            <th>机床型号</th>
+                                            <th>计划开始时间</th>
+                                            <th>计划结束时间</th>
+                                            <th>实际开始时间</th>
+                                            <th>实际结束时间</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody th:each="item:${planList}">
+                                        <tr>
+                                            <td th:text="${item.getOperation()}">x</td>
+                                            <td th:text="${item.getPlanNumber()}">x</td>
+                                            <td th:text="${item.getPlanNumber()}">x</td>
+                                            <td th:text="${item.getState()}">x</td>
+                                            <td th:text="${item.getDevicegroup()}">x</td>
+                                            <td th:text="${item.getPlanNumber()}">x</td>
+                                            <td th:text="${item.getQualifiedYield()}">x</td>
+                                            <td th:text="${item.getDisqualifiedYield()}">x</td>
+                                            <td th:text="${item.getPlanDetails()}">x</td>
+                                            <td th:text="${item.getModelType()}">x</td>
+                                            <td th:text="${#dates.format(item.getPlannedstart(),'yyyy-MM-dd HH:mm:ss')}">x</td>
+                                            <td th:text="${#dates.format(item.getPlannedend(),'yyyy-MM-dd HH:mm:ss')}">x</td>
+                                            <td th:text="${#dates.format(item.getActualstart(),'yyyy-MM-dd HH:mm:ss')}">x</td>
+                                            <td th:text="${#dates.format(item.getActualend(),'yyyy-MM-dd HH:mm:ss')}">x</td>
+                                            <!--                                            <td>-->
+                                            <!--                                                <div class="badge badge-soft-success font-size-12">正常</div>-->
+                                            <!--                                            </td>-->
+                                            <!--                                            <td><a href="javascript:void(0);" class="mr-3 text-primary"-->
+                                            <!--                                                   data-toggle="tooltip" data-placement="top" title=""-->
+                                            <!--                                                   data-original-title="Edit"><i-->
+                                            <!--                                                    class="mdi mdi-pencil font-size-18"></i></a><a-->
+                                            <!--                                                    href="javascript:void(0);" class="text-danger" data-toggle="tooltip"-->
+                                            <!--                                                    data-placement="top" title="" data-original-title="Delete"><i-->
+                                            <!--                                                    class="mdi mdi-trash-can font-size-18"></i></a></td>-->
+                                            <!--                                        </tr>-->
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Page-content -->
+    </div></div>
 
 </div><!-- End Page-content -->
 
-<!--日期控件-->
-<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/gijgo.min.js"></script>
-<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/messages/messages.zh-cn.min.js"></script>
-<script>
-    $("#searchStr").datepicker({
-        locale: 'zh-cn',
-        format: 'yyyy-mm-dd',
-        weekStartDay: 1
-    });
-</script>
 
 <!-- Right bar overlay-->
 

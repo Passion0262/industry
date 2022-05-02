@@ -9,15 +9,13 @@ import com.example.industry.entity.Device.Device;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.sql.Timestamp;
 
 @Controller
 public class toPageController {
@@ -333,20 +331,23 @@ public class toPageController {
         return "redirect:/cutter";//重定向展示页面
     }
 //----------------------生产计划-------------------------
-    @RequestMapping("/productionplan")
-    public String productionplan(Model model){
-        List<productionplan> planList = productionplanService.getall();
-        model.addAttribute("planList", planList);
-        return "productionplan";
-    }
+    //转至productionPlanController
 
-
-
-//----------------------test-----------------------
+    //----------------------test-----------------------
     @RequestMapping("/test")
     public String test(){
         return "test";
     }
 
 
+    public static long strToDate(String time) {
+        Date newTime=new Date();
+        SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  // 字符串转换成时间
+        try {
+            newTime = sd.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return  newTime.getTime();
+    }
 }
