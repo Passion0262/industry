@@ -71,6 +71,7 @@
                                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead class="thead-light">
                                         <tr>
+                                            <th style="text-align: center">编辑</th>
                                             <th>操作</th>
                                             <th>计划编号</th>
                                             <th>计划名称</th>
@@ -89,6 +90,8 @@
                                         </thead>
                                         <tbody th:each="item:${planList}">
                                         <tr>
+                                            <td class="bg-white"> <span class="btn btn-sm btn-danger"><a
+                                                    th:href="@{/deletePlan/}+${item.getPlanNumber()}" class="text-white border-warning">删除</a></span></td>
                                             <td th:text="${item.getOperation()}">x</td>
                                             <td th:text="${item.getPlanNumber()}">x</td>
                                             <td th:text="${item.getPlanName()}">x</td>

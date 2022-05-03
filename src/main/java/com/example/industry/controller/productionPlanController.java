@@ -5,6 +5,7 @@ import com.example.industry.service.productionplanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,13 +20,13 @@ public class productionPlanController {
 
     @RequestMapping("/productionplan")
     public String productionplan(Model model, @RequestParam Map<String, String> map){
-        List<productionplan> planList = new ArrayList<productionplan>();
+        List<productionplan> planList;
         if (map.get("startTime")==null || map.get("endTime")==null || map.get("startTime")=="" || map.get("endTime")==""){ //查询所有记录
-            System.out.println("参数为空");
+//            System.out.println("参数为空");
             planList = productionplanService.getall();
-            for (productionplan productionplan : planList) {
-                System.out.println(productionplan);
-            }
+//            for (productionplan productionplan : planList) {
+//                System.out.println(productionplan);
+//            }
         }
         else{ //按照日期查询
 //            System.out.println(map);
@@ -43,9 +44,6 @@ public class productionPlanController {
         return "productionplan";
     }
 
-//    @RequestMapping("/selectByTime")
-//    public String selectByTime(Map<String,>)
-
     @RequestMapping("/addPlan")
     public String addPlan(){
         return "/addPlan";
@@ -53,6 +51,10 @@ public class productionPlanController {
 
     @RequestMapping("/submitPlan")
     public String addPlan(@RequestParam Map<String, String> map) throws Exception{
+        if (map.get("planName")=="" || map.get("modelType")=="" || map.get("planYield")=="" || map.get("devicegroup")=="" || map.get("plannedstart")=="" || map.get("plannedend")==""){
+
+            return "redirect:/productionplan"; //插入失败重定向展示页面
+        }
 //        System.out.println("进入productionplan方法了！");
 //        System.out.println(map);
         productionplan productionplan= new productionplan();
@@ -84,6 +86,18 @@ public class productionPlanController {
         }else{
             System.out.println("插入失败");
         }
-        return "redirect:/productionplan";//插入失败重定向展示页面
+        return "redirect:/productionplan";
+    }
+
+    @RequestMapping("/deletePlan/{planNumber}")
+    public String deleteCutter(@PathVariable("planNumber") int planNumber) {
+        System.out.println("进入deleteCutter方法！");
+        boolean delete = productionplanService.deleteplan(planNumber);
+        if(delete){
+            System.out.println("删除成功");
+        }else{
+            System.out.println("删除失败");
+        }
+        return "redirect:/productionplan";//重定向展示页面
     }
 }
