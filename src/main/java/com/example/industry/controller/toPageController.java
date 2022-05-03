@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.websocket.server.PathParam;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -210,14 +211,13 @@ public class toPageController {
 //        return "ChanPin";
 //    }
 
-    //----------------------用时分析-------------------------
+    //----------------------用时分析bar---------   ----------------
     @RequestMapping("/time_analysis")
     public String timeAnalysis(String data, Model model){
         if(data==null){
             data="2022-03-11"; //默认展示 2022-03-11 的数据
         }
         List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
-
         //打印测试
 //        System.out.println("=====================!");
 //        for (TimeAnalysis timeAnalysis : dataByTime) {
@@ -229,6 +229,24 @@ public class toPageController {
         return "timeAnalysis";
     }
 
+    //----------------------用时分析table---------   ----------------
+    @RequestMapping("/time_analysisT")
+    public String timeAnalysisT(String data, Model model){
+        if(data==null){
+            data="2022-03-11"; //默认展示 2022-03-11 的数据
+        }
+        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
+        //打印测试
+//        System.out.println("=====================!");
+//        for (TimeAnalysis timeAnalysis : dataByTime) {
+//            System.out.println("data:"+timeAnalysis);
+//        }
+//        System.out.println("=====================!");
+
+        model.addAttribute("dataByTime", dataByTime);
+
+        return "timeAnalysisT";
+    }
 
     //设备产量计数分析
     @RequestMapping("/count_analysis")
@@ -303,8 +321,12 @@ public class toPageController {
 
     //----------------增加刀具-----------------
     @GetMapping("/addCutter")
-    public String addCutter() {
-        return "addCutter";//插入失败重定向展示页面
+    public String addCutter(Model model) {
+        List<cutter> cutterList = cutterService.listCutter();
+        int lastNumber = cutterList.get(cutterList.size()-1).getCutterId()+1;
+
+        model.addAttribute("number",lastNumber);
+        return "addCutter";
     }
 
     @PostMapping("/addCutter")

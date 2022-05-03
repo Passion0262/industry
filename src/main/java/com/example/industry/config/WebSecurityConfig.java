@@ -56,6 +56,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // 关闭CSRF跨域
         http.csrf().disable();
+
+        //记住我
+        http.rememberMe().rememberMeParameter("remember");
     }
 
     @Override

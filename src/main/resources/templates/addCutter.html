@@ -48,8 +48,8 @@
                                         <div class="col-lg-6 m-0">
                                             <div class="form-group">
                                                 <label for="Input1">刀具编号</label>
-                                                <input type="text" class="form-control" id="Input1"
-                                                       placeholder="" name="cutterId">
+                                                <input type="text" class="form-control" id="Input1" readonly="readonly"
+                                                      th:placeholder="${number}" name="cutterId" th:value="${number}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="Input2">刀具类型</label>

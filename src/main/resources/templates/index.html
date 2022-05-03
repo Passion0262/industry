@@ -19,6 +19,7 @@
     <link href="../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css"/>
     <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
     <script src="../static/js/echarts.js"></script>
+    <script src="../static/libs/jquery/jquery.min.js"></script>
 </head>
 
 <body data-sidebar="dark" class="bgc">
@@ -178,8 +179,8 @@
                         <div class="card">
                             <div class="card mb-0" style="background-color: #0a83ff">
                                 <div class="card-body pt-2 pb-0">
-                                    <h6 class="ri-pie-chart-2-fill text-white mt-0 mb-0">&nbsp;设备用时比例</h6>
-                                    <h6 id="name" class="text-white"></h6>
+                                    <h6 class="ri-pie-chart-2-fill text-white mt-0 mb-0" style="display: inline-block">&nbsp;设备用时比例</h6>
+                                    <span id="date" class="text-white"></span>
                                 </div>
                             </div>
                             <div class="card-body p-0"><!-- style="height: 40px;background-color: #FFFFFF"-->
@@ -585,7 +586,6 @@
                                     myChart4.setOption(option4);
                                 </script>
 
-
                                 <!--==================================================-->
                                 <script th:inline="javascript">
                                     // 基于准备好的dom，初始化echarts实例
@@ -809,7 +809,7 @@
                                 </script>
 
                                 <script type="text/javascript">
-                                    $("#name").html(d[0]['date']);
+                                    $("#date").html(d[0]['date']);
                                 </script>
                             </div>
                         </div>
@@ -828,7 +828,6 @@
 
 
 <!-- Right bar overlay-->
-<script src="../static/libs/jquery/jquery.min.js"></script>
 <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../static/libs/metismenu/metisMenu.min.js"></script>
 <script src="../static/libs/simplebar/simplebar.min.js"></script>

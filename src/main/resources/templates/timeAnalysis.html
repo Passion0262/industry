@@ -40,7 +40,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="page-title-box d-flex align-items-center justify-content-between" style="margin-bottom: -20px">
+                        <div class="page-title-box d-flex align-items-center justify-content-between"
+                             style="margin-bottom: -20px">
                             <h4 class="mb-0">用时分析</h4>
                             <!--          无用的右侧标题                  -->
                             <!--                            <div class="page-title-right">-->
@@ -56,7 +57,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <form class="form-inline" method="post" action="/time_analysis" id="form1"
+                                <form class="form-inline" method="post" th:action="@{time_analysis}" id="form1"
                                       onsubmit="return a();">
                                     <div class="input-group">
                                         <span style="line-height: 30px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;选择日期：</span>
@@ -68,16 +69,30 @@
                                     </div>
                                 </form>
                             </div>
-
                             <!--                            请输入日期提示框-->
                             <div class="row">
                                 <div class="col-md-8" id="nullMsg0"></div>
                             </div>
 
+
+                            <!--                            按钮组-->
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="btn-group btn-group-toggle mt-2 mt-xl-0" data-toggle="buttons">
+                                        <label class="btn btn-light active"><input type="radio" name="options"
+                                                                                   id="option1" checked><a class="text-dark" href="">饼图形式</a></label>
+                                        <label class="btn btn-light"><input type="radio" name="options"
+                                                                            id="option2"><a class="text-dark" th:href="@{/time_analysisT}">表格形式</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="m-0">
+
                             <!--                            查询无结果提示框-->
                             <div class="row">
                                 <div class="col-md-8" id="nullMsg"></div>
                             </div>
+
 
                             <!--                            饼图框-->
                             <div class="row" style="margin-top: 30px ">
@@ -733,49 +748,6 @@
                                 myChart7.setOption(option7);
                             </script>
 
-
-                        </div>
-                        <div class="row">
-                            <table class="table table-hover table-bordered table-striped"
-                                   style="width: 800px;height:400px;margin-left: 140px">
-                                <thead>
-                                <tr>
-                                    <th>
-                                        统计方式（按天）
-                                    </th>
-                                    <th>
-                                        设备
-                                    </th>
-                                    <th>
-                                        停机
-                                    </th>
-                                    <th>
-                                        运行
-                                    </th>
-                                    <th>
-                                        空闲
-                                    </th>
-                                    <th>
-                                        离线
-                                    </th>
-                                    <th>
-                                        设定
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody th:each="item:${dataByTime}">
-                                <tr>
-                                    <td id="td11" th:text="${item.getDate()}">无数据</td>
-                                    <td th:text="${item.getDevice()}">无数据</td>
-                                    <td th:text="${item.getStop()}">无数据</td>
-                                    <td th:text="${item.getOperate()}">无数据</td>
-                                    <td th:text="${item.getFree()}">无数据</td>
-                                    <td th:text="${item.getOffline()}">无数据</td>
-                                    <td th:text="${item.getSetting()}">无数据</td>
-                                </tr>
-
-                                </tbody>
-                            </table>
 
                         </div>
 
