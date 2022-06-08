@@ -31,4 +31,7 @@ public class TimeAnalysisServiceImpl implements TimeAnalysisService{
         return timeAnalysisMapper.listByDate(date);
     }
 
+    @Override
+    public List<TimeAnalysis> listByDateRange(String start_date, String end_date){return timeAnalysisMapper.listByDateRange(start_date, end_date);}
+
 }

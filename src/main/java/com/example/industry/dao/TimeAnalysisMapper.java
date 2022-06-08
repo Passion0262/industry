@@ -26,4 +26,11 @@ public interface TimeAnalysisMapper {
      */
     @Select("SELECT * FROM time_analysis WHERE date=#{date}")
     List<TimeAnalysis> listByDate(String date);
+
+    /**
+     *查询某时间范围内的数据
+     */
+    @Select("SELECT * from time_analysis where date BETWEEN #{start_date} AND #{end_date}")
+    List<TimeAnalysis> listByDateRange(String start_date,String end_date);
+
 }

@@ -72,7 +72,7 @@ public class toPageController {
 
         //获取设备状态
         for (warn warnlist : warnlists) {
-            if (warnlist.getDeviceName().equals("OP40-车床")){
+            if ("OP40-车床".equals(warnlist.getDeviceName())){
                 status_OP40.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_OP40.set(1, "bg-warning"); status_OP40.set(2, "dripicons-time-reverse"); break;
@@ -83,7 +83,7 @@ public class toPageController {
 //                    default:  status_OP40.set(1, "bg-primary"); status_OP40.set(2, "mdi-check-all");
                 }
             }
-            if (warnlist.getDeviceName().equals("OP50-车床")){
+            if ("OP50-车床".equals(warnlist.getDeviceName())){
                 status_OP50.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_OP50.set(1, "bg-warning"); status_OP50.set(2, "dripicons-time-reverse"); break;
@@ -94,7 +94,7 @@ public class toPageController {
 //                  default:  status_OP50.set(1, "bg-primary"); status_OP50.set(2, "mdi-check-all"); //运行
                 }
             }
-            if (warnlist.getDeviceName().equals("OP60-立加")){
+            if ("OP60-立加".equals(warnlist.getDeviceName())){
                 status_OP60.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_OP60.set(1, "bg-warning"); status_OP60.set(2, "dripicons-time-reverse"); break;
@@ -105,7 +105,7 @@ public class toPageController {
 //                  default:  status_OP60.set(1, "bg-primary"); status_OP60.set(2, "mdi-check-all"); //运行
                 }
             }
-            if (warnlist.getDeviceName().equals("OP70-立加")){
+            if ("OP70-立加".equals(warnlist.getDeviceName())){
                 status_OP70.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_OP70.set(1, "bg-warning"); status_OP70.set(2, "dripicons-time-reverse"); break;
@@ -116,7 +116,7 @@ public class toPageController {
 //                  default:  status_OP70.set(1, "bg-primary"); status_OP70.set(2, "mdi-check-all"); //运行
                 }
             }
-            if (warnlist.getDeviceName().equals("总控PLC-1")){
+            if ("总控PLC-1".equals(warnlist.getDeviceName())){
                 status_PLC1.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_PLC1.set(1, "bg-warning"); status_PLC1.set(2, "dripicons-time-reverse"); break;
@@ -127,7 +127,7 @@ public class toPageController {
 //                  default:  status_PLC1.set(1, "bg-primary"); status_PLC1.set(2, "mdi-check-all"); //运行
                 }
             }
-            if (warnlist.getDeviceName().equals("总控PLC-2")){
+            if ("总控PLC-2".equals(warnlist.getDeviceName())){
                 status_PLC2.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_PLC2.set(1, "bg-warning"); status_PLC2.set(2, "dripicons-time-reverse"); break;
@@ -138,7 +138,7 @@ public class toPageController {
 //                  default:  status_PLC2.set(1, "bg-primary"); status_PLC2.set(2, "mdi-check-all"); //运行
                 }
             }
-            if (warnlist.getDeviceName().equals("测量机")){
+            if ("测量机".equals(warnlist.getDeviceName())){
                 status_measure.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_measure.set(1, "bg-warning"); status_measure.set(2, "dripicons-time-reverse"); break;
@@ -149,7 +149,7 @@ public class toPageController {
 //                  default:  status_measure.set(1, "bg-primary"); status_measure.set(2, "mdi-check-all"); //运行
                 }
             }
-            if (warnlist.getDeviceName().equals("打标机")){
+            if ("打标机".equals(warnlist.getDeviceName())){
                 status_target.set(0, warnlist.getDeviceStatus());
                 switch(warnlist.getDeviceStatus()){
                     case "空闲": status_target.set(1, "bg-warning"); status_target.set(2, "dripicons-time-reverse"); break;
