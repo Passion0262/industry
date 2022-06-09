@@ -88,29 +88,26 @@ public class cloudController {
 
     //----------------------产量分析-------------------------
     @RequestMapping("/cloud_products")
-    public String timeAnalysisT(String data, Model model, @RequestParam Map<String, String> map){
+    public String timeAnalysisT(Model model, @RequestParam Map<String, String> map){
         //用时分析
-        if(data==null){
-            data="2022-03-11"; //默认展示 2022-03-11 的数据
-        }
-        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
-        //打印测试
-//        System.out.println("=====================!");
-//        for (TimeAnalysis timeAnalysis : dataByTime) {
-//            System.out.println("data:"+timeAnalysis);
-//        }
-//        System.out.println("=====================!");
+        if (map.get("startDate")==null || map.get("endDate")==null || "".equals(map.get("startDate")) || "".equals(map.get("endDate"))){
+            String data="2022-03-11"; //默认展示 2022-03-11 的数据
 
-        model.addAttribute("dataByTime", dataByTime);
+//            System.out.println("进入了if");
+            List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
+            model.addAttribute("dataByTime", dataByTime);
+        }
+        else{ //按照日期查询
+//            System.out.println("进入了else if");
+//            System.out.println(map);
+            List<TimeAnalysis> timeList =TimeAnalysis.listByDateRange(map.get("startDate"),map.get("endDate"));
+            model.addAttribute("dataByTime", timeList);
+        }
 
         //生产计划
         List<productionplan> planList;
         if (map.get("startTime")==null || map.get("endTime")==null || map.get("startTime")=="" || map.get("endTime")==""){ //查询所有记录
-//            System.out.println("参数为空");
             planList = productionplanService.getall();
-//            for (productionplan productionplan : planList) {
-//                System.out.println(productionplan);
-//            }
         }
         else{ //按照日期查询
 //            System.out.println(map);
@@ -122,7 +119,7 @@ public class cloudController {
             map.put("endTime", map.get("endTime").replaceAll("T", " "));
             map.put("endTime", map.get("endTime")+":00");
             //###########################################################
-            System.out.println(map);
+//            System.out.println(map);
             planList = productionplanService.getplans(Timestamp.valueOf(map.get("startTime")),Timestamp.valueOf(map.get("endTime")));
         }
         model.addAttribute("planList", planList);
@@ -147,7 +144,6 @@ public class cloudController {
         int sumStop = 0;
         int sumFree = 0;
 
-        System.out.println("-------------");int i=0;
         for (warn warn : warnList) {
             if("设定".equals(warn.getDeviceStatus())){
                 String temp = warn.getDeviceName()+"(warnID: "+warn.getWarnId()+")";

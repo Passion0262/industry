@@ -42,6 +42,35 @@ public class toPageController {
     public String index1(Model model){
         List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate("2022-03-11");
         model.addAttribute("dataByTime", dataByTime);
+
+        List<warn> warnList = WarnService.listwarn();
+
+
+        int sumSet = 0;
+        int sumOff = 0;
+        int sumOperate = 0;
+        int sumStop = 0;
+        int sumFree = 0;
+
+        for (warn warn : warnList) {
+            if("设定".equals(warn.getDeviceStatus())){
+                sumSet++;
+            }else if ("离线".equals(warn.getDeviceStatus())){
+                sumOff++;
+            }else if ("运行".equals(warn.getDeviceStatus())){
+                sumOperate++;
+            }else if ("停机".equals(warn.getDeviceStatus())){
+                sumStop++;
+            }else if ("空闲".equals(warn.getDeviceStatus())){
+                sumFree++;
+            }
+        }
+        model.addAttribute("sumSet",sumSet);
+        model.addAttribute("sumOff",sumOff);
+        model.addAttribute("sumOperate",sumOperate);
+        model.addAttribute("sumStop",sumStop);
+        model.addAttribute("sumFree",sumFree);
+
         return "index";
     }
 

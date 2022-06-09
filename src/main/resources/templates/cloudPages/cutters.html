@@ -474,11 +474,11 @@
                                     <div class="card">
                                         <span class="btn-secondary   ri-file-warning-line" style="font-size: larger;color: white;margin: 10px;text-align: center">&nbsp;刀具总数量：<span style="font-size: x-large" th:text="${cutterList.size()}"></span></span>
                                         <p style="margin: 10px">刀具编号：</p>
-                                        <div  style="height:200px;overflow-y:auto">
+                                        <div  style="max-height:400px;overflow-y:auto">
                                             <ul th:each="cutter:${cutterList}">
                                                 <li style="height: 5px" th:text="${cutter.getCutterId()}"></li>
                                             </ul>
-                                            <p></p>
+                                            </br>
                                         </div>
                                     </div>
                                 </div>
@@ -486,11 +486,11 @@
                                     <div class="card">
                                         <span class="btn-warning   ri-file-warning-line" style="font-size: larger;color: white;margin: 10px;text-align: center">&nbsp;刀具警告数量：<span style="font-size: x-large" th:text="${sum_warnings}"></span></span>
                                         <p style="margin: 10px">警告编号：</p>
-                                        <div  style="height:200px;overflow-y:auto">
+                                        <div  style="max-height:400px;overflow-y:auto">
                                             <ul th:each="warning:${warnings}">
                                                 <li style="height: 5px" th:text="${warning}"></li>
                                             </ul>
-                                            <p></p>
+                                            </br>
                                         </div>
                                     </div>
                                 </div>
@@ -498,11 +498,11 @@
                                     <div class="card">
                                         <span class="btn-danger  ri-file-warning-fill" style="font-size: larger;color: white;margin: 10px;text-align: center">&nbsp;刀具报警数量：<span style="font-size: x-large" th:text="${sum_aralms}"></span></span>
                                         <p style="margin: 10px">报警编号：</p>
-                                        <div  style="height:200px;overflow-y:auto">
+                                        <div  style="max-height:400px;overflow-y:auto">
                                         <ul th:each="aralm:${aralms}">
                                             <li style="height: 5px" th:text="${aralm}"></li>
                                         </ul>
-                                        <p></p>
+                                            </br>
                                     </div>
                                     </div>
                                 </div>
