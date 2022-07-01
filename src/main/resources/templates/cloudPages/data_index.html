@@ -37,6 +37,7 @@
     <!-- OdoMeter CSS -->
     <link rel="stylesheet" href="../../static/cloudStatic/staticShow/css/odometer.css"/>
     <script src="../../static/cloudStatic/staticShow/js/echarts.js"></script>
+
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="../../static/cloudStatic/staticShow/js/html5shiv.js"></script>
@@ -114,13 +115,18 @@
                 <div class="panel" style="padding: 0">
                     <div class="social-details clearfix">
                         <div class="social-icon pull-left" style="color: whitesmoke">
-                            <div class="round-icon" style="border: 2px solid white;">
-                                <i class="icon-display2" style="color: whitesmoke"></i>
+                            <div class="round-icon green-icon">
+                                <i class="icon-cycle"></i>
                             </div>
                         </div>
                         <div class="social-num">
-							<a href=""><h2><span class="odometer">1463</span><span class="text-blue" style="font-size: xx-small">详情</span><span class="label">100%</span></h2></a>
-                            <p>设备总量</p>
+                            <h2><span>OP-40机</span><span class="label label-success">&nbsp;</span></h2>
+                            <p>运行</p>
+                            <div class="progress progress-xsx">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,11 +141,11 @@
                             </div>
                         </div>
                         <div class="social-num">
-							<a href=""><h2><span class="odometer">1463</span><span class="text-blue" style="font-size: xx-small">详情</span><span class="label label-danger">7%</span></h2></a>
-                            <span>设备停机数量</span>
+                            <h2><span>打标机</span><span class="label label-danger">&nbsp;</span></h2></a>
+                            <p>停机</p>
                             <div class="progress progress-xsx">
                                 <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65"
-                                     aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                 </div>
                             </div>
                         </div>
@@ -155,11 +161,11 @@
                             </div>
                         </div>
                         <div class="social-num">
-							<a href=""><h2><span class="odometer">1463</span><span class="text-blue" style="font-size: xx-small">详情</span><span class="label label-warning">8%</span></h2></a>
-                            <p>设备空闲数量</p>
+                            <h2><span>OP-50机</span><span class="label label-warning">&nbsp;</span></h2>
+                            <p>空闲</p>
                             <div class="progress progress-xsx">
                                 <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45"
-                                     aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                 </div>
                             </div>
                         </div>
@@ -175,11 +181,11 @@
                             </div>
                         </div>
                         <div class="social-num">
-							<a href=""><h2><span class="odometer">1463</span><span class="text-blue" style="font-size: xx-small">详情</span><span class="label label-success">9+</span></h2></a>
-                            <p>设备运行数量</p>
+                            <h2><span>测量机</span><span class="label label-success">&nbsp;</span></h2></a>
+                            <p>运行</p>
                             <div class="progress progress-xsx">
                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72"
-                                     aria-valuemin="0" aria-valuemax="100" style="width: 72%">
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                 </div>
                             </div>
                         </div>
@@ -195,11 +201,11 @@
                             </div>
                         </div>
                         <div class="social-num">
-							<a href=""><h2><span class="odometer">1463</span><span class="text-blue" style="font-size: xx-small">详情</span><span class="label label-info">9+</span></h2></a>
-                            <p>设备设定数量</p>
+                            <h2><span>OP-60机</span><span class="label label-info">&nbsp;</span></h2>
+                            <p>设定</p>
                             <div class="progress progress-xsx">
                                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30"
-                                     aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                 </div>
                             </div>
                         </div>
@@ -215,12 +221,11 @@
                             </div>
                         </div>
                         <div class="social-num">
-							<a href=""><h2><span class="odometer">1463</span><span class="text-blue" style="font-size: xx-small">详情</span><span class="label">9+</span></h2></a>
-
-							<p>设备离线数量</p>
+                            <h2><span>OP-70机</span><span class="label label-default">&nbsp;</span></h2>
+                            <p>离线</p>
                             <div class="progress progress-xsx">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="30"
-                                     aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                <div class="" role="progressbar" aria-valuenow="30"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                 </div>
                             </div>
                         </div>
@@ -233,23 +238,40 @@
 
         <!-- Row starts -->
         <div class="row gutter">
-            <div class="col-lg-6 col-md-9 col-sm-12 col-xs-12">
-                <div class="panel height2">
-                    <div class="panel-heading">
-                        <h4>设备OEE</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div id="audienceOverview" class="chart-height1"></div>
-                        <h1 class="audience-total"><i class="icon-triangle-up"></i>35%<span>/ today</span></h1>
+
+            <!--            <div class="col-lg-6 col-md-9 col-sm-12 col-xs-12">-->
+            <!--                <div class="panel height2">-->
+            <!--                    <div class="panel-heading">-->
+            <!--                        <h4>设备OEE</h4>-->
+            <!--                    </div>-->
+            <!--                    <div class="panel-body">-->
+            <!--                        <div id="audienceOverview" class="chart-height1"></div>-->
+            <!--                        <h1 class="audience-total"><i class="icon-triangle-up"></i>35%<span>/ today</span></h1>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="panel no-margin">
+                        <div class="panel-heading">
+                            <h4>实时监测数据</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div id="flot-placeholder" class="chart-height3"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+
+
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="row gutter">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="panel height2">
                             <div class="panel-heading">
-                                <h4>零件产量月度                                                                                                                                                                                                                      数据 ==2022年==</h4>
+                                <h4>零件产量月度数据 ==2022年==</h4>
                             </div>
                             <div class="panel-body">
                                 <div class="col-lg-3 col-md-3">
@@ -257,19 +279,19 @@
                                         <li class="clearfix">
                                             <div class="month-type warning">1月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>39</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type info">2月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>75</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type">3月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>121</h3></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -279,19 +301,19 @@
                                         <li class="clearfix">
                                             <div class="month-type warning">4月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>109</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type info">5月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>73</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type">6月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>34</h3></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -301,19 +323,19 @@
                                         <li class="clearfix">
                                             <div class="month-type warning">7月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>47</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type info">8月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>87</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type">9月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>118</h3></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -323,19 +345,19 @@
                                         <li class="clearfix">
                                             <div class="month-type warning">10月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>105</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type info">11月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>121</h3></a>
                                             </div>
                                         </li>
                                         <li class="clearfix">
                                             <div class="month-type">12月</div>
                                             <div class="sale-info">
-												<a href=""><h3>1253</h3></a>
+                                                <a href=""><h3>89</h3></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -355,59 +377,62 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="row gutter">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel height1 tw-bg">
+                        <div class="panel height1 tw-bg" style="background-color: rgb(31, 119, 180)">
                             <div class="panel-heading">
                                 <h4 class="text-white">刀具总数量</h4>
                             </div>
                             <div class="panel-body">
-								<ul class="tickets">
+                                <ul class="tickets">
 
-									<li style="width: 100%;">
-										<a href="">
-											<h1 class="text-white" >13<span class="text-green" style="font-size: xx-small">详情</span></h1>
-										</a>
-									</li>
-								</ul>
+                                    <li style="width: 100%;">
+                                        <a href="">
+                                            <h1 class="text-white">13<span class="text-green"
+                                                                           style="font-size: xx-small">详情</span></h1>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-				<div class="row gutter">
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel height1 dark-yellow-bg">
-							<div class="panel-heading">
-								<h4 class="text-white">刀具警告数量</h4>
-							</div>
-							<div class="panel-body">
-								<ul class="tickets">
+                <div class="row gutter">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="panel height1 dark-yellow-bg" style="background-color: rgb(255, 127, 14)">
+                            <div class="panel-heading">
+                                <h4 class="text-white">刀具警告数量</h4>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="tickets">
 
-									<li style="width: 100%;">
-										<a href="tasks.html">
-											<h1 class="text-white">6<span class="text-green" style="font-size: xx-small">详情</span></h1>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel height1 dark-red-bg">
-							<div class="panel-heading">
-								<h4 class="text-white">刀具报警数量</h4>
-							</div>
-							<div class="panel-body">
-								<ul class="tickets">
+                                    <li style="width: 100%;">
+                                        <a href="">
+                                            <h1 class="text-white">6<span class="text-green"
+                                                                          style="font-size: xx-small">详情</span></h1>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="panel height1" style="background-color: rgb(214, 39, 40)">
+                            <div class="panel-heading">
+                                <h4 class="text-white">刀具报警数量</h4>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="tickets">
 
-									<li style="width: 100%;">
-										<a href="tasks.html">
-											<h1  class="text-white">6<span class="text-green" style="font-size: xx-small">详情</span></h1>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                                    <li style="width: 100%;">
+                                        <a href="">
+                                            <h1 class="text-white">6<span class="text-green"
+                                                                          style="font-size: xx-small">详情</span></h1>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
@@ -438,8 +463,8 @@
                             var option = {
                                 title: {
                                     text: '设备稼动率',
-                                    textStyle:{
-                                        color:'#95a0b1'
+                                    textStyle: {
+                                        color: '#95a0b1'
                                     },
                                 },
 
@@ -466,11 +491,11 @@
                                 xAxis: [
                                     {
                                         type: 'category',
-                                        data: ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+                                        data: ['03-11', '03-12', '03-13', '03-14', '03-15', '03-16', '03-17', '03-18', '03-19', '03-20', '03-21', '03-22'],
                                         axisLabel: {
                                             show: true,
-                                            lineStyle:{
-                                                color:'#95a0b1',//更改坐标轴颜色
+                                            lineStyle: {
+                                                color: '#95a0b1',//更改坐标轴颜色
                                             },
                                             textStyle: {
                                                 color: '#95a0b1',  //更改坐标轴文字颜色
@@ -483,8 +508,8 @@
                                         type: 'value',
                                         axisLabel: {
                                             show: true,
-                                            lineStyle:{
-                                                color:'#95a0b1',//更改坐标轴颜色
+                                            lineStyle: {
+                                                color: '#95a0b1',//更改坐标轴颜色
                                             },
                                             textStyle: {
                                                 color: '#95a0b1',  //更改坐标轴文字颜色
@@ -550,57 +575,73 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>Tiger Nvimn</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
+                                    <td>加工</td>
+                                    <td>1</td>
+                                    <td>plan1</td>
+                                    <td>暂停</td>
+                                    <td>无锡职业技术学院</td>
+                                    <td>5</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>无</td>
+                                    <td>20452</td>
+                                    <td>2022-03-02 15:33:59</td>
+                                    <td>2022-03-02 16:34:01</td>
+                                    <td>2022-03-02 13:34:11</td>
+                                    <td>2022-03-02 14:34:17</td>
                                 </tr>
                                 <tr>
-                                    <td>Nebrett Remters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>2011/07/25</td>
-                                    <td>$170,750</td>
+                                    <td>加工</td>
+                                    <td>3</td>
+                                    <td>plan2</td>
+                                    <td>完成</td>
+                                    <td>无锡职业技术学院</td>
+                                    <td>10</td>
+                                    <td>8</td>
+                                    <td>2</td>
+                                    <td>无</td>
+                                    <td>21402</td>
+                                    <td>2022-03-03 13:28:39</td>
+                                    <td>2022-03-03 13:29:59</td>
+                                    <td>2022-03-03 13:28:39</td>
+                                    <td>2022-03-03 13:28:49</td>
                                 </tr>
                                 <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>2009/01/12</td>
-                                    <td>$86,000</td>
+                                    <td>加工</td>
+                                    <td>4</td>
+                                    <td>plan4</td>
+                                    <td>暂停</td>
+                                    <td>无锡职业技术学院</td>
+                                    <td>5</td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                    <td>无</td>
+                                    <td>23212</td>
+                                    <td>2022-03-05 10:33:59</td>
+                                    <td>2022-03-05 11:34:01</td>
+                                    <td>2022-03-05 10:34:11</td>
+                                    <td>2022-03-05 11:34:17</td>
+                                </tr>
+                                <tr>
+                                    <td>加工</td>
+                                    <td>5</td>
+                                    <td>plan2</td>
+                                    <td>完成</td>
+                                    <td>无锡职业技术学院</td>
+                                    <td>5</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>无</td>
+                                    <td>70452</td>
+                                    <td>2022-03-08 18:53:59</td>
+                                    <td>2022-03-08 18:54:01</td>
+                                    <td>2022-03-08 19:34:11</td>
+                                    <td>2022-03-08 19:54:17</td>
                                 </tr>
                                 </tbody>
                             </table>
-							<br>
-							<a href="detail_plan.html" class="btn btn-warning" style="float: left;">>>查看更多</a>
+                            <br>
+                            <a href="detail_plan.html" class="btn btn-warning" style="float: left;">>>查看更多</a>
                         </div>
                     </div>
                 </div>
@@ -655,57 +696,83 @@
                                 <!--											<td th:text="${item.getSetting()}">无数据</td>-->
                                 <!--										</tr>-->
                                 <tr>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
+                                    <td>2022-03-11</td>
+                                    <td>OP40-车床</td>
+                                    <td>0.00%</td>
+                                    <td>0.00%</td>
+                                    <td>99.56%</td>
+                                    <td>0.06%</td>
+                                    <td>0.36%</td>
                                 </tr>
                                 <tr>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
+                                    <td>2022-03-11</td>
+                                    <td>OP50-车床</td>
+                                    <td>24.50%</td>
+                                    <td>0.00%</td>
+                                    <td>79.56%</td>
+                                    <td>0.06%</td>
+                                    <td>0.06%</td>
                                 </tr>
                                 <tr>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
+                                    <td>2022-03-11</td>
+                                    <td>OP60-立加</td>
+                                    <td>0.00%</td>
+                                    <td>0.00%</td>
+                                    <td>1.86%</td>
+                                    <td>98.06%</td>
+                                    <td>0.02%</td>
                                 </tr>
                                 <tr>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
-                                    <td>$320,800</td>
+                                    <td>2022-03-11</td>
+                                    <td>OP70-立加</td>
+                                    <td>0.00%</td>
+                                    <td>6.70%</td>
+                                    <td>92.56%</td>
+                                    <td>0.06%</td>
+                                    <td>0.43%</td>
                                 </tr>
-                                </tbody>
+                                <tr>
+                                    <td>2022-03-11</td>
+                                    <td>测量机</td>
+                                    <td>0.00%</td>
+                                    <td>23.70%</td>
+                                    <td>45.56%</td>
+                                    <td>33.06%</td>
+                                    <td>0.48%</td>
+                                </tr>
+                                <tr>
+                                    <td>2022-03-11</td>
+                                    <td>总控PLC-1</td>
+                                    <td>34.94%</td>
+                                    <td>23.70%</td>
+                                    <td>0.00%</td>
+                                    <td>0.00%</td>
+                                    <td>45.48%</td>
+                                </tr>
                                 </tbody>
                             </table>
-							<br>
-							<a href="detail_time.html" class="btn btn-warning" style="float: left;">>>查看更多</a>
+                            <br>
+                            <a href="detail_time.html" class="btn btn-warning" style="float: left;">>>查看更多</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Row Ends -->
+
     </div>
     <!-- Container fluid ends -->
-
 </div>
 <!-- Dashboard Wrapper End -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../static/cloudStatic/staticShow/js/jquery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../static/cloudStatic/staticShow/js/bootstrap.min.js"></script>
+
+<!-- jquery ScrollUp JS -->
+<script src="../../static/cloudStatic/staticShow/js/scrollup/jquery.scrollUp.js"></script>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../static/cloudStatic/staticShow/js/jquery.js"></script>
@@ -759,9 +826,22 @@
 
 <!-- Custom JS -->
 <script src="../../static/cloudStatic/staticShow/js/custom.js"></script>
+
+<!-- Flot Charts -->
+<script src="../../static/cloudStatic/staticShow/js/flot/jquery.flot.js"></script>
+<script src="../../static/cloudStatic/staticShow/js/flot/jquery.flot.orderBar.min.js"></script>
+<script src="../../static/cloudStatic/staticShow/js/flot/jquery.flot.pie.min.js"></script>
+<script src="../../static/cloudStatic/staticShow/js/flot/jquery.flot.stack.min.js"></script>
+<script src="../../static/cloudStatic/staticShow/js/flot/jquery.flot.tooltip.min.js"></script>
+<script src="../../static/cloudStatic/staticShow/js/flot/jquery.flot.resize.min.js"></script>
+
+<!-- Custom JS -->
+<script src="../../static/cloudStatic/staticShow/js/flot/custom/realtime.js"></script>
+
+<!-- Custom JS -->
+<script src="../../static/cloudStatic/staticShow/js/custom.js"></script>
 </body>
 
-<script src="../static/libs/jquery/jquery.min.js"></script>
 <script>
     var date = new Date();
 
@@ -770,7 +850,8 @@
     // date.getDate();                 //获取当前日(1-31)
 
     $('#year').html(date.getFullYear());
-    $('#month').html(date.getMonth()+1);
+    $('#month').html(date.getMonth() + 1);
     $('#day').html(date.getDate());
 </script>
+
 </html>

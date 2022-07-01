@@ -340,10 +340,10 @@ var chart14 = c3.generate({
 		],
 		type : 'donut',
 		colors: {
-			Telivision: '#D2A968',
-			Press: '#BF7A6A',
-			Internet: '#6FB4CE',
-			Friends: '#A9BD7A',
+			Telivision: '#4FC5F7',
+			Press: '#FCB050',
+			Internet: '#E04747',
+			Friends: '#10A7A9',
 			Other: '#656565',
 		},
 		

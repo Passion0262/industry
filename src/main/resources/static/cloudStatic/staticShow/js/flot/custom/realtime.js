@@ -4,8 +4,8 @@ var $default_black = "#666";
 
 var data = [];
 var dataset;
-var totalPoints = 100;
-var updateInterval = 1000;
+var totalPoints = 70;
+var updateInterval = 1000;  //刷新间隔时间
 var now = new Date().getTime();
 
 
@@ -38,12 +38,13 @@ var options = {
 		mode: "time",
 		tickSize: [5, "second"],
 		tickFormatter: function (v, axis) {
-		var date = new Date(v);
-		if (date.getSeconds() % 20 == 0) {
-			var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-			var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-			return hours + ":" + minutes;
-		} else {
+			var date = new Date(v);
+			if (date.getSeconds() % 5 == 0) {  //每隔5s显示时间
+				var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+				var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+				var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+				return hours + ":" + (minutes-1) + ":" +seconds;
+			} else {
 				return "";
 			}
 		},
@@ -96,7 +97,7 @@ var options = {
 $(document).ready(function () {
 	GetData();
 	dataset = [
-		{ label: "Sales", data: data, color: '#6FB4CE' }
+		{ label: "进给倍率占比", data: data, color: '#6FB4CE' }
 	];
 	$.plot($("#flot-placeholder"), dataset, options);
 	function update() {
