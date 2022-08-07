@@ -22,7 +22,7 @@ body {
   padding: 0;
   font: normal 14px 'Open Sans', sans-serif;
   line-height: 1.6;
-  color: #95a0b1;
+  color: #f3f0f0;
   background: #353C48; }
 
 a {
@@ -2183,13 +2183,13 @@ footer {
   right: 20px; }
 
 .tickLabel {
-  color: #95a0b1; }
+  color: #e7ebf3; }
 
 .legend div {
   background: transparent; }
 
 .legendLabel {
-  color: #b2bac7;
+  color: #4414f1;
   padding-left: 7px;
   font-size: 13px;
   padding-right: 7px; }

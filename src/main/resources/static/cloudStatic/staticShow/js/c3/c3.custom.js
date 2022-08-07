@@ -340,11 +340,11 @@ var chart14 = c3.generate({
 		],
 		type : 'donut',
 		colors: {
-			Telivision: '#4FC5F7',
-			Press: '#FCB050',
-			Internet: '#E04747',
-			Friends: '#10A7A9',
-			Other: '#656565',
+			'设定': '#34a9de',
+			'空闲': '#e3a01c',
+			'停机': '#d22121',
+			'运行': '#63cc1f',
+			'离线': '#b2a8a8',
 		},
 		
 		onclick: function (d, i) { console.log("onclick", d, i); },

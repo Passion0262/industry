@@ -2,7 +2,7 @@ $body-bg: #353C48;
 $border-bg: #1A1B1E;
 
 $primary-color: #FFFFFF;
-$secondary-color: #95a0b1; // #9AA5B5, #707C8E
+$secondary-color: #ffffff; // #9AA5B5, #707C8E
 
 $sidebar-bg: #30333B;
 $panel-bg: #282A30;
@@ -2832,7 +2832,7 @@ footer {
 	background: transparent;
 }
 .legendLabel {
-	color: lighten($secondary-color, 10%);
+	color: #7b00ff;
 	padding-left: 7px;
 	font-size: 13px;
 	padding-right: 7px;

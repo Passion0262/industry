@@ -97,7 +97,7 @@ var options = {
 $(document).ready(function () {
 	GetData();
 	dataset = [
-		{ label: "进给倍率占比", data: data, color: '#6FB4CE' }
+		{ label: "进给倍率占比", data: data, color: '#6fc6ce' }
 	];
 	$.plot($("#flot-placeholder"), dataset, options);
 	function update() {

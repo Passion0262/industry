@@ -15,7 +15,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  fill: #707C8E; }
+  fill: #edffea; }
 
 .c3-legend-item-tile, .c3-xgrid-focus, .c3-ygrid, .c3-event-rect, .c3-bars path {
   shape-rendering: crispEdges; }
@@ -85,7 +85,7 @@
 /*-- Select - Drag --*/
 /*-- Legend --*/
 .c3-legend-item {
-  font-size: 12px; }
+  font-size: 14px; }
 
 .c3-legend-item-hidden {
   opacity: 0.15; }
