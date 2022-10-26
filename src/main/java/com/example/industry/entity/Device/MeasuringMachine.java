@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class MeasuringMachine {
     private int id;
-    private String acquisitionTime; //采集时间
+    private Timestamp acquisitionTime; //采集时间
     private String status; //状态
     private String workpieceCode; //工件码
     private String workpieceType; //工件型号

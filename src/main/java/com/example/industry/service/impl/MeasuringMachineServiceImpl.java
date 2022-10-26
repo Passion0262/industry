@@ -14,6 +14,9 @@ public class MeasuringMachineServiceImpl implements MeasuringMachineService{
     @Override
     public MeasuringMachine getmeasured(String acquisition_time){return measuringMachineMapper.getmeasured(acquisition_time);}
 
+    @Override
+    public boolean insertMeasuringMachineCurrent(MeasuringMachine measuringMachine){return measuringMachineMapper.insertDeviceStatus(measuringMachine);}
+
 }
 
 

@@ -5,10 +5,12 @@ import com.example.industry.entity.Device.OP40Current;
 import com.example.industry.entity.Device.OP50Current;
 import com.example.industry.entity.Device.OP60Current;
 import com.example.industry.entity.Device.OP70Current;
+import com.example.industry.entity.Device.MeasuringMachine;
 import com.example.industry.service.OP40CurrentService;
 import com.example.industry.service.OP50CurrentService;
 import com.example.industry.service.OP60CurrentService;
 import com.example.industry.service.OP70CurrentService;
+import com.example.industry.service.MeasuringMachineService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -30,6 +32,7 @@ public class getDataRunner implements CommandLineRunner {
     public static final String OP60ID = "e8d89f4b-48ba-42b6-be37-e932b6904466";
     public static final String OP70ID = "b4fa2331-f058-4771-ac11-9f6125ccdca3";
 
+    public static final String MeasuringMachineID = "0aab89b4-0eb0-44d6-a476-9bc22aa50dae";
     @Autowired
     OP40CurrentService op40CurrentService;
 
@@ -42,12 +45,15 @@ public class getDataRunner implements CommandLineRunner {
     @Autowired
     OP70CurrentService op70CurrentService;
 
+    @Autowired
+    MeasuringMachineService measuringMachineService;
+
 
     @Override
     public void run(String... args) throws Exception {
         log.info("这里处理项目加载一些系统参数、完成初始化、" +
                 "预热本地缓存 from getDataRunner");
-//        getData();
+        getData();
     }
 
     void getData() throws Exception {
@@ -80,6 +86,16 @@ public class getDataRunner implements CommandLineRunner {
             Thread.sleep(10000);
             System.out.println(document_op70.text());
             getOP70(document_op70.text());
+
+            Document document_measuringMachine = connect
+                    .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
+                    .timeout(30000)
+                    .ignoreContentType(true)
+                    .data("deviceid", "0aab89b4-0eb0-44d6-a476-9bc22aa50dae")
+                    .post();
+            Thread.sleep(10000);
+            System.out.println(document_measuringMachine.text());
+            getMeasuringMachine(document_measuringMachine.text());
         }
     }
 
@@ -139,7 +155,7 @@ public class getDataRunner implements CommandLineRunner {
                 .post();
         Thread.sleep(10000);
         String data = document_op50.text();
-        log.info("op50: " +data);
+        log.info("op50: " + data);
 
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(data);
@@ -250,5 +266,41 @@ public class getDataRunner implements CommandLineRunner {
         String alarmInfo = node.path(8).path("value").textValue();
         OP70Current op70Current = new OP70Current(80, status, programName, output, spindleRate, spindleSpeed, feedRate, feedSpeed, alarmNumber, alarmInfo, new Timestamp(new Date().getTime()));
         op70CurrentService.insertOP70Current(op70Current);
+    }
+
+    void getMeasuringMachine(String data) throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = mapper.readTree(data);
+        JsonNode node = rootNode.path("data");
+        System.out.println(node);
+        String value = node.path(0).path("value").textValue();
+        System.out.println(value);
+        String status = "";
+        switch (value) {
+            case "1":
+                status = "Stop";
+                break;
+            case "2":
+                status = "Offline";
+                break;
+            case "3":
+                status = "Free";
+                break;
+            case "5":
+                status = "Run";
+                break;
+            default:
+                break;
+        }
+        String workpieceCode = node.path(1).path("value").textValue();
+        String workpieceType = node.path(2).path("value").textValue();
+        String measuredValue1 = node.path(3).path("value").textValue();
+        String measuredValue2 = node.path(4).path("value").textValue();
+        String measuredValue3 = node.path(5).path("value").textValue();
+        String measuredValue4 = node.path(6).path("value").textValue();
+        String measuredResults = node.path(7).path("value").textValue();
+
+        MeasuringMachine measuringMachine = new MeasuringMachine(0,new Timestamp(new Date().getTime()),status,workpieceCode,workpieceType,measuredValue1,measuredValue2,measuredValue3,measuredValue4,measuredResults);
+        measuringMachineService.insertMeasuringMachineCurrent(measuringMachine);
     }
 }
