@@ -1,6 +1,7 @@
 package com.example.industry.dao.device;
 
 import com.example.industry.entity.Device.OP40Current;
+import com.example.industry.entity.Device.OP60Current;
 import com.example.industry.entity.Device.OP70Current;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -24,4 +25,15 @@ public interface OP70CurrentMapper {
     @Select("SELECT * FROM op70_current ORDER BY time DESC LIMIT 10")
     List<OP70Current> getLatest10();
 
+    /**
+     * 获取最新的一条记录
+     */
+    @Select("SELECT * FROM op70_current WHERE id = (SELECT MAX(id) FROM op70_current)")
+    OP70Current getLatest();
+
+    /**
+     * 获取op70指定某一天的数据
+     */
+    @Select("SELECT * FROM op70_current WHERE DATE_FORMAT(time,'%Y-%m-%d') = #{date}")
+    List<OP70Current> getOP70ListByDate(String date);
 }

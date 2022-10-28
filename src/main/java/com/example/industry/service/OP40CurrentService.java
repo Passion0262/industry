@@ -2,6 +2,7 @@ package com.example.industry.service;
 
 import com.example.industry.entity.Device.DeviceStatus;
 import com.example.industry.entity.Device.OP40Current;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -27,4 +28,8 @@ public interface OP40CurrentService {
      */
     List<OP40Current> getLatest10();
 
+    /**
+     * 获取op40指定某一天的数据
+     */
+    List<OP40Current> getOP40ListByDate(String date);
 }

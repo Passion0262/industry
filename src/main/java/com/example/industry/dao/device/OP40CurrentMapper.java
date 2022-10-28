@@ -30,4 +30,9 @@ public interface OP40CurrentMapper {
     @Select("SELECT * FROM op40_current ORDER BY time DESC LIMIT 10")
     List<OP40Current> getLatest10();
 
+    /**
+     * 获取op40指定某一天的数据
+     */
+    @Select("SELECT * FROM op40_current WHERE DATE_FORMAT(time,'%Y-%m-%d') = #{date}")
+    List<OP40Current> getOP40ListByDate(String date);
 }

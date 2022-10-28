@@ -42,6 +42,11 @@ public class OP40CurrentServiceImpl implements OP40CurrentService {
         return op40CurrentMapper.getLatest10();
     }
 
+    @Override
+    public List<OP40Current> getOP40ListByDate(String date) {
+        return op40CurrentMapper.getOP40ListByDate(date);
+    }
+
     boolean isSame(OP40Current o1,OP40Current o2){
         if (o1.getStatus().equals(o2.getStatus())
                 && o1.getWorkPiece().equals(o2.getWorkPiece())
