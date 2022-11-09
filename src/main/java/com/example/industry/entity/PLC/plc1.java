@@ -3,13 +3,14 @@ package com.example.industry.entity.PLC;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class plc1 {
     int id;//编号（此表为PLC_1历史参数）
-    String acquisitionTime;//采集时间
+    public Timestamp acquisitionTime;//采集时间
     String status;//状态
     String PLCType;//总控机种
     String fortyFeedingRequest;//40上料请求

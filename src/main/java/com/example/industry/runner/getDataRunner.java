@@ -6,6 +6,13 @@ import com.example.industry.entity.Device.OP50Current;
 import com.example.industry.entity.Device.OP60Current;
 import com.example.industry.entity.Device.OP70Current;
 import com.example.industry.entity.Device.MeasuringMachine;
+import com.example.industry.entity.PLC.plc1;
+import com.example.industry.service.OP40CurrentService;
+import com.example.industry.service.OP50CurrentService;
+import com.example.industry.service.OP60CurrentService;
+import com.example.industry.service.OP70CurrentService;
+import com.example.industry.service.MeasuringMachineService;
+import com.example.industry.service.Plc1Service;
 import com.example.industry.entity.Timeanalysis.TimeAnalysis;
 import com.example.industry.entity.Timeanalysis.TimeAnalysisByDate;
 import com.example.industry.service.*;
@@ -35,6 +42,7 @@ public class getDataRunner implements CommandLineRunner {
     public static final String OP70ID = "b4fa2331-f058-4771-ac11-9f6125ccdca3";
 
     public static final String MeasuringMachineID = "0aab89b4-0eb0-44d6-a476-9bc22aa50dae";
+    public static final String Plc1ID = "04265e86-37f7-4bef-b80c-5a6597598971";
     @Autowired
     OP40CurrentService op40CurrentService;
 
@@ -49,6 +57,9 @@ public class getDataRunner implements CommandLineRunner {
 
     @Autowired
     MeasuringMachineService measuringMachineService;
+
+    @Autowired
+    Plc1Service plc1Service;
 
     @Autowired
     TimeAnalysisService timeAnalysisService;
@@ -102,6 +113,16 @@ public class getDataRunner implements CommandLineRunner {
             Thread.sleep(10000);
             System.out.println(document_measuringMachine.text());
             getMeasuringMachine(document_measuringMachine.text());
+
+            Document document_plc1 = connect
+                    .userAgent("Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)")
+                    .timeout(30000)
+                    .ignoreContentType(true)
+                    .data("deviceid", "04265e86-37f7-4bef-b80c-5a6597598971")
+                    .post();
+            Thread.sleep(10000);
+            System.out.println(document_plc1.text());
+            getPlc1(document_plc1.text());
         }
     }
 
@@ -287,13 +308,13 @@ public class getDataRunner implements CommandLineRunner {
                 status = "Stop";
                 break;
             case "2":
-                status = "Offline";
+                status = "Run";
                 break;
             case "3":
                 status = "Free";
                 break;
             case "5":
-                status = "Run";
+                status = "Offline";
                 break;
             default:
                 break;
@@ -309,6 +330,71 @@ public class getDataRunner implements CommandLineRunner {
         MeasuringMachine measuringMachine = new MeasuringMachine(0,new Timestamp(new Date().getTime()),status,workpieceCode,workpieceType,measuredValue1,measuredValue2,measuredValue3,measuredValue4,measuredResults);
         measuringMachineService.insertMeasuringMachineCurrent(measuringMachine);
     }
+
+    void getPlc1(String data) throws Exception{
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = mapper.readTree(data);
+        JsonNode node = rootNode.path("data");
+        System.out.println(node);
+        String value = node.path(0).path("value").textValue();
+        System.out.println(value);
+        String status = "";
+        switch (value){
+            case "1":
+                status = "Stop";
+                break;
+            case "2":
+                status = "Run";
+                break;
+            case "3":
+                status = "Offline";
+                break;
+            case "5":
+                status = "Debug";
+                break;
+            default:
+                break;
+        }
+        String PLCType = node.path(1).path("value").textValue();
+        String fortyFeedingRequest = node.path(2).path("value").textValue();
+        String fortyCuttingRequest = node.path(3).path("value").textValue();
+        String fortyOnPosition = node.path(4).path("value").textValue();
+        String fortyFeedingDone = node.path(5).path("value").textValue();
+        String fortyCuttingDone = node.path(6).path("value").textValue();
+        String fortyForward = node.path(7).path("value").textValue();
+        String fortyReverse= node.path(8).path("value").textValue();
+        String fiftyFeedingRequest = node.path(9).path("value").textValue();
+        String fiftyCuttingRequest = node.path(10).path("value").textValue();
+        String fiftyOnPosition = node.path(11).path("value").textValue();
+        String fiftyFeedingDone = node.path(12).path("value").textValue();
+        String fiftyCuttingDone = node.path(13).path("value").textValue();
+        String fiftyForward = node.path(14).path("value").textValue();
+        String fiftyReverse = node.path(15).path("value").textValue();
+        String feedingLocation1XN = node.path(16).path("value").textValue();
+        String feedingLocation2XN = node.path(17).path("value").textValue();
+        String OP40LocationXN = node.path(18).path("value").textValue();
+        String markingMachineLocationXN = node.path(19).path("value").textValue();
+        String markingMachineLocationZS = node.path(20).path("value").textValue();
+        String OP50LocationZS = node.path(21).path("value").textValue();
+        String measuringMachineLocationZS = node.path(22).path("value").textValue();
+        String NGZSCode = node.path(23).path("value").textValue();
+        String productionlineState = node.path(24).path("value").textValue();
+        String planNumber = node.path(25).path("value").textValue();
+        String planAmount = node.path(26).path("value").textValue();
+        String productionNumber = node.path(27).path("value").textValue();
+        String feedingLocation1ZS = node.path(32).path("value").textValue();
+        String feedingLocation2ZS = node.path(33).path("value").textValue();
+        String OP40LocationZS = node.path(34).path("value").textValue();
+        String measuringMachineLocationXN = node.path(35).path("value").textValue();
+        String OP50LocationXN = node.path(36).path("value").textValue();
+        String MarkingCode = node.path(37).path("value").textValue();
+
+        plc1 plc1 = new plc1(6948,new Timestamp(new Date().getTime()),status,PLCType,fortyFeedingRequest,fortyCuttingRequest,fortyOnPosition,
+                fortyFeedingDone,fortyCuttingDone,fortyForward,fortyReverse,fiftyFeedingRequest,fiftyCuttingRequest,fiftyOnPosition,fiftyFeedingDone,
+                fiftyCuttingDone,fiftyForward,fiftyReverse,feedingLocation1XN,feedingLocation2XN,OP40LocationXN,markingMachineLocationXN,
+                markingMachineLocationZS,OP50LocationZS,measuringMachineLocationZS,NGZSCode,productionlineState,planNumber,planAmount,productionNumber,
+                feedingLocation1ZS,feedingLocation2ZS,OP40LocationZS,measuringMachineLocationXN,OP50LocationXN,MarkingCode);
+        plc1Service.insertPlc1Current(plc1);}
 
 
 

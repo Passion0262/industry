@@ -29,5 +29,9 @@ public interface Plc1Service {
      */
     List<plc1> getByPNumber(String productionNumber);
 
+    /**
+     * 新增当前plc1状态信息
+     */
+    boolean insertPlc1Current(plc1 plc1);
 
 }
