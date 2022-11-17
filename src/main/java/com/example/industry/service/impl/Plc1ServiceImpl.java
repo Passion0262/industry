@@ -29,4 +29,7 @@ public class Plc1ServiceImpl implements Plc1Service {
 
     @Override
     public List<plc1> getByPNumber(String productionNumber){return plc1Mapper.getByPNumber(productionNumber);}
+
+    @Override
+    public boolean insertPlc1Current(plc1 plc1){return plc1Mapper.insertDeviceStatus(plc1);}
 }
