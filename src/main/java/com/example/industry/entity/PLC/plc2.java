@@ -32,7 +32,7 @@ public class plc2 {
     String OP70LocationZS;//OP70位置ZS
     String OKZSCode;//OKZS码
     String OKZSCode1;//OKZS码1
-    String NGZSCode;//NGZS码
+    String NGZHCode;//NGZH码
     String OP60LocationXN;//OP60地址XN
     String OP70LocationXN;//OP70地址XN
     String MarkingCode;//打标码
