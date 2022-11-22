@@ -22,4 +22,7 @@ public class Plc2ServiceImpl implements Plc2Service {
 
     @Override
     public List<plc2> getByType(String PLCType){return plc2Mapper.getByType(PLCType);}
-}
+
+    @Override
+    public boolean insertPlc2Current(plc2 plc2){return plc2Mapper.insertDeviceStatus(plc2);}
+    }

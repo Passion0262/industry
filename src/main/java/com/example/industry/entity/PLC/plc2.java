@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class plc2 {
     int id;//编号（此表为PLC_2历史参数）
-    String acquisitionTime;//采集时间
+    public Timestamp acquisitionTime;//采集时间
     String status;//状态
     String PLCType;//总控机种
     String sixtyFeedingRequest;//60上料请求

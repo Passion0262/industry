@@ -19,4 +19,9 @@ public interface Plc2Service {
      * 根据总控机种查询
      */
     List<plc2> getByType(String PLCType);
+
+    /**
+     * 新增当前plc2状态信息
+     */
+    boolean insertPlc2Current(plc2 plc2);
 }
