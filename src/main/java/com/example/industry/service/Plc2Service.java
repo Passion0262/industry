@@ -1,5 +1,6 @@
 package com.example.industry.service;
 
+import com.example.industry.entity.PLC.plc1;
 import com.example.industry.entity.PLC.plc2;
 
 import java.util.List;
@@ -24,4 +25,10 @@ public interface Plc2Service {
      * 新增当前plc2状态信息
      */
     boolean insertPlc2Current(plc2 plc2);
+
+    /**
+     * 获取plc2指定某一天的数据
+     */
+    List<plc2> getPlc2ListByDate(String date);
+
 }

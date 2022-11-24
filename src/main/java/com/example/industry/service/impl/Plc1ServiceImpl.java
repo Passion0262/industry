@@ -1,6 +1,7 @@
 package com.example.industry.service.impl;
 
 import com.example.industry.dao.Plc1Mapper;
+import com.example.industry.entity.Device.MeasuringMachine;
 import com.example.industry.entity.PLC.plc1;
 import com.example.industry.service.Plc1Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,11 @@ public class Plc1ServiceImpl implements Plc1Service {
 
     @Override
     public List<plc1> getByPNumber(String productionNumber){return plc1Mapper.getByPNumber(productionNumber);}
+
+    @Override
+    public List<plc1> getPlc1ListByDate(String date) {
+        return plc1Mapper.getPlc1ListByDate(date);
+    }
 
     @Override
     public boolean insertPlc1Current(plc1 plc1){return plc1Mapper.insertDeviceStatus(plc1);}

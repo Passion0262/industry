@@ -1,4 +1,5 @@
 package com.example.industry.dao;
+import com.example.industry.entity.Device.MeasuringMachine;
 import com.example.industry.entity.PLC.plc1;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -37,6 +38,13 @@ public interface Plc1Mapper
      */
     @Select("SELECT * FROM plc1 WHERE production_number=#{production_number}")
     List<plc1> getByPNumber(String productionNumber);
+
+
+    /**
+     * 获取plc1指定某一天的数据
+     */
+    @Select("SELECT * FROM plc1 WHERE DATE_FORMAT(acquisition_time,'%Y-%m-%d') = #{date}")
+    List<plc1> getPlc1ListByDate(String date);
 
     /**
      * 新增plc记录

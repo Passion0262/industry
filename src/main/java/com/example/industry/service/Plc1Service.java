@@ -1,4 +1,5 @@
 package com.example.industry.service;
+import com.example.industry.entity.Device.MeasuringMachine;
 import com.example.industry.entity.PLC.plc1;
 
 import java.util.List;
@@ -33,5 +34,10 @@ public interface Plc1Service {
      * 新增当前plc1状态信息
      */
     boolean insertPlc1Current(plc1 plc1);
+
+    /**
+     * 获取plc1指定某一天的数据
+     */
+    List<plc1> getPlc1ListByDate(String date);
 
 }

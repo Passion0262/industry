@@ -75,7 +75,7 @@ public class getDataRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         log.info("这里处理项目加载一些系统参数、完成初始化、" +
                 "预热本地缓存 from getDataRunner");
-        getData();
+//        getData();
 //        getTimeAnalysis("2022-03-28");
     }
 
@@ -500,27 +500,12 @@ public class getDataRunner implements CommandLineRunner {
 //        List<OP50Current> op50data = op50CurrentService.getOP50ListByDate(date);
 //        List<OP60Current> op60data = op60CurrentService.getOP60ListByDate(date);
 //        List<OP70Current> op70data = op70CurrentService.getOP70ListByDate(date);
-////        List<MeasuringMachine> measuringMachinesData = measuringMachineService.getMeasuringMachineListByDate(date);
-////        List<PLC1> PLC1data = plc1Service.getPLC1ListByDate(date);
-////        List<PLC2> PLC2data = plc2Service.getPLC2ListByDate(date);
+//        List<MeasuringMachine> measuringMachineData = measuringMachineService.getMeasuringMachineListByDate(date);
+//        List<plc1> plc1Data = plc1Service.getPlc1ListByDate(date);
+//        List<plc2> plc2Data = plc2Service.getPlc2ListByDate(date);
 //
 ////      若查询的日期无设备数据，默认离线
-//        OP40Current op40temp;
-//        if (op40data.size()==0){op40temp = new OP40Current(1, "离线", null, 0, 0, 0, 0, 0, 0, null, DateEnd);
-//        }else{op40temp = op40data.get(op40data.size() - 1);op40temp.setId(op40temp.getId()+1);op40temp.setTime(DateEnd);}
-//        op40data.add(op40temp);
-//        OP50Current op50temp;
-//        if (op50data.size()==0){op50temp = new OP50Current(1, "离线", null, 0, 0, 0, 0, 0, 0, null, DateEnd);
-//        }else{op50temp = op50data.get(op50data.size() - 1);op50temp.setId(op50temp.getId()+1);op50temp.setTime(DateEnd);}
-//        op50data.add(op50temp);
-//        OP60Current op60temp;
-//        if (op60data.size()==0){op60temp = new OP60Current(1, "离线", null, 0, 0, 0, 0, 0, 0, null, DateEnd);
-//        }else{op60temp = op60data.get(op60data.size() - 1);op60temp.setId(op60temp.getId()+1);op60temp.setTime(DateEnd);}
-//        op60data.add(op60temp);
-//        OP70Current op70temp;
-//        if (op70data.size()==0){op70temp = new OP70Current(1, "离线", null, 0, 0, 0, 0, 0, 0, null, DateEnd);
-//        }else{op70temp = op70data.get(op70data.size() - 1);op70temp.setId(op70temp.getId()+1);op70temp.setTime(DateEnd);}
-//        op70data.add(op70temp);
+//        timeAnalysisRunner.device_data(DateEnd, op40data, op50data, op60data, op70data, measuringMachineData, plc1Data, plc2Data);
 //
 ////        System.out.println(op60temp);
 ////        System.out.println(op70temp);
@@ -534,21 +519,21 @@ public class getDataRunner implements CommandLineRunner {
 //
 //        List<TimeAnalysisByDate> timeAnalysisByDate2 = new LinkedList<>();
 //        for( OP50Current o1 : op50data){
-//            TimeAnalysisByDate timeAnalysisByDateTemp = new TimeAnalysisByDate(o1.getId(),o1.getTime(),device[0],o1.getStatus());
+//            TimeAnalysisByDate timeAnalysisByDateTemp = new TimeAnalysisByDate(o1.getId(),o1.getTime(),device[1],o1.getStatus());
 //            timeAnalysisByDate2.add(timeAnalysisByDateTemp);
 //        }
 //        getDeviceTimeAnalysis(timeAnalysisByDate2,DateStart,date,device[1]);
 //
 //        List<TimeAnalysisByDate> timeAnalysisByDate3 = new LinkedList<>();
 //        for( OP60Current o1 : op60data){
-//            TimeAnalysisByDate timeAnalysisByDateTemp = new TimeAnalysisByDate(o1.getId(),o1.getTime(),device[0],o1.getStatus());
+//            TimeAnalysisByDate timeAnalysisByDateTemp = new TimeAnalysisByDate(o1.getId(),o1.getTime(),device[2],o1.getStatus());
 //            timeAnalysisByDate3.add(timeAnalysisByDateTemp);
 //        }
 //        getDeviceTimeAnalysis(timeAnalysisByDate3,DateStart,date,device[2]);
 //
 //        List<TimeAnalysisByDate> timeAnalysisByDate4 = new LinkedList<>();
 //        for( OP70Current o1 : op70data){
-//            TimeAnalysisByDate timeAnalysisByDateTemp = new TimeAnalysisByDate(o1.getId(),o1.getTime(),device[0],o1.getStatus());
+//            TimeAnalysisByDate timeAnalysisByDateTemp = new TimeAnalysisByDate(o1.getId(),o1.getTime(),device[3],o1.getStatus());
 //            timeAnalysisByDate4.add(timeAnalysisByDateTemp);
 //        }
 //        getDeviceTimeAnalysis(timeAnalysisByDate4,DateStart,date,device[3]);

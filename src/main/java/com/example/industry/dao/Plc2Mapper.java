@@ -1,4 +1,5 @@
 package com.example.industry.dao;
+import com.example.industry.entity.PLC.plc1;
 import com.example.industry.entity.PLC.plc2;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -25,6 +26,12 @@ public interface Plc2Mapper
      */
     @Select("SELECT * FROM plc2 WHERE PLC_type=#{PLC_type}")
     List<plc2> getByType(String PLCType);
+
+    /**
+     * 获取plc2指定某一天的数据
+     */
+    @Select("SELECT * FROM plc2 WHERE DATE_FORMAT(acquisition_time,'%Y-%m-%d') = #{date}")
+    List<plc2> getPlc2ListByDate(String date);
 
     /**
      * 新增plc记录
