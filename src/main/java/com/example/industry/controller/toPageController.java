@@ -45,7 +45,6 @@ public class toPageController {
 
         List<warn> warnList = WarnService.listwarn();
 
-
         int sumSet = 0;
         int sumOff = 0;
         int sumOperate = 0;
