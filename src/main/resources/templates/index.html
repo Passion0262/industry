@@ -158,77 +158,77 @@
                     </div>
 
                     <div class="col-lg-8 m-0">
-                        <div class="card">
-                            <div class="card mb-0" style="background-color: #0a83ff">
-                                <div class="card-body p-2">
-                                    <h6 class="mt-0 mb-0 text-white ri-bar-chart-fill">&nbsp;设备班次稼动率</h6>
-                                </div>
-                            </div>
-                            <div class="card-body" style="width: 100%; height: 300px">
-                                <div id="main" style="width:100%; height:100%"></div>
-                                <script type="text/javascript">
-                                    // 基于准备好的dom，初始化echarts实例
-                                    var myChart = echarts.init(document.getElementById('main'));
-                                    window.onresize = function () { // 监听窗口大小变化
-                                        myChart.resize()       // 自适应大小变化
-                                    }
+<!--                        <div class="card">-->
+<!--                            <div class="card mb-0" style="background-color: #0a83ff">-->
+<!--                                <div class="card-body p-2">-->
+<!--                                    <h6 class="mt-0 mb-0 text-white ri-bar-chart-fill">&nbsp;设备班次稼动率</h6>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="card-body" style="width: 100%; height: 300px">-->
+<!--                                <div id="main" style="width:100%; height:100%"></div>-->
+<!--                                <script type="text/javascript">-->
+<!--                                    // 基于准备好的dom，初始化echarts实例-->
+<!--                                    var myChart = echarts.init(document.getElementById('main'));-->
+<!--                                    window.onresize = function () { // 监听窗口大小变化-->
+<!--                                        myChart.resize()       // 自适应大小变化-->
+<!--                                    }-->
 
-                                    // 指定图表的配置项和数据
-                                    var option = {
-                                        title: {
-                                            text: '设备稼动率',
-                                        },
-                                        tooltip: {
-                                            trigger: 'axis'
-                                        },
-                                        legend: {
-                                            data: '设备稼动率'
-                                        },
-                                        toolbox: {
-                                            show: true,
-                                            feature: {
-                                                mark: {show: true},
-                                                dataView: {show: true, readOnly: false},
-                                                magicType: {show: true, type: ['line', 'bar']},
-                                                restore: {show: true},
-                                                saveAsImage: {show: true}
-                                            }
-                                        },
-                                        calculable: true,
-                                        xAxis: [
-                                            {
-                                                type: 'category',
-                                                data: ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
-                                            }
-                                        ],
-                                        yAxis: [
-                                            {
-                                                type: 'value'
-                                            }
-                                        ],
-                                        series: {
-                                            name: '设备产量',
-                                            type: 'bar',
-                                            data: [0.7, 0.67, 0.87, 0.99, 0.95, 0.69, 0.33, 0.87, 0.99, 0.95, 0.69, 0.33],
-                                            markPoint: {
-                                                data: [
-                                                    {type: 'max', name: '最大值'},
-                                                    {type: 'min', name: '最小值'}
-                                                ]
-                                            },
-                                            markLine: {
-                                                data: [
-                                                    {type: 'average', name: '平均值'}
-                                                ]
-                                            }
-                                        }
-                                    };
+<!--                                    // 指定图表的配置项和数据-->
+<!--                                    var option = {-->
+<!--                                        title: {-->
+<!--                                            text: '设备稼动率',-->
+<!--                                        },-->
+<!--                                        tooltip: {-->
+<!--                                            trigger: 'axis'-->
+<!--                                        },-->
+<!--                                        legend: {-->
+<!--                                            data: '设备稼动率'-->
+<!--                                        },-->
+<!--                                        toolbox: {-->
+<!--                                            show: true,-->
+<!--                                            feature: {-->
+<!--                                                mark: {show: true},-->
+<!--                                                dataView: {show: true, readOnly: false},-->
+<!--                                                magicType: {show: true, type: ['line', 'bar']},-->
+<!--                                                restore: {show: true},-->
+<!--                                                saveAsImage: {show: true}-->
+<!--                                            }-->
+<!--                                        },-->
+<!--                                        calculable: true,-->
+<!--                                        xAxis: [-->
+<!--                                            {-->
+<!--                                                type: 'category',-->
+<!--                                                data: ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']-->
+<!--                                            }-->
+<!--                                        ],-->
+<!--                                        yAxis: [-->
+<!--                                            {-->
+<!--                                                type: 'value'-->
+<!--                                            }-->
+<!--                                        ],-->
+<!--                                        series: {-->
+<!--                                            name: '设备产量',-->
+<!--                                            type: 'bar',-->
+<!--                                            data: [0.7, 0.67, 0.87, 0.99, 0.95, 0.69, 0.33, 0.87, 0.99, 0.95, 0.69, 0.33],-->
+<!--                                            markPoint: {-->
+<!--                                                data: [-->
+<!--                                                    {type: 'max', name: '最大值'},-->
+<!--                                                    {type: 'min', name: '最小值'}-->
+<!--                                                ]-->
+<!--                                            },-->
+<!--                                            markLine: {-->
+<!--                                                data: [-->
+<!--                                                    {type: 'average', name: '平均值'}-->
+<!--                                                ]-->
+<!--                                            }-->
+<!--                                        }-->
+<!--                                    };-->
 
-                                    // 使用刚指定的配置项和数据显示图表。
-                                    myChart.setOption(option);
-                                </script>
-                            </div>
-                        </div>
+<!--                                    // 使用刚指定的配置项和数据显示图表。-->
+<!--                                    myChart.setOption(option);-->
+<!--                                </script>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
 
                         <div class="row m-0" style="height: 34px">
@@ -268,22 +268,22 @@
                             </div>
                             <div class="card-body" style="overflow-x: auto;">
 
-                                <div style="width: 2200px">
+                                <div style="width: 2200px;height:400px">
 
                                     <div id="main1"
-                                         style="float:left;width: 300px;height:300px;margin-left-left: 100px"></div>
+                                         style="float:left;width: 300px;height:300px;margin-top: 50px"></div>
 
-                                    <div id="main2" style="float:left;width: 300px;height:300px;"></div>
+                                    <div id="main2" style="float:left;width: 300px;height:300px;margin-top: 50px"></div>
 
-                                    <div id="main3" style="float:left;width: 300px;height:300px;"></div>
+                                    <div id="main3" style="float:left;width: 300px;height:300px;margin-top: 50px"></div>
 
-                                    <div id="main4" style="float:left;width: 300px;height:300px;"></div>
+                                    <div id="main4" style="float:left;width: 300px;height:300px;margin-top: 50px"></div>
 
-                                    <div id="main5" style="float:left;width: 300px;height:300px;"></div>
+                                    <div id="main5" style="float:left;width: 300px;height:300px;margin-top: 50px"></div>
 
-                                    <div id="main6" style="float:left;width: 300px;height:300px;"></div>
+                                    <div id="main6" style="float:left;width: 300px;height:300px;margin-top: 50px"></div>
 
-                                    <div id="main7" style="float:left;width: 300px;height:300px;"></div>
+                                    <div id="main7" style="float:left;width: 300px;height:300px;margin-top: 50px"></div>
                                 </div>
 
 
