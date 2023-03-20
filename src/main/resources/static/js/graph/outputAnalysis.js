@@ -7,7 +7,7 @@ function outputAnalysis(){
 
 
     // 创建变量接收数据
-    var date = [];
+    var date = 2023;
     var OP40 = [];
     var OP50 = [];
     var OP60 = [];
