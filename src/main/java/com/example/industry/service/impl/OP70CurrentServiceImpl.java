@@ -32,13 +32,14 @@ public class OP70CurrentServiceImpl implements OP70CurrentService{
 
     @Override
     public boolean insertOP70Current(OP70Current op70Current) {
-        OP70Current lasted = getLatest();
+        /*OP70Current lasted = getLatest();
         //如果要新增的记录和最新的一条相同，则不添加
         if (isSame(lasted,op70Current)){
             return false;
         }else {
-            return op70CurrentMapper.insertDeviceStatus(op70Current);
-        }
+        return op70CurrentMapper.insertDeviceStatus(op70Current);
+             }*/
+        return op70CurrentMapper.insertDeviceStatus(op70Current);
     }
 
     @Override

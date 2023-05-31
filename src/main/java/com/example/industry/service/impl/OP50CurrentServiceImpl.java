@@ -28,13 +28,14 @@ public class OP50CurrentServiceImpl implements OP50CurrentService {
 
     @Override
     public boolean insertOP50Current(OP50Current op50Current) {
-        OP50Current lasted = getLatest();
+    /*    OP50Current lasted = getLatest();
         //如果要新增的记录和最新的一条相同，则不添加
         if (isSame(lasted,op50Current)){
             return false;
         }else {
             return op50CurrentMapper.insertDeviceStatus(op50Current);
-        }
+        }*/
+        return op50CurrentMapper.insertDeviceStatus(op50Current);
     }
 
     @Override

@@ -1,11 +1,11 @@
 package com.example.industry.controller;
 
 import com.example.industry.entity.Cutter.cutter;
+import com.example.industry.entity.Device.*;
 import com.example.industry.entity.Productionplan.productionplan;
 import com.example.industry.entity.Timeanalysis.TimeAnalysis;
 import com.example.industry.entity.Warn.warn;
 import com.example.industry.service.*;
-import com.example.industry.entity.Device.Device;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +35,19 @@ public class toPageController {
 
     @Autowired
     TimeAnalysisService TimeAnalysis;
+
+    @Autowired
+    OP40CurrentService OP40CurrentService;
+    @Autowired
+    OP50CurrentService OP50CurrentService;
+
+    @Autowired
+    OP60CurrentService OP60CurrentService;
+
+    @Autowired
+    OP70CurrentService OP70CurrentService;
+
+
 
 
     //主页
@@ -79,7 +92,21 @@ public class toPageController {
     @RequestMapping("/instance_status")
     public String instanceStatus(Model model){
         List<Device> productionLines = DeviceService.listDevices();
+
+        Integer op40output = OP40CurrentService.getLatest().getOutput();
+        Integer op50output = OP50CurrentService.getLatest().getOutput();
+        Integer op60output = OP60CurrentService.getLatest().getOutput();
+        Integer op70output = OP70CurrentService.getLatest().getOutput();
+
         model.addAttribute("data", productionLines);
+        model.addAttribute("op40output", op40output);
+        model.addAttribute("op50output", op50output);
+        model.addAttribute("op60output", op60output);
+        model.addAttribute("op70output", op70output);
+
+
+
+
         return "instanceStatus";
     }
 

@@ -75,7 +75,7 @@ public class getDataRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         log.info("这里处理项目加载一些系统参数、完成初始化、" +
                 "预热本地缓存 from getDataRunner");
-//        getData();
+        getData();
 //        getTimeAnalysis("2022-03-28");
     }
 

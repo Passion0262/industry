@@ -60,7 +60,7 @@ public class timeAnalysisRunner {
         //        读取设备信息进行用时分析并将结果存入数据库中
 //        String date = "2022-03-28";
         LocalDate date = LocalDate.now().minusDays(1);
-//        System.out.println(date.toString());
+        System.out.println(date.toString());
         getTimeAnalysis(date.toString());
 
     }
