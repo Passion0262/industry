@@ -268,11 +268,13 @@ public class toPageController {
 
     //----------------------用时分析bar---------   ----------------
     @RequestMapping("/time_analysis")
-    public String timeAnalysis(String data, Model model){
-        if(data==null){
-            data="2022-03-11"; //默认展示 2022-03-11 的数据
+    public String timeAnalysis(String dateTime, Model model){
+        System.out.println("data:");
+        System.out.println(dateTime);
+        if(dateTime==null){
+            dateTime="2022-03-11"; //默认展示 2022-03-11 的数据
         }
-        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
+        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(dateTime);
         //打印测试
 //        System.out.println("=====================!");
 //        for (TimeAnalysis timeAnalysis : dataByTime) {
@@ -286,11 +288,11 @@ public class toPageController {
 
     //----------------------用时分析table---------   ----------------
     @RequestMapping("/time_analysisT")
-    public String timeAnalysisT(String data, Model model){
-        if(data==null){
-            data="2022-03-11"; //默认展示 2022-03-11 的数据
+    public String timeAnalysisT(String dateTime, Model model){
+        if(dateTime==null){
+            dateTime="2022-03-11"; //默认展示 2022-03-11 的数据
         }
-        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(data);
+        List<TimeAnalysis> dataByTime = TimeAnalysis.listByDate(dateTime);
         //打印测试
 //        System.out.println("=====================!");
 //        for (TimeAnalysis timeAnalysis : dataByTime) {

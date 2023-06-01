@@ -20,7 +20,7 @@
     <link href="../static/css/diy.css" rel="stylesheet" type="text/css"/>
     <script src="../static/js/echarts.js"></script>
     <script src="../static/libs/jquery/jquery.min.js"></script>
-    <link href="https://cdn.bootcss.com/gijgo/1.9.13/combined/css/gijgo.min.css" rel="stylesheet">
+<!--    <link href="https://cdn.bootcss.com/gijgo/1.9.13/combined/css/gijgo.min.css" rel="stylesheet">-->
 </head>
 
 <body data-sidebar="dark" class="bgc">
@@ -57,16 +57,22 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <form class="form-inline" method="post" th:action="@{time_analysis}" id="form1"
-                                      onsubmit="return a();">
+<!--                                <form class="form-inline ml-3 mt-2 mr-5" method="post" action="/time_analysis">-->
+<!--                                    <div class="form-group mr-2">-->
+<!--                                        <label for="startTime" class="mr-1">计划开始时间</label>-->
+<!--                                        <input type="datetime-local" class="form-control" id="startTime" name="startTime">-->
+<!--                                    </div>-->
+<!--                                    <button type="submit" class="btn btn-primary">查询</button>-->
+<!--                                </form>-->
+
+                                <form class="form-inline" method="post" action="/time_analysis">
                                     <div class="input-group">
-                                        <span style="line-height: 30px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;选择日期：</span>
-                                        <input type="text" class="form-control input-sm" id="searchStr"
-                                               placeholder="按日期搜索..." name="data" style="height: 30px;width: 200px">
-                                        <button class="btn btn-success btn-sm" type="submit" style="margin-left: 10px">
-                                            查找
-                                        </button>
+                                        <label for="dateTime" style="line-height: 30px;color: white;background-color: #3e96e4;margin-left: 30px">&nbsp;&nbsp;选择日期：</label>
+                                        <input  type="date" class="form-control" id="dateTime" name="dateTime">
                                     </div>
+                                    <button class="btn btn-success btn-sm" type="submit" style="margin-left: 10px">
+                                        查找
+                                    </button>
                                 </form>
                             </div>
                             <!--                            请输入日期提示框-->
@@ -124,7 +130,7 @@
                             <!--                            <div id="main" style="width: 800px;height:400px;margin: auto;margin-top: 100px" ></div>-->
                             <script>
                                 function a() {
-                                    var val1 = $("#searchStr").val();
+                                    var val1 = $("#startTime").val();
                                     if (val1 == "") {
                                         $("#nullMsg0").html("<span style=\"font-size: medium;color: #4b83ff;;margin-left: 50px;\">请输入日期！<span/>");
                                         return false;
@@ -766,15 +772,15 @@
 </div><!-- End Page-content -->
 
 <!--日期控件-->
-<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/gijgo.min.js"></script>
-<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/messages/messages.zh-cn.min.js"></script>
-<script>
-    $("#searchStr").datepicker({
-        locale: 'zh-cn',
-        format: 'yyyy-mm-dd',
-        weekStartDay: 1
-    });
-</script>
+<!--<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/gijgo.min.js"></script>-->
+<!--<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/messages/messages.zh-cn.min.js"></script>-->
+<!--<script>-->
+<!--    $("#searchStr").datepicker({-->
+<!--        locale: 'zh-cn',-->
+<!--        format: 'yyyy/mm/dd',-->
+<!--        weekStartDay: 1-->
+<!--    });-->
+<!--</script>-->
 
 
 <!-- Right bar overlay-->
