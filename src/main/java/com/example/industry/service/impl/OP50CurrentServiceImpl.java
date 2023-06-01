@@ -44,6 +44,9 @@ public class OP50CurrentServiceImpl implements OP50CurrentService {
     }
 
     @Override
+    public Integer getOutput(){return op50CurrentMapper.getOutput();}
+
+    @Override
     public List<OP50Current> getLatest10() {
         return op50CurrentMapper.getLatest10();
     }

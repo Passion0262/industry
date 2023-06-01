@@ -39,6 +39,9 @@ public class OP40CurrentServiceImpl implements OP40CurrentService {
     }
 
     @Override
+    public Integer getOutput(){return op40CurrentMapper.getOutput();}
+
+    @Override
     public List<OP40Current> getLatest10() {
         return op40CurrentMapper.getLatest10();
     }

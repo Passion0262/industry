@@ -24,6 +24,11 @@ public interface OP40CurrentService {
     OP40Current getLatest();
 
     /**
+     * 获取最大产量
+     */
+    Integer getOutput();
+
+    /**
      * 获取最新10条记录
      */
     List<OP40Current> getLatest10();

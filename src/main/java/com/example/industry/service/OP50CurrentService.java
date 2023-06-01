@@ -34,6 +34,11 @@ public interface OP50CurrentService {
     OP50Current getLatest();
 
     /**
+     * 获取最大产量
+     */
+    Integer getOutput();
+
+    /**
      * 获取op50指定某一天的数据
      */
     List<OP50Current> getOP50ListByDate(String date);

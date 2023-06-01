@@ -2,6 +2,7 @@ package com.example.industry.dao.device;
 
 import com.example.industry.entity.Device.DeviceStatus;
 import com.example.industry.entity.Device.OP40Current;
+import com.example.industry.entity.Device.OP50Current;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -23,6 +24,12 @@ public interface OP40CurrentMapper {
      */
     @Select("SELECT * FROM op40_current WHERE id = (SELECT MAX(id) FROM op40_current)")
     OP40Current getLatest();
+
+    /**
+     * 获取最大产量
+     */
+    @Select("SELECT MAX(output) FROM op40_current")
+    Integer getOutput();
 
     /**
      * 获取最新的10条记录

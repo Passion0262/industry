@@ -93,10 +93,10 @@ public class toPageController {
     public String instanceStatus(Model model){
         List<Device> productionLines = DeviceService.listDevices();
 
-        Integer op40output = OP40CurrentService.getLatest().getOutput();
-        Integer op50output = OP50CurrentService.getLatest().getOutput();
-        Integer op60output = OP60CurrentService.getLatest().getOutput();
-        Integer op70output = OP70CurrentService.getLatest().getOutput();
+        Integer op40output = OP40CurrentService.getOutput();
+        Integer op50output = OP50CurrentService.getOutput();
+        Integer op60output = OP60CurrentService.getOutput();
+        Integer op70output = OP70CurrentService.getOutput();
 
         model.addAttribute("data", productionLines);
         model.addAttribute("op40output", op40output);

@@ -29,6 +29,11 @@ public interface OP60CurrentService {
     OP60Current getLatest();
 
     /**
+     * 获取最大产量
+     */
+    Integer getOutput();
+
+    /**
      * 获取op60指定某一天的数据
      */
     List<OP60Current> getOP60ListByDate(String date);

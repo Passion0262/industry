@@ -33,7 +33,8 @@ public class OutputAnalysisController {
 
     @RequestMapping("/OutputAnalysis")
     @ResponseBody
-    public Map<String, List> OutputAnalysis(){
+    //获取最新数据返回的产量与时间
+    /*public Map<String, List> OutputAnalysis(){
         System.out.println("ijdffdgn");
         OP40Current op40output =  OP40CurrentService.getLatest();
         OP50Current op50output =  OP50CurrentService.getLatest();
@@ -46,6 +47,7 @@ public class OutputAnalysisController {
         outputAnalysis.add(op60output.getOutput());
         outputAnalysis.add(op70output.getOutput());
 
+        //获取最新那条数据的时间字段
         List<Timestamp> outputAnalysisdate = new ArrayList<>();
         outputAnalysisdate.add(op40output.getTime());
         outputAnalysisdate.add(op50output.getTime());
@@ -57,9 +59,29 @@ public class OutputAnalysisController {
         Map<String, List> map = new HashMap<String, List>();
         map.put("outputAnalysis", outputAnalysis);
         map.put("outputAnalysisdate", outputAnalysisdate);
-        return map;
+        return map;*/
 
 //        return .subList(outputStatistics.size()-50, outputStatistics.size());
 //        return outputAnalysis, outputAnalysisdate;
+
+    public List<Integer> OutputAnalysis(){
+        Integer op40output = OP40CurrentService.getOutput();
+        Integer op50output = OP50CurrentService.getOutput();
+        Integer op60output = OP60CurrentService.getOutput();
+        Integer op70output = OP70CurrentService.getOutput();
+
+        List<Integer> outputAnalysis = new ArrayList<>();
+        outputAnalysis.add(op40output);
+        outputAnalysis.add(op50output);
+        outputAnalysis.add(op60output);
+        outputAnalysis.add(op70output);
+        System.out.println(outputAnalysis);
+
+
+        return outputAnalysis;
+
+
+
+
     }
 }

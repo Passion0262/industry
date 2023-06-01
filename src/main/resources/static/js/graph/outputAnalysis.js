@@ -21,10 +21,11 @@ function outputAnalysis(){
         async:false,
         cache:false,
         success:function (result) {
-            OP40 = result['outputAnalysis'][0]
-            OP50 = result['outputAnalysis'][1]
-            OP60 = result['outputAnalysis'][2]
-            OP70 = result['outputAnalysis'][3]
+
+            OP40 = result[0]
+            OP50 = result[1]
+            OP60 = result[2]
+            OP70 = result[3]
 
             // date.push(result['outputAnalysisdate'][0])
             // date.push(result['outputAnalysisdate'][1])

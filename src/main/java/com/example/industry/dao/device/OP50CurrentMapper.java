@@ -36,6 +36,12 @@ public interface OP50CurrentMapper {
     OP50Current getLatest();
 
     /**
+     * 获取最大产量
+     */
+    @Select("SELECT MAX(output) FROM op50_current")
+    Integer getOutput();
+
+    /**
      * 获取op50指定某一天的数据
      */
     @Select("SELECT * FROM op50_current WHERE DATE_FORMAT(time,'%Y-%m-%d') = #{date}")

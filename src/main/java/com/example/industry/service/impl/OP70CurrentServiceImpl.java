@@ -48,6 +48,9 @@ public class OP70CurrentServiceImpl implements OP70CurrentService{
     }
 
     @Override
+    public Integer getOutput(){return op70CurrentMapper.getOutput();}
+
+    @Override
     public List<OP70Current> getLatest10() {
         return op70CurrentMapper.getLatest10();
     }

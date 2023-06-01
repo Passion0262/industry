@@ -29,6 +29,11 @@ public interface OP70CurrentService {
     OP70Current getLatest();
 
     /**
+     * 获取最大产量
+     */
+    Integer getOutput();
+
+    /**
      * 获取op70指定某一天的数据
      */
     List<OP70Current> getOP70ListByDate(String date);
