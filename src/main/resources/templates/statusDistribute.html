@@ -47,88 +47,88 @@
                         </div>
                     </div>
                 </div><!-- end page title -->
-                <div class="card " >
-                    <div class="card-body">
-                        <!--                            <div class="float-right d-none d-md-inline-block">-->
-                        <!--                                <div class="btn-group mb-2"></div>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="float-right d-none d-md-inline-block">-->
-                        <!--                                <div class="btn-group mb-2">-->
-                        <!--                                    <a href="#"><button type="button" class="btn btn-sm btn-light active">当前设备OEE</button></a>-->
-                        <!--                                    <a th:href="@{/OEE1}"><button type="button" class="btn btn-sm btn-light">整线OEE</button></a>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        <h4 class="card-title mb-4">当前设备OEE分析</h4>-->
-                        <div id="all" style="width: 400px;height:300px;margin: auto" ></div>
-                        <script type="text/javascript">
-                            // 基于准备好的dom，初始化echarts实例
-                            var myChart = echarts.init(document.getElementById('all'));
-                            window.onresize = function () { // 监听窗口大小变化
-                                myChart.resize()       // 自适应大小变化
-                            }
+<!--                <div class="card " >-->
+<!--                    <div class="card-body">-->
+<!--                        &lt;!&ndash;                            <div class="float-right d-none d-md-inline-block">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                <div class="btn-group mb-2"></div>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <div class="float-right d-none d-md-inline-block">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                <div class="btn-group mb-2">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    <a href="#"><button type="button" class="btn btn-sm btn-light active">当前设备OEE</button></a>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    <a th:href="@{/OEE1}"><button type="button" class="btn btn-sm btn-light">整线OEE</button></a>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        <h4 class="card-title mb-4">当前设备OEE分析</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div id="all" style="width: 400px;height:300px;margin: auto" ></div>&ndash;&gt;-->
+<!--                        <script type="text/javascript">-->
+<!--                            // 基于准备好的dom，初始化echarts实例-->
+<!--                            var myChart = echarts.init(document.getElementById('all'));-->
+<!--                            window.onresize = function () { // 监听窗口大小变化-->
+<!--                                myChart.resize()       // 自适应大小变化-->
+<!--                            }-->
 
-                            // 指定图表的配置项和数据
-                            var option = {
-                                title : {
-                                    text: '整体设备状态分布',
-                                    x:'center'
-                                },
-                                tooltip : {
-                                    trigger: 'item',
-                                    formatter: "{a} <br/>{b} : {c} ({d}%)"
-                                },
-                                legend: {
-                                    orient : 'vertical',
-                                    x : 'left',
-                                    data:['运行','空闲','停机','离线','设定']
-                                },
-                                color:['#91cc75', '#fac858', '#ee6666', '#abadb4', '#5470c6'],
-                                toolbox: {
-                                    show : true,
-                                    feature : {
-                                        mark : {show: true},
-                                        dataView : {show: true, readOnly: false},
-                                        magicType : {
-                                            show: true,
-                                            type: ['pie', 'funnel'],
-                                            option: {
-                                                funnel: {
-                                                    x: '25%',
-                                                    width: '50%',
-                                                    funnelAlign: 'left',
-                                                    max: 1548
-                                                }
-                                            }
-                                        },
-                                        restore : {show: true},
-                                        saveAsImage : {show: true}
-                                    }
-                                },
-                                calculable : true,
-                                series : [
-                                    {
-                                        name:'访问来源',
-                                        type:'pie',
-                                        radius : '55%',
-                                        center: ['50%', '60%'],
-                                        data:[
-                                            {value:335, name:'运行'},
-                                            {value:310, name:'空闲'},
-                                            {value:134, name:'停机'},
-                                            {value:295, name:'离线'},
-                                            {value:315, name:'设定'},
-                                        ]
-                                    }
-                                ]
-                            };
+<!--                            // 指定图表的配置项和数据-->
+<!--                            var option = {-->
+<!--                                title : {-->
+<!--                                    text: '整体设备状态分布',-->
+<!--                                    x:'center'-->
+<!--                                },-->
+<!--                                tooltip : {-->
+<!--                                    trigger: 'item',-->
+<!--                                    formatter: "{a} <br/>{b} : {c} ({d}%)"-->
+<!--                                },-->
+<!--                                legend: {-->
+<!--                                    orient : 'vertical',-->
+<!--                                    x : 'left',-->
+<!--                                    data:['运行','空闲','停机','离线','设定']-->
+<!--                                },-->
+<!--                                color:['#91cc75', '#fac858', '#ee6666', '#abadb4', '#5470c6'],-->
+<!--                                toolbox: {-->
+<!--                                    show : true,-->
+<!--                                    feature : {-->
+<!--                                        mark : {show: true},-->
+<!--                                        dataView : {show: true, readOnly: false},-->
+<!--                                        magicType : {-->
+<!--                                            show: true,-->
+<!--                                            type: ['pie', 'funnel'],-->
+<!--                                            option: {-->
+<!--                                                funnel: {-->
+<!--                                                    x: '25%',-->
+<!--                                                    width: '50%',-->
+<!--                                                    funnelAlign: 'left',-->
+<!--                                                    max: 1548-->
+<!--                                                }-->
+<!--                                            }-->
+<!--                                        },-->
+<!--                                        restore : {show: true},-->
+<!--                                        saveAsImage : {show: true}-->
+<!--                                    }-->
+<!--                                },-->
+<!--                                calculable : true,-->
+<!--                                series : [-->
+<!--                                    {-->
+<!--                                        name:'访问来源',-->
+<!--                                        type:'pie',-->
+<!--                                        radius : '55%',-->
+<!--                                        center: ['50%', '60%'],-->
+<!--                                        data:[-->
+<!--                {value:335, name:'运行'},-->
+<!--                {value:310, name:'空闲'},-->
+<!--                {value:134, name:'停机'},-->
+<!--                {value:295, name:'离线'},-->
+<!--                {value:315, name:'设定'},-->
+<!--                ]-->
+<!--                }-->
+<!--                ]-->
+<!--                };-->
 
-                            // 使用刚指定的配置项和数据显示图表。
-                            myChart.setOption(option);
-                        </script>
+<!--                // 使用刚指定的配置项和数据显示图表。-->
+<!--                myChart.setOption(option);-->
+<!--                </script>-->
 
 
-                    </div><!-- container-fluid -->
-                </div>
+<!--            </div>&lt;!&ndash; container-fluid &ndash;&gt;-->
+<!--        </div>-->
                 <div class="row">
                     <div class="card " style="width:48%; margin:1%">
                         <div class="card-body">
